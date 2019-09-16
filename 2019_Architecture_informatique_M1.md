@@ -13,6 +13,8 @@ Aucun
 
 * © IGN 2016 - Clément Delgrange, Benoît Costes, Didier Richard - ValiLab (DRE)
 * Wikipedia®
+* © IGN 2019 - Amaury Zarzelli (Pôle Technique Géoportail) (DSTI) (Légères modifications, adaptation à Markdown)
+
 
 ![Document sous licence Creatives Commons 3 BY-CC-SA](img/by-nc-sa.png)
 
@@ -243,20 +245,17 @@ ils ont simplement utilisé les préfixes SI en changeant légèrement leurs
 valeurs (par exemple kilo $\longrightarrow$ 1 024 au lieu de 1 000). L’habitude
 en est ensuite restée.
 
-\tiny
-
-| **Nom** | **Symbole CEI** | **facteur=$2^{10*a}$**                       | **Nom** | **Symbole SI** | **facteur=$10^{3*a}$**                       | **Erreur (%)** |
+| **Nom** | **Symbole CEI** | **facteur=2^(10*a)**                       | **Nom** | **Symbole SI** | **facteur=10^(3*a)**                       | **Erreur (%)** |
 |:-------:|:---------------:|:---------------------------------------------|:-------:|:--------------:|:---------------------------------------------|:--------------:|
-| kibi    | Ki              | $2^{10*1}=1024$                              | kilo    | k              | $10^{3*1}=1000$                              | 2              |
-| mébi    | Mi              | $2^{10*2}=1 048 576$                         | méga    | M              | $10^{3*2}=1 000 000$                         | 5              |
-| gibi    | Gi              | $2^{10*3}=1 073 741 824$                     | giga    | G              | $10^{3*3}=1 000 000 000$                     | 7              |
-| tébi    | Ti              | $2^{10*4}=1 099 511 627 776$                 | téra    | T              | $10^{3*4}=1 000 000 000 000$                 | 10             |
-| pébi    | Pi              | $2^{10*5}=1 125 899 906 842 624$             | péta    | P              | $10^{3*5}=1 000 000 000 000 000$             | 13             |
-| exbi    | Ei              | $2^{10*6}=1 152 921 504 606 846 976$         | exa     | E              | $10^{3*6}=1 000 000 000 000 000 000$         | 15             |
-| zébi    | Zi              | $2^{10*7}=1 180 591 620 717 411 303 424$     | zetta   | Z              | $10^{3*7}=1 000 000 000 000 000 000 000$     | 18             |
-| yobi    | Yi              | $2^{10*8}=1 208 925 819 614 629 174 706 176$ | yotta   | Y              | $10^{3*8}=1 000 000 000 000 000 000 000 000$ | 21             |
+| kibi    | Ki              | 2^(10*1)=1024                              | kilo    | k              | 10^(3*1)=1000                              | 2              |
+| mébi    | Mi              | 2^(10*2)=1 048 576                         | méga    | M              | 10^(3*2)=1 000 000                         | 5              |
+| gibi    | Gi              | 2^(10*3)=1 073 741 824                     | giga    | G              | 10^(3*3)=1 000 000 000                     | 7              |
+| tébi    | Ti              | 2^(10*4)=1 099 511 627 776                 | téra    | T              | 10^(3*4)=1 000 000 000 000                 | 10             |
+| pébi    | Pi              | 2^(10*5)=1 125 899 906 842 624             | péta    | P              | 10^(3*5)=1 000 000 000 000 000             | 13             |
+| exbi    | Ei              | 2^(10*6)=1 152 921 504 606 846 976         | exa     | E              | 10^(3*6)=1 000 000 000 000 000 000         | 15             |
+| zébi    | Zi              | 2^(10*7)=1 180 591 620 717 411 303 424     | zetta   | Z              | 10^(3*7)=1 000 000 000 000 000 000 000     | 18             |
+| yobi    | Yi              | 2^(10*8)=1 208 925 819 614 629 174 706 176 | yotta   | Y              | 10^(3*8)=1 000 000 000 000 000 000 000 000 | 21             |
 
-\normalsize
 
 
 ##### Ordre de grandeur des capacités #####
@@ -264,12 +263,12 @@ Nous utilisons les unités SI pour décrire les capacités connues en 2016...
 
 | **Type de média**   | **Capacité maximale** | **Vitesse de Transfert (Mo/s)** | **Prix (€/Go)** |
 |:--------------------|:---------------------:|:-------------------------------:|----------------:|
-| Bande magnétique	  | $\leq$ 6,25 To        | 160 (max)                       |  0,0002         |
+| Bande magnétique	  | ≤ 6,25 To        | 160 (max)                       |  0,0002         |
 | CD                  | 650 Mo                | 0,7 (moy)                       | 40,0000         |
 | DVD                 | 4,7 Go                | 1,4 (moy)                       |  5,0000         |
-| USB                 | $\leq$ 1 To           | 240 (max)                       |  0,5700         |
-| Disque dur          | $\leq$ 10 To          | 600 (max)                       |  0,0540         |
-| SSD                 | $\leq$ 1 To           | 540 (moy)                       |  0,3000         |
+| USB                 | ≤ 1 To           | 240 (max)                       |  0,5700         |
+| Disque dur          | ≤ 10 To          | 600 (max)                       |  0,0540         |
+| SSD                 | ≤ 1 To           | 540 (moy)                       |  0,3000         |
 
 La vitesse de transfert peut fortement varier en fonction du type de
 technologie pour le contrôleur de disque (USB 1.0 à 3.0, Firewire, Fiber
@@ -537,8 +536,6 @@ TCP/IP), la nomenclature est la suivante :
 ![The Opte Project — Originally from the English Wikipedia; CC BY 2.5](img/opte-project.jpg)
 
 
-\newpage
-
 # Architecture logicielle #
 
 Les grandes phases de la conception d'un programme sont : l'**analyse**,
@@ -620,8 +617,6 @@ JavaScript, etc.).
 
 ![Historique des langages de programmation](img/historique_langage_programmation.png)
 
-
-\newpage
 
 # Ingénierie des système d'information #
 
