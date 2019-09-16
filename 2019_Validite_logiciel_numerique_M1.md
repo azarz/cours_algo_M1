@@ -25,7 +25,7 @@ Typiquement, l'implémentation d'une solution sur un ordinateur peut être confr
 
 * des problèmes de **précision** : 0,1+0,1+0,1-0,3 n'est pas strictement égal à 0 en arithmétique d'un ordinateur;
 * des problèmes de **capacité** : charger dans la mémoire vive d'un ordinateur une matrice carré de 100000 lignes, avec des entiers stockés sur 8 bits, demande environ 10 Go de RAM;
-* des problèmes de **puissance** : pour un ordinateur grand marché effectuant $10^6$ opérations par secondes, un tri naif d'un tableau de 1000000 d'éléments prend plus d'une semaine.
+* des problèmes de **puissance** : pour un ordinateur grand marché effectuant 10^6 opérations par secondes, un tri naif d'un tableau de 1000000 d'éléments prend plus d'une semaine.
 
 Si les problèmes de capacité sont pratiquement résolus avec les évolutions récentes des ordinateurs, hormis pour quelques applications très poussées (il est tout de même assez rare de manipuler des matrices de 100000 lignes!), les problèmes de précision et de puissance sont encore au coeurs des problématiques actuelles.
 
@@ -68,7 +68,7 @@ Il est pourtant possible d'utiliser n'importe quelle autre base que la base 10.
 Pour écrire un nombre dans une autre base que la base naturelle, nous l'écrirons
 entre parenthèses et indiquerons la base en indice.
 
-Par exemple (146)^(_8) représente le nombre *146* dans la base 8.
+Par exemple (146)<sub>8</sub> représente le nombre *146* dans la base 8.
 
 Dans le domaine de l'infomatique, la base naturelle est la base 2, ou
 représentation *binaire*.
@@ -124,49 +124,49 @@ une base donnée, nous partirons d'un exemple d'un nombre en base naturelle (bas
 
 Nous pouvons tous facilement établir que :
 
-2016 = 2*1000 + 0*100 + 1*10 + 6*1
+2019 = 2 * 1000 + 0 * 100 + 1 * 10 + 6 * 1
 
 Si nous utilisont des puissances de 10, cela donne alors :
 
-2016 =  2*10^(3) + 0*10^(2) + 1*10^(1) + 6*10^(0)
+2019 =  2 * 10<sup>3</sup>) + 0 * 10<sup>2</sup>) + 1 * 10<sup>1</sup>) + 9 * 10<sup>0</sup>)
 
-Qui est la décomposition en base 10 de 2016.
+Qui est la décomposition en base 10 de 2019.
 
 La décomposition dans une autre base respecte le même schéma. La décomposition
-de $(146)_{8}$ s'écrira ainsi :
+de (146)<sub>8</sub> s'écrira ainsi :
 
-(146)^(_8) = 1*8^(2) + 4*8^(1) + 6*8^(0)
+(146)<sub>8</sub> = 1 * 8<sup>2</sup>) + 4 * 8<sup>1</sup>) + 6 * 8<sup>0</sup>)
 
 Pour évaluer la valeur de ce nombre en base naturelle, il ne reste qu'à évaluer
 les différents termes de la décomposition :
 
-(146)^(_8) = 1*64 + 4*8 + 6*1 = 102
+(146)<sub>8</sub> = 1 * 64 + 4 * 8 + 6 * 1 = 102
 
-(146)^(_8) est égal à 102 en base naturelle.
+(146)<sub>8</sub> est égal à 102 en base naturelle.
 
 La décomposition des nombres décimaux n'apporte pas de changement majeurs. Pour
 comprendre comment cela fonctionne, revenons à un exemple en base 10 :
 
-2016,125 = 2*1000 + 1*10 + 6*1 + 1*0,1 + 2*0,01 + 5*0,001
+2019,125 = 2 * 1000 + 1 * 10 + 9 * 1 + 1 * 0,1 + 2 * 0,01 + 5 * 0,001
 
 Soit en utilisant des puissances de 10 :
 
-$2016,125 = 2*10^(3) + 1*10^(1) + 6*10^(0) + 1*10^(-1) + 2*10^(-2) + 5*10^(-3)
+2019,125 = 2 * 10<sup>3</sup> + 1 * 10<sup>1</sup> + 9 * 10<sup>0</sup> + 1 * 10<sup>-1</sup> + 2 * 10<sup>-2</sup> + 5 * 10<sup>-3</sup>
 
 Dans une autre base que la base naturelle, cela donnera par exemple :
 
-$(1010,101)_2 = 1*2^3 + 0*2^2 + 1*2^1 + 0*2^0 + 1*2^{-1} + 0*2^{-2} + 1*2^{-3}$
+(1010,101)<sub>2</sub> = 1 * 2<sup>3</sup> + 0 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 0 * 2<sup>0</sup> + 1 * 2<sup>-1</sup> + 0 * 2<sup>-2</sup> + 1 * 2<sup>-3</sup>
 
-Ce qui nous permet d'évaluer la nombre : $(1010,101)_2 = 10,625$
+Ce qui nous permet d'évaluer la nombre : (1010,101)<sub>2</sub> = 10,625
 
 Pour finir ce paragraphe, nous remarquerons que le principe reste le même en
 hexadécimal, même si nous devons utiliser de nouveaux symboles :
 
-$(2A3F)_{16} = 2*16^3 + A*16^2 + 3*16^1 + F*16^0$
+(2A3F)<sub>16</sub> = 2 * 16<sup>3</sup> + A * 16<sup>2</sup> + 3 * 16<sup>1</sup> + F * 16<sup>0</sup>
 
 Soit en remplaçant les lettres par leur valeurs en base 10 :
 
-$(2A3F)_{16} = 2*16^3 + 10*16^2 + 3*16^1 + 15*16^0 = 10815$
+(2A3F)<sub>16</sub> = 2 * 16<sup>3</sup> + 10 * 16<sup>2</sup> + 3 * 16<sup>1</sup> + 15 * 16<sup>0</sup> = 10815
 
 
 ## Passage de la base naturelle à une base quelconque ##
@@ -180,57 +180,57 @@ base quelconque à la base 10.
 Il nous reste à effectuer l'opération inverse. Pour ce faire, nous allons
 utiliser une propriété mathématique illustrée par l'égalité suivante :
 
-$2*16^3 + 10*16^2 + 3*16^1 + 15*16^0 = ((2*16 + 10)*16 + 3)*16 + 15$
+2 * 16<sup>3</sup> + 10 * 16<sup>2</sup> + 3 * 16<sup>1</sup> + 15 * 16<sup>0</sup> = ((2 * 16 + 10) * 16 + 3) * 16 + 15
 
 Le principe de cette égalité va nous permettre de retrouver, par divisions
 entières successives, l'écriture dans une base quelconque.
 
-> **Division entière** : soient a et b deux entiers positifs ($b > 0$). Il exite
+> **Division entière** : soient a et b deux entiers positifs (b > 0). Il exite
 un unique couple d'entiers positifs (q, r) tels que
-$a = b*q+r$ avec $0 \leq r < b$. q est le *quotient* de la division entière
+a = b * q + r avec 0 ≤ r < b. q est le *quotient* de la division entière
 de a par b et r est le *reste* de cette division entière.
 
 Pour écrire 10815 en base 16, nous commencerons donc par effectuer la division
 entière de 10815 par 16 :
 
-$10815 = 675 * 16 + 15$
+10815 = 675 * 16 + 15
 
 Puis nous repartons du quotient sur lequel nous effectuons à nouveau une
 divison entière :
 
-$675 = 42 * 16 + 3$
+675 = 42 * 16 + 3
 
 Et nous répétons l'opération jusqu'à ce que le quotient de la division entière
 soit nul :
 
-$42 = 2 * 16 + 10$
+42 = 2 * 16 + 10
 
-$2 = 0 * 16 + 2$
+2 = 0 * 16 + 2
 
 Pour reconstituer la représentation en base 16, il ne nous reste plus qu'à
 assembler les restes des divisions entières en partant du dernier vers le
 premier :
 
-$10815 = (2$ "10" $3$ "15"$)_{16} = (2A3F)_{16}$
+10815 = (2 "10" 3 "15")<sub>16</sub> = (2A3F)<sub>16</sub>
 
 Le principe est le même pour convertir vers une n'importe quelle autre base.
 Par exemple, pour retrouver l'écriture en base de 2 de 52 :
 
-$52 = 26 * 2 + 0$
+52 = 26 * 2 + 0
 
-$26 = 13 * 2 + 0$
+26 = 13 * 2 + 0
 
-$13 = 6 * 2 + 1$
+13 = 6 * 2 + 1
 
-$6 = 3 * 2 + 0$
+6 = 3 * 2 + 0
 
-$3 = 1 * 2 + 1$
+3 = 1 * 2 + 1
 
-$1 = 0 * 2 + 1$
+1 = 0 * 2 + 1
 
 Soit au final :
 
-$52 = (110100)_2$
+52 = (110100)<sub>2</sub>
 
 Dans le cas de nombres à virgules, nous distinguerons les parties entières et
 décimales et traiterons chacune d'elles de manière séparée. Nous savons déjà
@@ -238,74 +238,74 @@ traiter la partie entière et il nous reste à trouver une méthode pour la part
 décimale. Pour comprendre comment opérer, repartons de la décomposition en base
 10 de 0,125 :
 
-$0,125 = 1 * 10^{-1} + 2 * 10^{-2} + 5 * 10^{-3}$
+0,125 = 1 * 10<sup>-1</sup> + 2 * 10<sup>-2</sup> + 5 * 10<sup>-3</sup>
 
-Comme pour la partie entière, nous pouvons factoriser les $10^{-1}$ pour
+Comme pour la partie entière, nous pouvons factoriser les 10<sup>-1</sup> pour
 obtenir :
 
-$0,125 = 10^{-1} * ( 1 + 10^{-1} * ( 2 + 10^{-1} * 5))$
+0,125 = 10<sup>-1</sup> * ( 1 + 10<sup>-1</sup> * ( 2 + 10<sup>-1</sup> * 5))
 
 Pour éviter d'avoir à manipuler des puissance négatives, prenons le problème
 dans l'autre sens :
 
-$0,125 * 10 = 1 + 0,25$
+0,125 * 10 = 1 + 0,25
 
-$0,25 * 10 = 2 + 0,5$
+0,25 * 10 = 2 + 0,5
 
-$0,5 * 10 = 5 + 0,0$
+0,5 * 10 = 5 + 0,0
 
 A chaque étape, nous séparons ainsi les partie entières et décimale puis
 multiplions par la partie décimale par la base. La décomposition finale est
 égale à la suite des parties entières.
 
-Tentons par exemple de convertir $10,25$ en base 2. Pour la partie entière,
+Tentons par exemple de convertir 10,25 en base 2. Pour la partie entière,
 nous pouvons établir que :
 
-$10 = (1010)_2$
+10 = (1010)<sub>2</sub>
 
 Puis, pour la partie décimale :
 
-$0,25 * 2 = 0 + 0,5$
+0,25 * 2 = 0 + 0,5
 
-$0,5 * 2 = 1 + 0,0$
+0,5 * 2 = 1 + 0,0
 
 Ce qui donne donc pour la partie décimale :
 
-$0,25 = (0,010)_2$
+0,25 = (0,010)<sub>2</sub>
 
 Soit au final en réassemblant les deux parties :
 
-$10,25 = (1010,010)_2$
+10,25 = (1010,010)<sub>2</sub>
 
 ## Un premier problème de précision ##
 Revennons ici à notre problématique de départ : les erreurs lors de certaines
 opérations en mahcines. Pour ce faire, nous essayerons simplement de
 représenter 0,1 en base 2.
 
-$0,1 * 2 = 0,2$
+0,1 * 2 = 0,2
 
-$0,2 * 2 = 0,4$
+0,2 * 2 = 0,4
 
-$0,4 * 2 = 0,8$
+0,4 * 2 = 0,8
 
-$0,8 * 2 = 1,6$
+0,8 * 2 = 1,6
 
-$0,6 * 2 = 1,2$
+0,6 * 2 = 1,2
 
-$0,2 * 2 = 0,4$
+0,2 * 2 = 0,4
 
-$0,4 * 2 = 0,8$
+0,4 * 2 = 0,8
 
-$0,8 * 2 = 1,6$
+0,8 * 2 = 1,6
 
-$0,6 * 2 = 1,2$
+0,6 * 2 = 1,2
 
 ...
 
 Nous pourrions poursuivre ainsi indéfiniement! Au même titre qu'il n'existe pas
-de représentation exacte de $1/3$ en base naturelle
-($1 / 3 \simeq (0,333)_{10}$), il n'existe pas de réprésentation exacte de 0,1
-en base 2 : $(0,2)_{10} \simeq (0,00110011)_2$.
+de représentation exacte de 1/3 en base naturelle
+(1 / 3 	≈  (0,333)<sub>10</sub>), il n'existe pas de réprésentation exacte de 0,1
+en base 2 : (0,2)<sub>10</sub>  ≈  (0,00110011)<sub>2</sub>.
 
 
 ## Arithmétique dans les bases différentes de la base naturelle ##
@@ -327,14 +327,11 @@ un ordinateur. La base utilisée sera donc la base 2. Quelques spécificités
 propres à l'architecture des ordinateurs viendront s'ajouter à cette
 représentation en binaire. Nous mettrons en évidence les problèmes résultants.
 
-\small
 
-Remarque : convention
+> Remarque : convention
+> Dans cette partie, nous ne manipulerons que les bases 2 et 10 qui ne
+> seront plus nécessairement indiquées en indice des nombres.
 
-Dans cette partie, nous ne manipulerons que les bases 2 et 10 qui ne
-seront plus nécessairement indiquées en indice des nombres.
-
-\normalsize
 
 ### Cas des nombres négatifs ###
 Un premier problème se pose pour la réprésentation des nombres négatifs en
@@ -348,16 +345,16 @@ La solution la plus simple consiste à utiliser un nombre fixe de bits
 
 En appliquant cette règle et en utilisant un stockage sur 8 bits :
 
-* $2 = 00000010$
-* $(-2) = 10000010$
+* 2 = 00000010
+* (-2) = 10000010
 
 Cette représentation possède deux inconvénients majeurs :
 
 * le nombre 0 possède deux représentations : 00000000 et 10000000;
 * l'addition "classique" ne fonctionne plus si un des nombres est négatif :
-	* $(-3) = 10000011$
-	* $2 = 00000010$
-	* Donc $(-3) + 2 = 10000011 + 00000010 = 10000101$, soit $-5$.
+	* (-3) = 10000011
+	* 2 = 00000010
+	* Donc (-3) + 2 = 10000011 + 00000010 = 10000101, soit -5.
 
 Afin d'améliorer la représentation, nous utiliserons alors une notation en
 **complément à deux**. Elle est obtenue de la manière suivante :
@@ -367,16 +364,16 @@ Afin d'améliorer la représentation, nous utiliserons alors une notation en
 	* inversion des bits de l'écriture binaire;
 	* ajout de 1 au résultat.
 
-Par exemple, pour représenter $-3$ :
+Par exemple, pour représenter -3 :
 
-* $3 = (00000011)_2$
+* 3 = (00000011)<sub>2</sub>
 * inversion des bits : 11111100
 * ajout de 1 : 11111101
-* soit $(-3) = 11111101$
+* soit (-3) = 11111101
 
-L'opération $(-3) + 2$ est maintenant traduite en :
+L'opération (-3) + 2 est maintenant traduite en :
 
-$11111101 + 00000010 = 11111111$
+11111101 + 00000010 = 11111111
 
 qui si l'on revient à une représentation en base naturelle donne :
 
@@ -387,20 +384,17 @@ qui si l'on revient à une représentation en base naturelle donne :
 Le résultat de l'addition en utilisant la représentation en complément à deux
 est exact.
 
-\small
 
-Remarque : nombres minimum et maximum représentables
-
-En utilisant le représentation en complément à deux et un stockage sur e bits,
-(e-1) bits restent disponible pour indiquer la valeur du nombre. Celle-ci peut
-donc être comprise entre $-2^{e-1}$ et $2^{e-1} - 1$.
+> Remarque : nombres minimum et maximum représentables
+> En utilisant le représentation en complément à deux et un stockage sur e bits,
+> (e-1) bits restent disponible pour indiquer la valeur du nombre. Celle-ci peut
+> donc être comprise entre -2<sup>e-1</sup> et 2<sup>e-1</sup> - 1.
 
 Par exemple :
 
 * sur 8 bits : entre -128 et 127;
 * sur 16 bits : entre -256 et 255.
 
-\normalsize
 
 ### Cas des nombres décimaux ###
 De même que pour les nombres négatifs, il n'est pas envisageable d'utiliser de
@@ -430,14 +424,14 @@ des parties et nous utiliserons beaucoup d'espace pour stocker des 0.
 
 Pour palier aux limites de cette première approche, nous utiliserons une
 **représentation en virgule flottante** qui consiste à utiliser une forme
-normalisée de la représentation binaire kdu type $x = \pm a * 2^n$ où :
+normalisée de la représentation binaire kdu type x = \pm a * 2^n où :
 
-* $a$ est la *mantisse* comprise entre 1 et 2;
-* $n$ est un entier relatif appelé *exposant*.
+* a est la *mantisse* comprise entre 1 et 2;
+* n est un entier relatif appelé *exposant*.
 
 Par exemple :
 
-$9,5 = (1001,1)_2 = (1,0011)_2*2^3$
+9,5 = (1001,1)<sub>2</sub> = (1,0011)<sub>2</sub>*2^3
 
 Le stockage de ce nombre dans l'ordinateur s'effectuera alors sous la forme
 d'un triplet (signe, exposant, mantisse) avec :
@@ -458,45 +452,45 @@ représentables :
 * en binaire, la partie entière de la mantisse vaut toujours 1. Seule la valeur
   de la partie décimale sera donc stockée;
 * pour éviter d'avoir à stocker des exposants négatifs, un *décalage* de
-  $+ (2^{e-1} - 1)$ est appliqué à la valeur des exposants (127, par exemple, en
+  + (2<sup>e-1</sup> - 1) est appliqué à la valeur des exposants (127, par exemple, en
   simple précision).
 
 Pour calculer la valeur correspondant à un triplet stocké en respectant la norme
 IEEE-754, nous appliquerons finalement la formule :
 
-$valeur = (-1)^{s} * (m + 1) * 2^{e - decalage}$
+valeur = (-1)<sup>s</sup> * (m + 1) * 2<sup>e - decalage</sup>
 
 où :
 
 * s = 0 pour un nombre positif / 1 pour un nombre négatif
 * m = nombre compris entre 0 et 1
-* e = exposant décalé compris entre $-2^{e-1} + 1$ et $2^{e-1}$
+* e = exposant décalé compris entre -2<sup>e-1</sup> + 1 et 2<sup>e-1</sup>
 
 ![Norme IEEE-754, représentation en simple précision](img/norme_ieee.png)
 
 Par exemple :
 
-$9,5$ = 0  10000010  00110000000000000000000
+9,5 = 0  10000010  00110000000000000000000
 
-$0,15625$ = 0  01111100  01000000000000000000000
+0,15625 = 0  01111100  01000000000000000000000
 
-$-2,25$ = 1  10000000  00100000000000000000000
+-2,25 = 1  10000000  00100000000000000000000
 
-Quelques exceptions à cette règle existent toutefois. En effet la représentation n'est pas correcte pour les nombres valant 0 ou proche de 0. Si l'exposant vaut 0, la règle est alors de ne pas ajouter 1 à la mantisse. De même, si l'exposant vaut $2^{e - 1}$, la norme indique que le nombre vaut l'infini.
+Quelques exceptions à cette règle existent toutefois. En effet la représentation n'est pas correcte pour les nombres valant 0 ou proche de 0. Si l'exposant vaut 0, la règle est alors de ne pas ajouter 1 à la mantisse. De même, si l'exposant vaut 2<sup>e - 1</sup>, la norme indique que le nombre vaut l'infini.
 
 Le tableau suivant résume les formes normalisées/non normalisées de la norme :
 
 | **Exposant décalé** | **Mantisse** | **Type**  |
 |:-------------------:|:------------:|:---------:|
 | 0                   | 0            | 0         |
-| 0                   | =! 0         | $(-1)^{s}.m.2^{1-d}$ |
-| de 1 à $2^e - 2$    | quelconque   | $(-1)^{s}.(m+1).2^{1-d}$ |
-| $2^e - 1$           | 0            | infini    |
-| $2^e - 1$           | =! 0         | NaN       |
+| 0                   | =! 0         | (-1)<sup>s</sup>.m.2<sup>1-d</sup> |
+| de 1 à 2^e - 2    | quelconque   | (-1)<sup>s</sup>.(m+1).2<sup>1-d</sup> |
+| 2^e - 1           | 0            | infini    |
+| 2^e - 1           | =! 0         | NaN       |
 
 ### Opérations sur les nombres en machine ###
 La norme IEEE-754 consistant à représenter les nombres sous une forme du type
-$\pm a * 2^n$, l'addition de deux nombres ne sera possible que si leurs
+\pm a * 2^n, l'addition de deux nombres ne sera possible que si leurs
 exposants sont identiques. L'opération consistera alors simplement à
 additionner les mantisses.
 
@@ -512,28 +506,28 @@ IEEE-754).
 
 Illustrons avec un exemple, en tentant de calculer **9,5 + 1,75** :
 
-$9,5$  = 0 10000010 00110000000000000000000
+9,5  = 0 10000010 00110000000000000000000
 
-$1,75$ = 0 01111111 11000000000000000000000
+1,75 = 0 01111111 11000000000000000000000
 
 L'exposant de 9,5 vaut 130 et celui de 1,75 vaut 127. Il faut donc décaler la
 mantisse de 1,75 (plus petit exposant) de 3 vers la droite, sans oublire
 d'insérer le bit implicite (entre parenthèse si dessous) :
 
-\begin{tabular}{cccccc}
-  & 0 & & 01111111 &(1)& 11000000000000000000000 \\
-  &   & &          &   &  \\
-  & 0 & & 10000010 &(0)& 00\textbf{1}11000000000000000000 \\
-\end{tabular}
+
+0  01111111 (1) 11000000000000000000000
+
+0  10000010 (0) 00**1**11000000000000000000
+
 
 Il est maintenant possible d'additionner les mantisses :
 
-\begin{tabular}{cccccc}
-  & 0 & & 10000010 &(1)& 00110000000000000000000 \\
-+ & 0 & & 10000010 &(0)& 00111000000000000000000 \\
-\hline
-= & 0 & & 10000010 &(1)& 01101000000000000000000 \\
-\end{tabular}
+0  10000010 (1) 00110000000000000000000
+\+
+0  10000010 (0) 00111000000000000000000
+=
+0  10000010 (1) 01101000000000000000000
+
 
 La représentation est déjà normalisée (bit implicite valant 1). L'addition
 est terminée.
@@ -542,9 +536,9 @@ Pour contrôler le résultat, évaluons le en base naturelle :
 
 0 10000010 01101000000000000000000
 
-$= (-1)^0 * (1,01101)_2 * 2^{130-127}$
-$= (1011,01)_2$
-$ = 11,25$
+= (-1)<sup>0</sup> * (1,01101)<sub>2</sub> * 2<sup>130-127</sup>
+= (1011,01)<sub>2</sub>
+ = 11,25
 
 Le résultat est correct !
 
@@ -560,12 +554,12 @@ L'alignement des mantisses peut faire disparaître des bits "utiles" (ie.
 différents de 0) de la représentation.
 
 Par exemple :
-* $9,5 + 1,7500001$
+* 9,5 + 1,7500001
 	* le 0,0000001 est perdu : cela revient à additionner 9,5 + 1,75
-* $10^{16} + 0,1$
+* 10<sup>16</sup> + 0,1
 	* le 0,1 est perdu : cela revient à additionner 0
-* $9,500000953674316 - 9,5$
-* $(1000000 + 0,01171875) - 1000000$
+* 9,500000953674316 - 9,5
+* (1000000 + 0,01171875) - 1000000
 
 
 
@@ -579,50 +573,47 @@ Les réprésentation de 0,1 et 0,3 sont :
 
 On calcule 0,1+0,1 :
 
-\begin{tabular}{cccccc}
-  & 0 & & 01111011 &( 1)& 10011001100110011001101 \\
-+ & 0 & & 01111011 &( 1)& 10011001100110011001101 \\
-\hline
-= & 0 & & 10000010 &(11)& 00110011001100110011010 \\
-\end{tabular}
+0 01111011 ( 1) 10011001100110011001101
+\+
+0 01111011 ( 1) 10011001100110011001101
+=
+0 10000010 (11) 00110011001100110011010
+
 
 On ajoute encore 0,1 :
 
-\begin{tabular}{cccccc}
-  & 0 & & 01111011 &( 11)& 00110011001100110011010 \\
-+ & 0 & & 01111011 &(  1)& 10011001100110011001101 \\
-\hline
-= & 0 & & 10000010 &(100)& 11001100110011001100111 \\
-\end{tabular}
+
+0 01111011 ( 11) 00110011001100110011010
+\+
+0 01111011 (  1) 10011001100110011001101
+=
+0 10000010 (100) 11001100110011001100111
+
 
 Renormalisation de la mantisse de **0,1+0,1+0,1** :
 
-\begin{tabular}{cccccc}
-  & 0 & & 01111011 &(100)& 11001100110011001100111 \\
-  &   & &          &     &    \\
-  & 0 & & 01111101 &  (1)& 00110011001100110011001 \\
-\end{tabular}
+
+0 01111011 (100) 11001100110011001100111
+0 01111101   (1) 00110011001100110011001
 
 Et on retire 0,3, le principe pour les soustractions étant le même que pour les additions (alignement des mantisses, opération sur les mantisses, renormalisation, le tout sans oublier de gérer le bit implicite.
 
 Soustraction des mantisses :
 
-\begin{tabular}{cccccc}
-  & 0 & & 01111011 &( 1)& 00110011001100110011001 \\
-- & 0 & & 01111101 &( 1)& 00110011001100110011010 \\
-\hline
-= & 1 & & 01111101 &( 0)& 00000000000000000000001 \\
-\end{tabular}
+0 01111011 ( 1) 00110011001100110011001
+\-
+0 01111101 ( 1) 00110011001100110011010
+=
+1 01111101 ( 0) 00000000000000000000001
 
 Il reste à renormaliser la mantisse :
 
-\begin{tabular}{cccccc}
-  & 1 & & 01111101 &(0)& 0000000000000000000000\textbf{1} \\
-  &   & &          & & \\
-  & 1 & & 01100110 &(\textbf{1})& 00000000000000000000000 \\
-\end{tabular}
 
-Soit en évaluant l'expression : $-2^{-25} = -3*10^{-8}$
+1 01111101 (0) 0000000000000000000000**1**
+1 01100110 (**1**) 00000000000000000000000
+
+
+Soit en évaluant l'expression : -2<sup>-25</sup> = -3 * 10<sup>-8</sup>
 
 
 
@@ -679,11 +670,11 @@ Considérons l'algorithme effectuant la somme des éléments d'un tableau.
 
 La terminaison est évidente puisque l'algorithme est constituée d'une boucle qui exécute n fois une somme et une affectation (opérations s'exécutant en temps fini).
 
-Pour démontrer la validité, nous procédons par récurrence sur la taille du tableau. Nous devons démontrer que la formule $S(n) = \sum_{i}^{n} T_i$.
+Pour démontrer la validité, nous procédons par récurrence sur la taille du tableau. Nous devons démontrer que la formule S(n) = ∑T<sub>i</sub> (pour i allant jusqu'à n).
 
 * Si le tableau est composé de zero élément, la somme est initialisée à 0 avant la boucle et la boucle est parcourue 0-fois. La somme est donc correcte.
-* Si le tableau est composé d'un élément, la somme calculée par l'algorithme est toujous correcte : elle est initialisée à 0 pour $T_1$ est ajouté ($S = 0 + T_1 = T_1$), ce qui est correct.
-* Si l'algorithme est vrai pour un tableau de p éléments, nous devons démontrer qu'elle l'est pour un tableau de p+1 éléments. $S_{p+1} = S_p + T_{p+1} = \sum_{i}^{n} T_i$. La formule est donc correcte.
+* Si le tableau est composé d'un élément, la somme calculée par l'algorithme est toujous correcte : elle est initialisée à 0 pour T<sub>1</sub> est ajouté (S = 0 + T<sub>1</sub> = T<sub>1</sub>), ce qui est correct.
+* Si l'algorithme est vrai pour un tableau de p éléments, nous devons démontrer qu'elle l'est pour un tableau de p+1 éléments. S(p+1) = S(p) + T(p+1) =  ∑T<sub>i</sub>. La formule est donc correcte.
 
 
 
@@ -691,7 +682,7 @@ Exemple 2 : somme récursive des éléments d'un tableau
 
 Exercice 1 : algorithme mystère
 
-* algo de calcul de 2^2^n
+* algo de calcul de 2<sup>2<sup>n</sup></sup>
 * calcul de la complexité de l'algorithme
 * comment améliore cette complexité ?
 
@@ -756,20 +747,20 @@ Les complexités que l'on rencontre fréquement sont les suivantes :
 
 Tableau des temps d'exécution pour divers fonctions sur une données de taille
 n=10, 20, 30, 60, en considérant que l'ordinateur traite les insctructions en
-$10^{-6}$ secondes.
+10<sup>-6</sup> secondes.
 
 
 | n        |  10  |  20  |  30  |  60  |
 |:---------|:----:|:----:|:----:|:----:|
-| $log(n)$ |  $2,3.10^{-6}$  |  $3,0.10^{-6}$  |  $3,4.10^{-6}$  | $4,09.10^{-6}$  |
-| $n$      |  $1.10^{-5}$  |  $2.10^{-5}$  |  $3.10^{-5}$  |  $6.10^{-5}$  |
-|$n.log(n)$|  $2,3.10^{-5}$  |  $5,99.10^{-5}$  |  $1,02.10^{-4}$  |  $2,46.10^{-4}$  |
-| $n^2$    |  $10^{-4}$  |  $4.10^{-4}$  |  $9.10^{-4}$  |  $3,6.10^{-3}$  |
-| $n^3$    |  $10^{-3}$  |  $8.10^{-3}$  |  $2,7.10^{-2}$  |  $2,16.10^{-1}$  |
-| $2^n$    |  $1,02.10^{-3}$  |  $1,05$  |  $1,07.10^3  |  $1,15.10^12$  |
-| $n!$       |    |    |    |    |
+| log(n) |  2,3.10<sup>-6</sup>  |  3,0.10<sup>-6</sup>  |  3,4.10<sup>-6</sup>  | 4,09.10<sup>-6</sup>  |
+| n      |  1.10<sup>-5</sup>  |  2.10<sup>-5</sup>  |  3.10<sup>-5</sup>  |  6.10<sup>-5</sup>  |
+|n.log(n)|  2,3.10<sup>-5</sup>  |  5,99.10<sup>-5</sup>  |  1,02.10<sup>-4</sup>  |  2,46.10<sup>-4</sup>  |
+| n<sup>2</sup>    |  10<sup>-4</sup>  |  4.10<sup>-4</sup>  |  9.10<sup>-4</sup>  |  3,6.10<sup>-3</sup>  |
+| n<sup>3</sup>    |  10<sup>-3</sup>  |  8.10<sup>-3</sup>  |  2,7.10<sup>-2</sup>  |  2,16.10<sup>-1</sup>  |
+| 2<sup>n</sup>    |  1,02.10<sup>-3</sup>  |  1,05  |  1,07.10<sup>3</sup>  |  1,15.10<sup>12</sup>  |
+| n!       |    |    |    |    |
 
-Il est intéressant de remarquer que 10^12 secondes équivaut à environ 36 000 annnées !
+Il est intéressant de remarquer que 10<sup>12</sup> secondes équivaut à environ 36 000 annnées !
 
 
 

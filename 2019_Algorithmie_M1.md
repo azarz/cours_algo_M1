@@ -106,17 +106,17 @@ La notion de boucle est fondamentale en algorithmie.
 
 > Une boucle permet de répéter plusieurs fois un bloc d'instructions.
 
-Imaginons que nous voulions ajouter 1 aux valeurs contenues dans un tableau T de trois lignes (T_1, T_2 et T_3). L'algorithme naif serait le suivant :
-```
-T^(_1) = T^(_1) + 1;
-T^(_2) = T^(_2) + 1;
-T^(_3) = T^(_3) + 1;
-```
+Imaginons que nous voulions ajouter 1 aux valeurs contenues dans un tableau T de trois lignes (T_1, T_2 et T_3). L'algorithme naïf serait le suivant :
+
+T<sub>1</sub> = T<sub>1</sub> + 1;
+T<sub>2</sub> = T<sub>2</sub> + 1;
+T<sub>3</sub> = T<sub>3</sub> + 1;
+
 
 
 Nous recopions en fait trois fois quasiment la même chose, ce qui est inutile et devriendrait très fastidieux si nous devions travailler sur un tableau avec 10000 lignes...
 
-Il est alors plus élégant d'abstraire un peu la méthode en écrivant : `T^(_i) = T^(_i) + 1`  et en faisant varier la valeur de i qui est la seule chose qui change dans les opérations à réaliser.
+Il est alors plus élégant d'abstraire un peu la méthode en écrivant : T<sub>i</sub> = T<sub>i</sub> + 1  et en faisant varier la valeur de i qui est la seule chose qui change dans les opérations à réaliser.
 
 Ce faisant, nous utilisons une boucle sur i, qui est alors appellée variable muette.
 
@@ -155,7 +155,7 @@ Si nous retournons à notre exemple initial, nous pouvons maintenant simplement 
 
 ```
 Pour i allant de de 1 à 3
-    T^(_i) = T^(_i) + 1
+    Ti = Ti + 1
 Fin pour
 ```
 

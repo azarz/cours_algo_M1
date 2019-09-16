@@ -237,24 +237,24 @@ du système international d'unités (kilo-, méga-, giga- et ainsi de suite).
 
 Du fait que les capacités de mémoires d’ordinateurs sont des puissances de
 deux ou des multiples de telles puissances, l’utilisation de puissances de 1
-024 = $2^{10}$ comme préfixes pour de telles capacités et, de façon dérivée, pour
+024 = 2<sup>10</sup> comme préfixes pour de telles capacités et, de façon dérivée, pour
 toutes les tailles de programmes et de supports informatiques, est venue
 naturellement aux informaticiens. Le problème est que les premiers
 informaticiens n’ont pas éprouvé le besoin d’inventer de nouveaux préfixes ;
 ils ont simplement utilisé les préfixes SI en changeant légèrement leurs
-valeurs (par exemple kilo $\longrightarrow$ 1 024 au lieu de 1 000). L’habitude
+valeurs (par exemple kilo -> 1 024 au lieu de 1 000). L’habitude
 en est ensuite restée.
 
-| **Nom** | **Symbole CEI** | **facteur=2^(10*a)**                       | **Nom** | **Symbole SI** | **facteur=10^(3*a)**                       | **Erreur (%)** |
+| **Nom** | **Symbole CEI** | **facteur=2<sup>10 * a)**                       | **Nom** | **Symbole SI** | **facteur=10<sup>3 * a)**                       | **Erreur (%)** |
 |:-------:|:---------------:|:---------------------------------------------|:-------:|:--------------:|:---------------------------------------------|:--------------:|
-| kibi    | Ki              | 2^(10*1)=1024                              | kilo    | k              | 10^(3*1)=1000                              | 2              |
-| mébi    | Mi              | 2^(10*2)=1 048 576                         | méga    | M              | 10^(3*2)=1 000 000                         | 5              |
-| gibi    | Gi              | 2^(10*3)=1 073 741 824                     | giga    | G              | 10^(3*3)=1 000 000 000                     | 7              |
-| tébi    | Ti              | 2^(10*4)=1 099 511 627 776                 | téra    | T              | 10^(3*4)=1 000 000 000 000                 | 10             |
-| pébi    | Pi              | 2^(10*5)=1 125 899 906 842 624             | péta    | P              | 10^(3*5)=1 000 000 000 000 000             | 13             |
-| exbi    | Ei              | 2^(10*6)=1 152 921 504 606 846 976         | exa     | E              | 10^(3*6)=1 000 000 000 000 000 000         | 15             |
-| zébi    | Zi              | 2^(10*7)=1 180 591 620 717 411 303 424     | zetta   | Z              | 10^(3*7)=1 000 000 000 000 000 000 000     | 18             |
-| yobi    | Yi              | 2^(10*8)=1 208 925 819 614 629 174 706 176 | yotta   | Y              | 10^(3*8)=1 000 000 000 000 000 000 000 000 | 21             |
+| kibi    | Ki              | 2<sup>10 * 1</sup>=1024                              | kilo    | k              | 10<sup>3 * 1</sup>=1000                              | 2              |
+| mébi    | Mi              | 2<sup>10 * 2</sup>=1 048 576                         | méga    | M              | 10<sup>3 * 2</sup>=1 000 000                         | 5              |
+| gibi    | Gi              | 2<sup>10 * 3</sup>=1 073 741 824                     | giga    | G              | 10<sup>3 * 3</sup>=1 000 000 000                     | 7              |
+| tébi    | Ti              | 2<sup>10 * 4</sup>=1 099 511 627 776                 | téra    | T              | 10<sup>3 * 4</sup>=1 000 000 000 000                 | 10             |
+| pébi    | Pi              | 2<sup>10 * 5</sup>=1 125 899 906 842 624             | péta    | P              | 10<sup>3 * 5</sup>=1 000 000 000 000 000             | 13             |
+| exbi    | Ei              | 2<sup>10 * 6</sup>=1 152 921 504 606 846 976         | exa     | E              | 10<sup>3 * 6</sup>=1 000 000 000 000 000 000         | 15             |
+| zébi    | Zi              | 2<sup>10 * 7</sup>=1 180 591 620 717 411 303 424     | zetta   | Z              | 10<sup>3 * 7</sup>=1 000 000 000 000 000 000 000     | 18             |
+| yobi    | Yi              | 2<sup>10 * 8</sup>=1 208 925 819 614 629 174 706 176 | yotta   | Y              | 10<sup>3 * 8</sup>=1 000 000 000 000 000 000 000 000 | 21             |
 
 
 
