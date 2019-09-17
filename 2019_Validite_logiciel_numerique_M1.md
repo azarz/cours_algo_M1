@@ -25,7 +25,7 @@ Typiquement, l'implémentation d'une solution sur un ordinateur peut être confr
 
 * des problèmes de **précision** : 0,1+0,1+0,1-0,3 n'est pas strictement égal à 0 en arithmétique d'un ordinateur;
 * des problèmes de **capacité** : charger dans la mémoire vive d'un ordinateur une matrice carré de 100000 lignes, avec des entiers stockés sur 8 bits, demande environ 10 Go de RAM;
-* des problèmes de **puissance** : pour un ordinateur grand marché effectuant 10^6 opérations par secondes, un tri naif d'un tableau de 1000000 d'éléments prend plus d'une semaine.
+* des problèmes de **puissance** : pour un ordinateur grand marché effectuant 10<sup>6</sup> opérations par secondes, un tri naif d'un tableau de 1000000 d'éléments prend plus d'une semaine.
 
 Si les problèmes de capacité sont pratiquement résolus avec les évolutions récentes des ordinateurs, hormis pour quelques applications très poussées (il est tout de même assez rare de manipuler des matrices de 100000 lignes!), les problèmes de précision et de puissance sont encore au coeurs des problématiques actuelles.
 
@@ -519,13 +519,12 @@ d'insérer le bit implicite (entre parenthèse si dessous) :
 
 0  10000010 (0) 00**1**11000000000000000000
 
-
 Il est maintenant possible d'additionner les mantisses :
 
 0  10000010 (1) 00110000000000000000000
 \+
 0  10000010 (0) 00111000000000000000000
-=
+\=
 0  10000010 (1) 01101000000000000000000
 
 
@@ -576,7 +575,7 @@ On calcule 0,1+0,1 :
 0 01111011 ( 1) 10011001100110011001101
 \+
 0 01111011 ( 1) 10011001100110011001101
-=
+\=
 0 10000010 (11) 00110011001100110011010
 
 
@@ -586,7 +585,7 @@ On ajoute encore 0,1 :
 0 01111011 ( 11) 00110011001100110011010
 \+
 0 01111011 (  1) 10011001100110011001101
-=
+\=
 0 10000010 (100) 11001100110011001100111
 
 
@@ -603,7 +602,7 @@ Soustraction des mantisses :
 0 01111011 ( 1) 00110011001100110011001
 \-
 0 01111101 ( 1) 00110011001100110011010
-=
+\=
 1 01111101 ( 0) 00000000000000000000001
 
 Il reste à renormaliser la mantisse :
@@ -666,7 +665,15 @@ Nous illustrerons par quelques exemples la démonstration des preuves de termina
 
 Considérons l'algorithme effectuant la somme des éléments d'un tableau.
 
-.......
+```
+Fonction somme (tableau, taille)
+  resultat = 0
+  Pour i allant de 1 à taille
+    rasultat = resultat + tableau[i]
+  Fin pour
+  Retourner resultat
+Fin fonction
+```
 
 La terminaison est évidente puisque l'algorithme est constituée d'une boucle qui exécute n fois une somme et une affectation (opérations s'exécutant en temps fini).
 
@@ -675,27 +682,6 @@ Pour démontrer la validité, nous procédons par récurrence sur la taille du t
 * Si le tableau est composé de zero élément, la somme est initialisée à 0 avant la boucle et la boucle est parcourue 0-fois. La somme est donc correcte.
 * Si le tableau est composé d'un élément, la somme calculée par l'algorithme est toujous correcte : elle est initialisée à 0 pour T<sub>1</sub> est ajouté (S = 0 + T<sub>1</sub> = T<sub>1</sub>), ce qui est correct.
 * Si l'algorithme est vrai pour un tableau de p éléments, nous devons démontrer qu'elle l'est pour un tableau de p+1 éléments. S(p+1) = S(p) + T(p+1) =  ∑T<sub>i</sub>. La formule est donc correcte.
-
-
-
-Exemple 2 : somme récursive des éléments d'un tableau
-
-Exercice 1 : algorithme mystère
-
-* algo de calcul de 2<sup>2<sup>n</sup></sup>
-* calcul de la complexité de l'algorithme
-* comment améliore cette complexité ?
-
-
-Exercice 2 : polynômes (algo de calcul en x donné)
-
-* dérouler l'algo pour x=2 et T=3, 8, 0, 1, 1, 2
-* que calcul d'algorithme ? démontrer la terminaison et la validité de l'algorithme
-* quelle est la complexité ?
-* proposez le même algorithme en récursif
-* quelle est la complexité du nouvel algorithme ?
-
-
 
 
 
@@ -712,42 +698,67 @@ La taille des données pouvant avoir un impact sur la performance d'un algorithm
 
 
 ### Notion de complexité ###
-4 opérations élémentaires :
+La complexité mesure le nombre d'opérations fondamentales qu'effectue un algorithme sur un jeu de données pour aboutir au résultat. Elle est exprimée en fonction de la taille du jeu de données, souvent noté n.
 
+Nous ne nous intéresserons ici qu'à des jeux de données de grande taille (n > 1000). En effet, lorsque les jeux de données sont petits les ordinateurs actuels sont suffisamment puissant pour retourner un résultat en quelques millisecondes, même lorsque l'algorithme est mauvais. Nous dirons parfois que la complexité mesure la *performance asymptotique* d'un algorithme pour signifier qu'il s'agit de la performance lorsque la taille du jeu de données tend vers l'infini.
+
+Les *opérations élémentaires* dont il est questions pour évaluer la complexité d'un algorithme sont au nombre de quatre :
 * adition, soustraction, multiplication, division
 * accès mémoire
 * comparaisons
 * calculs sur les pointeurs
 
 
-3 modes de calcul de la complèxité d'un algorithme :
+Nous distinguons trois types de complexité :
 
-* pire des cas : notation O(f(n))
-* meilleur des cas : notation sigma(f(n))
-* cas moyen : notation
++ la **complexité dans le meilleur des cas** : plus petit nombre d'opérations qu'aura à effectuer l'algorithme sur le jeu de données;
++ la **complexité dans le pire des cas** : plus grand nombre d'opérations qu'aura à effectuer l'algorithme sur le jeu de données;
++ la **complexité dans le cas moyen** : moyenne des nombres d'opérations de l'algorithme sur des jeux de données de même taille.
 
-Notations de Landau
+C'est généralement l'analyse de la complexité dans le pire des cas qui focalisera l'attention. En effet nous observons que les algorithmes fonctionnent souvent dans des situations les plus mauvaises pour eux. L'analyse du pire des cas nous fournit alors une limite supérieure de temps de calculs : les performances seront toujours meilleures que dans ce cas. Dans la suite de ce cours, nous ne nous intéresserons qu'à la complexité dans le pire des cas.
 
-* Borne asymptotique supérieure (existe k, n0 tels que pour `n > n0, 0 < f(n) < k.g(n)`)
-* Borne asymptotique inférieure
-* Borne asymptotique
+Lorsque plusieurs algorithmes retournent le même résultat à partir d'un jeu de données (par exemple les différents algorithmes de tri), l'algorithme est dit **optimal** si sa complexité est la plus faible de tous.
+
+### Notations de Landau ###
+La notation de Landau est utilisée pour définir rigoureusement la notion de complexité.
+
++ O(f) pour le pire des cas
++ Omega(f) pour le meilleur des cas
++ Theta(f) pour le cas moyen
+
+Pour le pire des cas, qui nous intéresse ici exclusivement, cette notation exprime une borne supérieure d'une fonction.
+
+Si le nombre d'opération effectué par l'algorithme suit une fonction f(n), nous noterons O(g(n)) la complexité de l'algorithme avec f(n) = 0(g(n)).
+
+![Borne asymptotique supérieure](img/borne_asymtotique_sup.png)
 
 
-Les complexités que l'on rencontre fréquement sont les suivantes :
+Les règles suivantes s'appliquent lorsque l'on effectue des opérations :
 
-* 1 : accès constant
-* log(n) : logarithmique
-* n : linéaire
-* n.log(n) : quasi-linéaire
-* n2 : quadratique
-* n3 : cubique
-* np : polynomiale
-* 2n : exponentielle
-* n! : factorielle
++ les constantes multiplicatives sont omises : O(c * g(n)) = c * O(g(n) = O(g(n))
++ ainsi les termes constants sont notés O(1) (*O(k) = O(k * 1) = O(1)*)
++ l'addition est réalisée en ne retenant que le maximum : O(f(n) + g(n)) = O(f(n)) + O(g(n)) = max(O(f(n)), O(g(n)))
++ la multiplication est "classique" : O(f(n) * g(n)) = O(f(n)) * O(g(n))
 
-Tableau des temps d'exécution pour divers fonctions sur une données de taille
-n=10, 20, 30, 60, en considérant que l'ordinateur traite les insctructions en
-10<sup>-6</sup> secondes.
+
+Par exemple, si un algorithme présente une complexité dans le pire des cas fonction de $g(n) = 3 * n<sup>3</sup> + 10 * n<sup>2</sup> + 5$, elle sera noté O(n<sup>3</sup>).
+
+### Classes de complexité ###
+Les complexités que l'on rencontre fréquemment sont les suivantes :
+
+* O(1) : accès constant
+* O(log(n)) : logarithmique
+* O(n) : linéaire
+* O(n.log(n)) : quasi-linéaire
+* O(n<sup>2</sup>) : quadratique
+* O(n<sup>3</sup>) : cubique
+* O(n<sup>p</sup>) : polynomiale
+* O(2<sup>n</sup>) : exponentielle
+* O(n!) : factorielle
+
+![Quelques classes de complexité](img/figure_2.png)
+
+Le tableau ci-dessous fournit des temps d'exécution pour le différentes classes de complexité et différentes tailles de données, en considérant que l'ordinateur traite 10<sup>6</sup> instructions par secondes (10<sup>6</sup> FLOPS; ce qui correspond à un ordinateur bureautique classique en 2016).
 
 
 | n        |  10  |  20  |  30  |  60  |
@@ -763,16 +774,66 @@ n=10, 20, 30, 60, en considérant que l'ordinateur traite les insctructions en
 Il est intéressant de remarquer que 10<sup>12</sup> secondes équivaut à environ 36 000 annnées !
 
 
+## Calculs de complexité ##
+Dans ce paragraphe, nous donnons les éléments de base permettant de calculer la complexité d'un algorithme.
+
+
++ Une *instruction simple* (lecture, écriture, affectation...) s'effectue en accès constant : O(1)
+
++ Dans le cas d'une *suite d'instructions simples*, la complexité est égale à la somme des complexités.
+
+|Instructions| Complexité|
+|:-----------|:---------:|
+|a = 2 | O(1) |
+|b = 3 | O(1) |
+|c = a + b | O(1) |
+
+
+Complexité résultante : O(1)+O(1)+O(1) = max(O(1), O(1), O(1)) = O(1)
+
+
++ Dans le cas d'un *traitement conditionnel*, la complexité au pire des cas est retenue est celle du bloc d'instructions le moins performant :
+
+|**Instructions** | **Complexité** |
+|Si condition| O(condition) |
+|   instructionsA | O(instructionsA) |
+|sinon | |
+|   insctructionsB  | O(instructionsB)|
+|fin si | |
+Complexité résultante : O(condition) + max(O(instructionsA), O(instructionsB))
+
++ Dans le cas d'une *structure itérative*, la complexité est celle du bloc d'instructions de la boucle multiplié par le nombre d'itérations.
+
+|**Instructions** | **Complexité** |
+|Pour i allant de p à q   | |
+|  instructions           |(q-p)*O(instructions) |
+|Fin pour                 | |
+
+
+Pour illustrer évaluons la complexité de l'algorithme de calcul de la factorielle :
+
+|Fonction factorielle(n) | |
+|  res = 1 | O(1) |
+|  Si n ≠ 0 | O(1) |
+|    Pour i allant de 1 à n | |
+|      res = res * i | n*O(1) |
+|    Fin pour | |
+|  Fin si | |
+|  Retourner res | |
+|Fin fonction| |
+
+
+La complexité est donc en O(1) + O(1) + max(O(1), O(0)) + n*O(1) = O(n)
+
 
 ## Application : comparaison de divers algorithmes de tri ##
 
 * tri par sélection (trouver le plus petit et le mettre au début)
-* tri par séléection récursif (trouver le plus grand, le mettre à la fin et recommancer sur le tableau 0:n-1)
+* tri par sélection récursif (trouver le plus grand, le mettre à la fin et recommancer sur le tableau 0:n-1)
 * tri par insertion (tri des 2 premiers éléments, insertion du 3ème, etc.)
 * tri fusion (découper en deux et trier chaque partie puis fusionner)
 * tri bulle (comparer chaque élément à son suivant et recommencer)
-* tri rapide (choisir un pivot, placer les plus petits avant, les plus grands
-après et trier chaque partie)
+* tri rapide (choisir un pivot, placer les plus petits avant, les plus grands après et trier chaque partie)
 
 
 Illustration en codant les algorithmes sous Python (plateforme de test : Ubuntu 14.04 64bits / 7,7Gio RAM / Intel® Core™ i5-3337U CPU @ 1.80GHz × 4  / Python 3.4). Moyennes sur 10 exécutions de tri d'un tableau de 10000 entiers aléatoires entre 0 et 1000 :
@@ -783,8 +844,3 @@ Illustration en codant les algorithmes sous Python (plateforme de test : Ubuntu 
 * Tri fusion: 0.0434
 * Tri bulle: 5.2502
 * Tri rapide: 0.000005
-
-
-
-
-

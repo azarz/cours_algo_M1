@@ -4,9 +4,12 @@ Cours d'introduction à l'algorithmie pour le Master 1 Géomatique de l'ENSG
 Durée : 16 demi journées.
 Évaluation : TP noté (16 octobre 2019) et interrogation écrite (7 novembre 2019)
 
-## Programme par demi-journées
+## Programme par demi-journées
 
 ### 1 & 2 (1er octobre 2019)
+[Architecture informatique](2019_Architecture_informatique_M1.md)
+[Validité des calculs dans un ordinateur](2019_Validite_logiciel_numerique_M1.md)
+[Théorie de l'algorithmie](2019_Algorithmie_M1.md)
 
 ### 3 & 4 (2 octobre 2019)
 

@@ -106,7 +106,7 @@ La notion de boucle est fondamentale en algorithmie.
 
 > Une boucle permet de répéter plusieurs fois un bloc d'instructions.
 
-Imaginons que nous voulions ajouter 1 aux valeurs contenues dans un tableau T de trois lignes (T_1, T_2 et T_3). L'algorithme naïf serait le suivant :
+Imaginons que nous voulions ajouter 1 aux valeurs contenues dans un tableau T de trois lignes (T<sub>1</sub>, T<sub>2</sub> et T<sub>3</sub>). L'algorithme naïf serait le suivant :
 
 T<sub>1</sub> = T<sub>1</sub> + 1;
 T<sub>2</sub> = T<sub>2</sub> + 1;
