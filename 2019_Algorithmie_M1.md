@@ -106,15 +106,15 @@ La notion de boucle est fondamentale en algorithmie.
 
 > Une boucle permet de répéter plusieurs fois un bloc d'instructions.
 
-Imaginons que nous voulions ajouter 1 aux valeurs contenues dans un tableau T de trois lignes (T<sub>1</sub>, T<sub>2</sub> et T<sub>3</sub>). L'algorithme naïf serait le suivant :
+Imaginons que nous voulions ajouter 1 aux valeurs contenues dans un tableau T de trois éléments (T<sub>0</sub>, T<sub>1</sub> et T<sub>2</sub>). L'algorithme naïf serait le suivant :
 
+T<sub>0</sub> = T<sub>0</sub> + 1;
 T<sub>1</sub> = T<sub>1</sub> + 1;
 T<sub>2</sub> = T<sub>2</sub> + 1;
-T<sub>3</sub> = T<sub>3</sub> + 1;
 
 
 
-Nous recopions en fait trois fois quasiment la même chose, ce qui est inutile et devriendrait très fastidieux si nous devions travailler sur un tableau avec 10000 lignes...
+Nous recopions en fait trois fois quasiment la même chose, ce qui est inutile et devriendrait très fastidieux si nous devions travailler sur un tableau avec 10000 éléments...
 
 Il est alors plus élégant d'abstraire un peu la méthode en écrivant : T<sub>i</sub> = T<sub>i</sub> + 1  et en faisant varier la valeur de i qui est la seule chose qui change dans les opérations à réaliser.
 
@@ -154,8 +154,8 @@ Pour i allant de de bi à bf
 Si nous retournons à notre exemple initial, nous pouvons maintenant simplement écrire :
 
 ```
-Pour i allant de de 1 à 3
-    Ti = Ti + 1
+Pour i allant de de 0 à 2
+    T[i] = T[i] + 1
 Fin pour
 ```
 

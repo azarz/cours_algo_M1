@@ -21,7 +21,7 @@ Durée : 16 demi journées.
 [Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md)
 
 ### 5 & 6 (4 octobre 2019)
-[Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md)
+[Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md#nombre-mystère-jeu-de-plus-ou-moins)
 [Approche diviser pour régner.](diviser_pour_regner.md)
 
 ### 7 & 8 (7 octobre 2019)
@@ -39,7 +39,7 @@ Durée : 16 demi journées.
 [Mise en pratique de la théorie des graphes.](exercices_tdg.md)
 
 ### 13 & 14 (15 octobre 2019)
-TP Python.
+[TP Python.](exercices_python.md)
 
 ### 15 & 16 (16 octobre 2019)
 TP noté.
