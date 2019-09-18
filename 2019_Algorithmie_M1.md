@@ -355,9 +355,37 @@ L'instruction `Retourner` correspond à la fin de la fonction. Toutes les instru
 Remarque : on pourra parler de procédure pour une fonction ne retournant aucune valeur, et de fonction (tout court) pour celles retournant une valeur.
 
 
-## Cas de la récursivité ##
+## Récursivité ##
 
-Exemple du tri d'un tableau : je place le plus grand élément en dernier. La suite revient alors à trier le tableau de N-1 éléments. Etc.
+Un algorithme est dit récursif s'il est défini à partir de lui même.
 
-# Écriture d'algorithmes simples #
+On prendra pour exemple la fonction qui calcule la somme des n premiers entiers. En mode itératif, elle s'écrit :
 
+```
+Fonction somme(n)
+  res = 0
+  Pour i allant de 0 à n
+    res = res + i
+  Fin pour
+  Retourner res
+Fin fonction
+```
+
+En mode récursif, on l'écrira :
+
+```
+Fonction somme_recursive(n)
+  Si n = 0
+    Retourner 0
+  Sinon
+    res = n + somme_recursive(n-1)
+    Retourner res
+  Fin si
+Fin fonction
+```
+
+Pour bien se convaincre que ça marche (car le fonctionnement est contre-intuitif), on peut dérouler les étapes réalisées par la fonction.
+
+En faisant cela, on remarque que la condition d'arrêt des appels récursifs est primordiale, car sinon la fonction s'exécuterait à l'infini.
+
+La récursivité est similaire aux démonstrations par récurrence : la condition d'arrêt correspond au cas trivial (initiation), et la partie recursive à l'hérédité.
