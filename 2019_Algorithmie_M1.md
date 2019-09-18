@@ -20,7 +20,7 @@ Aucun
 
 Les grandes phases de la conception d'un programme sont : l'analyse, l'algorithmie et la programmation.
 
-image Problème à résoudre -> analyse -> formulation d'un solution (schémas + algorithmes) -> implémentation
+![Étapes de la programmation](img/etapes_prog.png)
 
 Cette partie du cours se concentre sur la seconde phase : l'écriture d'algorithmes. Les méthodes d'analyse seront étudiées ultérieurement. Pour la programmation, nous nous appuierons sur le langage Python pour illustrer lors de ce cours la dernière phase de réalisation d'un logiciel.
 
@@ -42,7 +42,7 @@ Pour écrire des algorithmes, nous utiliserons un pseudo-code, c'est-à-dire des
 
 ## Variable et affectation ##
 
-Pou résoudre un problème, un algorithme décrit une suite d'opérations à effectuer. Pour ce faire, nous allons avoir besoin de manipuler des valeurs (résultats de calculs, données saisies par l'utilisateur...). A chaque fois que nous aurons besoin de stocker une information, nous utiliserons une **variable**.
+Pour résoudre un problème, un algorithme décrit une suite d'opérations à effectuer. Pour ce faire, nous allons avoir besoin de manipuler des valeurs (résultats de calculs, données saisies par l'utilisateur...). A chaque fois que nous aurons besoin de stocker une information, nous utiliserons une **variable**.
 
 > Une variable permet d'associer un *nom* à une *valeur*, cette dernière pouvant évoluer au cours de l'algorithme.
 

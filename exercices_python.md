@@ -6,4 +6,4 @@
 ## Généralisation cartographique
 [TP_generalisation.pdf](tp/TP_generalisation.pdf)
 
-
+## Lecture de fichiers
