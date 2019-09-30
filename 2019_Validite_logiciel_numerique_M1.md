@@ -426,14 +426,14 @@ des parties et nous utiliserons beaucoup d'espace pour stocker des 0.
 
 Pour palier aux limites de cette première approche, nous utiliserons une
 **représentation en virgule flottante** qui consiste à utiliser une forme
-normalisée de la représentation binaire kdu type x = \pm a * 2^n où :
+normalisée de la représentation binaire du type x =  a * 2<sup>n</sup> où :
 
 * a est la *mantisse* comprise entre 1 et 2;
 * n est un entier relatif appelé *exposant*.
 
 Par exemple :
 
-9,5 = (1001,1)<sub>2</sub> = (1,0011)<sub>2</sub>*2^3
+9,5 = (1001,1)<sub>2</sub> = (1,0011)<sub>2</sub>*2<sup>3</sup>
 
 Le stockage de ce nombre dans l'ordinateur s'effectuera alors sous la forme
 d'un triplet (signe, exposant, mantisse) avec :

@@ -33,7 +33,7 @@ Durée : 16 demi journées.
 
 [Mise en pratique](exercices_algo.md)
 
-### 9 (matin 8 octobre 2019)
+### 9 (matin du 8 octobre 2019)
 [Introduction à la complexité](2019_Validite_logiciel_numerique_M1.md#complexité-en-algorithmie)
 
 ### 10 & 11 (9 octobre 2019)
@@ -41,7 +41,7 @@ Durée : 16 demi journées.
 
 [Introduction à la théorie des graphes.](intro_tdg.md)
 
-### 12 (11 octobre 2019 matin)
+### 12 (matin du 11 octobre 2019)
 [Mise en pratique de la théorie des graphes.](exercices_tdg.md)
 
 ### 13 & 14 (15 octobre 2019)
