@@ -539,8 +539,7 @@ TCP/IP), la nomenclature est la suivante :
 # Architecture logicielle #
 
 Les grandes phases de la conception d'un programme sont : l'**analyse**,
-l'**algorithmie** et la **programmation** (\tiny et le déboggage, le déboggage,
-le dégoggage... \normalsize).
+l'**algorithmie** et la **programmation**.
 
 ![Architecture logicielle](img/etapes_prog.png)
 
