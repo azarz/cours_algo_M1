@@ -553,7 +553,7 @@ Les personnes chargées d'analyser un problème important ont à leur dispositio
 ## L'algorithmique ##
 > Un **algorithme** est l'expression de l'ensemble des opérations à effectuer sur des ensembles de données pour aboutir à des ensembles de résultats.
 
-L'*algorithmique* est la phase d'élaboration et d'écriture de l'ensemble des algorithmes nécessaire à la conception d'un programme ou d'un logiciel. Plusieurs langages algorithmiques existent : pseudo-codes, ADL, etc.
+L'*algorithmique* est la phase d'élaboration et d'écriture de l'ensemble des algorithmes nécessaire à la conception d'un programme ou d'un logiciel.
 
 Passer par un langage algorithmique permet se concentrer sur les étapes de résolution d'un problème sans avoir à se soucier de la machine sur laquelle le programme devra fonctionner ou des spécificités du langage de programmation qui sera utilisé. Le travail de passage d'un langage d'algorithmie à n'importe quel langage de programmation n'est plus alors qu'une "simple" traduction appelée *implémentation* ou codage.
 

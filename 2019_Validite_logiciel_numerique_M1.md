@@ -329,6 +329,7 @@ représentation en binaire. Nous mettrons en évidence les problèmes résultant
 
 
 > Remarque : convention
+>
 > Dans cette partie, nous ne manipulerons que les bases 2 et 10 qui ne
 > seront plus nécessairement indiquées en indice des nombres.
 
@@ -386,6 +387,7 @@ est exact.
 
 
 > Remarque : nombres minimum et maximum représentables
+>
 > En utilisant le représentation en complément à deux et un stockage sur e bits,
 > (e-1) bits restent disponible pour indiquer la valeur du nombre. Celle-ci peut
 > donc être comprise entre -2<sup>e-1</sup> et 2<sup>e-1</sup> - 1.
