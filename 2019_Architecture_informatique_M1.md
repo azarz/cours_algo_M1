@@ -78,8 +78,8 @@ Pour mesurer la vitesse des ordinateurs, nous retiendrons deux indicateurs :
 
 En 2016, un ordinateur personnel peut développer une puissance d'environ 200 GigaFLOPS avec un microprocesseur Intel Core i7-3770 (2 milliards de transistors dans le circuit intégré) et 5000 GigaFLOPS avec un processeur graphique  Nvidia GTX690.
 
-En 2013, le supercalculateur le plus puissant, Tianhe-2, affiche une puissance de 33,86 PetaFLOPS ($10^{15}$)... dépassé aujourd'hui (2016) par le réseau de minage
-permettant la génération de la crypto-monnaie Bitcoin qui totalise une puissance d'environ 18 000 exaFLOPS ($10^{18}$) !
+En 2013, le supercalculateur le plus puissant, Tianhe-2, affiche une puissance de 33,86 PetaFLOPS (10<sup>15</sup>)... dépassé aujourd'hui (2016) par le réseau de minage
+permettant la génération de la crypto-monnaie Bitcoin qui totalise une puissance d'environ 18 000 exaFLOPS (10<sup>18</sup>) !
 
 ![Supercalculateur Tianhe-2](img/tianhe-2.jpg)
 
