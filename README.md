@@ -11,38 +11,43 @@ Durée : 16 demi journées.
 
 ## Programme par demi-journées
 
-### 1 & 2 (1er octobre 2019)
+### 1 (matin du 1er octobre 2019)
 [Architecture informatique](2019_Architecture_informatique_M1.md)
 
 [Validité des calculs dans un ordinateur](2019_Validite_logiciel_numerique_M1.md)
 
-[Théorie de l'algorithmie](2019_Algorithmie_M1.md)
-
-### 3 & 4 (2 octobre 2019)
-[Théorie de l'algorithmie (Fonctions)](2019_Algorithmie_M1.md#les-fonctions)
+### 2 (après-midi du 1er octobre 2019)
+[Théorie de l'algorithmie (Fonctions)](2019_Algorithmie_M1.md)
 
 [Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md)
 
-### 5 & 6 (4 octobre 2019)
+### 3 & 4 (2 octobre 2019)
 [Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md#nombre-mystère-jeu-de-plus-ou-moins)
 
 [Approche diviser pour régner.](diviser_pour_regner.md)
 
-### 7 & 8 (7 octobre 2019)
+### 5 & 6 (4 octobre 2019)
 [Introduction à Python.](intro_python.md)
 
 [Mise en pratique](exercices_algo.md)
 
-### 9 (matin du 8 octobre 2019)
+### 7 & 8 (7 octobre 2019)
 [Introduction à la complexité](2019_Validite_logiciel_numerique_M1.md#complexité-en-algorithmie)
 
-### 10 & 11 (9 octobre 2019)
 [Mise en pratique des notions de complexité (Algorithmes de tri)](2019_Validite_logiciel_numerique_M1.md#application--comparaison-de-divers-algorithmes-de-tri)
+
+### 9 (matin du 8 octobre 2019)
 
 [Introduction à la théorie des graphes.](intro_tdg.md)
 
-### 12 (matin du 11 octobre 2019)
+### 10 & 11 (9 octobre 2019)
 [Mise en pratique de la théorie des graphes.](exercices_tdg.md)
+
+[Utilisation plus avancée de Python](intro_python.md#Documentation)
+
+
+### 12 (matin du 11 octobre 2019)
+[TP Python.](exercices_python.md)
 
 ### 13 & 14 (15 octobre 2019)
 [TP Python.](exercices_python.md)
