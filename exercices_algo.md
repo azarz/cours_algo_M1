@@ -25,10 +25,10 @@ Dans les exercices suivants, on considèrera un tableau de nombres entiers et de
 Écrire une fonction qui calcule le minimum de tous les éléments du tableau
 
 ### Moyenne
-Écrire une fonction qui calcule la moyenne dees éléments du tableau
+Écrire une fonction qui calcule la moyenne des éléments du tableau
 
 ### Médiane
-Écrire une fonction qui calcule la médiane dees éléments du tableau
+Écrire une fonction qui calcule la médiane des éléments du tableau
 
 ### Tri
 Écrire une procédure (ne renvoie pas de valeur) qui trie les valeurs du tableau dans l'ordre croissant
