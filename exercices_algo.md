@@ -1,5 +1,5 @@
 # Exercices de mise en pratique de l'algorithmique
-Il s'agira dans les exercices suivants d'écrire une (ou plusieurs) fonctions répondant à la problématique.
+Il s'agira dans les exercices suivants d'écrire une (ou plusieurs) fonction(s) répondant à la problématique.
 
 ## Permutation
 Écrire une fonction qui permute les valeurs attribuées à deux variables.
