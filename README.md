@@ -17,12 +17,14 @@ Durée : 16 demi journées.
 [Validité des calculs dans un ordinateur](2019_Validite_logiciel_numerique_M1.md)
 
 ### 2 (après-midi du 1er octobre 2019)
-[Théorie de l'algorithmie (Fonctions)](2019_Algorithmie_M1.md)
+[Théorie de l'algorithmie (Fonctions)](2019_Algorithmie_M1.md#les-fonctions)
 
 [Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md)
 
-### 3 & 4 (2 octobre 2019)
-[Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md#nombre-mystère-jeu-de-plus-ou-moins)
+### 3 (matin du 2 octobre 2019)
+[Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md#médiane)
+
+### 4 (après-midi du 2 octobre 2019)
 
 [Approche diviser pour régner.](diviser_pour_regner.md)
 
