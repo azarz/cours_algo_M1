@@ -1,4 +1,4 @@
-# Approche diviser pour régner
+# Approche diviser pour régner
 Pour résoudre certains types de problèmes complexes, il peut être utile de le diviser en sous-problèmes plus faciles à résoudre pour ensuite les combiner dans la solution finale.
 
 ![Exemple pour le tri fusion](img/Trois_étapes_illustré_avec_l'algorithme_du_tri_fusion.svg.png)
