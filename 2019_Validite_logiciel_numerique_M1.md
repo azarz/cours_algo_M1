@@ -830,19 +830,19 @@ La complexité est donc en O(1) + O(1) + max(O(1), O(0)) + n*O(1) = O(n)
 
 ## Application : comparaison de divers algorithmes de tri ##
 
-* tri par sélection (trouver le plus petit et le mettre au début)
+* [tri par sélection](https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection) (trouver le plus petit et le mettre au début)
 * tri par sélection récursif (trouver le plus grand, le mettre à la fin et recommancer sur le tableau 0:n-1)
-* tri par insertion (tri des 2 premiers éléments, insertion du 3ème, etc.)
-* tri fusion (découper en deux et trier chaque partie puis fusionner)
-* tri bulle (comparer chaque élément à son suivant et recommencer)
-* tri rapide (choisir un pivot, placer les plus petits avant, les plus grands après et trier chaque partie)
+* [tri par insertion](https://fr.wikipedia.org/wiki/Tri_par_insertion) (tri des 2 premiers éléments, insertion du 3ème, etc.)
+* [tri fusion](https://fr.wikipedia.org/wiki/Tri_fusion) (découper en deux et trier chaque partie puis fusionner)
+* [tri à bulles](https://fr.wikipedia.org/wiki/Tri_%C3%A0_bulles) (comparer chaque élément à son suivant et recommencer)
+* [tri rapide](https://fr.wikipedia.org/wiki/Tri_rapide) (choisir un pivot, placer les plus petits avant, les plus grands après et trier chaque partie)
 
 
 Illustration en codant les algorithmes sous Python (plateforme de test : Ubuntu 14.04 64bits / 7,7Gio RAM / Intel® Core™ i5-3337U CPU @ 1.80GHz × 4  / Python 3.4). Moyennes sur 10 exécutions de tri d'un tableau de 10000 entiers aléatoires entre 0 et 1000 :
 
-* Tri par sélection: 3.2706
-* Tri par sélection récursif: 3.1255
-* Tri par insertion: 4.0774
-* Tri fusion: 0.0434
-* Tri bulle: 5.2502
-* Tri rapide: 0.000005
+* Tri par sélection : 3.2706s
+* Tri par sélection récursif : 3.1255s
+* Tri par insertion : 4.0774s
+* Tri fusion : 0.0434s
+* Tri à bulles : 5.2502s
+* Tri rapide : 0.000005s
