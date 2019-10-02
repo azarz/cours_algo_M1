@@ -25,10 +25,10 @@ Durée : 16 demi journées.
 [Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md#médiane)
 
 ### 4 (après-midi du 2 octobre 2019)
-
 [Approche diviser pour régner.](diviser_pour_regner.md)
 
 ### 5 & 6 (4 octobre 2019)
+# FAIRE UN ERRATUM SUR LA CORRECTION DE LA RECHERCHE DICHO !!!!!
 [Introduction à Python.](intro_python.md)
 
 [Mise en pratique](exercices_algo.md)
