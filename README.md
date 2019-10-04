@@ -17,7 +17,7 @@ Durée : 16 demi journées.
 [Validité des calculs dans un ordinateur](2019_Validite_logiciel_numerique_M1.md)
 
 ### 2 (après-midi du 1er octobre 2019)
-[Théorie de l'algorithmie (Fonctions)](2019_Algorithmie_M1.md#les-fonctions)
+[Théorie de l'algorithmie](2019_Algorithmie_M1.md)
 
 [Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md)
 
@@ -28,10 +28,11 @@ Durée : 16 demi journées.
 [Approche diviser pour régner.](diviser_pour_regner.md)
 
 ### 5 & 6 (4 octobre 2019)
-# FAIRE UN ERRATUM SUR LA CORRECTION DE LA RECHERCHE DICHO !!!!!
 [Introduction à Python.](intro_python.md)
 
 [Mise en pratique](exercices_algo.md)
+
+[Mise en pratique 2](diviser_pour_regner.md#exemple--recherche-dichotomique)
 
 ### 7 & 8 (7 octobre 2019)
 [Introduction à la complexité](2019_Validite_logiciel_numerique_M1.md#complexité-en-algorithmie)
