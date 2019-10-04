@@ -31,7 +31,7 @@ Dans les exercices suivants, on considèrera un tableau de nombres entiers et de
 Écrire une fonction qui calcule la médiane des éléments du tableau
 
 ### Tri
-Écrire une procédure (ne renvoie pas de valeur) qui trie les valeurs du tableau dans l'ordre croissant
+Écrire une procédure qui trie les valeurs du tableau dans l'ordre croissant et renvoie un nouveau tableau
 
 
 ## Factorielle
