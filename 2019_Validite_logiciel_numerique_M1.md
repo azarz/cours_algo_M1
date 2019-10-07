@@ -743,7 +743,7 @@ Les règles suivantes s'appliquent lorsque l'on effectue des opérations :
 + la multiplication est "classique" : O(f(n) * g(n)) = O(f(n)) * O(g(n))
 
 
-Par exemple, si un algorithme présente une complexité dans le pire des cas fonction de $g(n) = 3 * n<sup>3</sup> + 10 * n<sup>2</sup> + 5$, elle sera noté O(n<sup>3</sup>).
+Par exemple, si un algorithme présente une complexité dans le pire des cas fonction de g(n) = 3 * n<sup>3</sup> + 10 * n<sup>2</sup> + 5, elle sera noté O(n<sup>3</sup>).
 
 ### Classes de complexité ###
 Les complexités que l'on rencontre fréquemment sont les suivantes :
@@ -796,32 +796,36 @@ Complexité résultante : O(1)+O(1)+O(1) = max(O(1), O(1), O(1)) = O(1)
 
 + Dans le cas d'un *traitement conditionnel*, la complexité au pire des cas est retenue est celle du bloc d'instructions le moins performant :
 
-|**Instructions** | **Complexité** |
-|Si condition| O(condition) |
-|   instructionsA | O(instructionsA) |
+|Instructions | Complexité |
+|:-----------|:---------:|
+|Si condition | O(condition) |
+|-- instructionsA | O(instructionsA) |
 |sinon | |
-|   insctructionsB  | O(instructionsB)|
+|-- insctructionsB  | O(instructionsB)|
 |fin si | |
 Complexité résultante : O(condition) + max(O(instructionsA), O(instructionsB))
 
 + Dans le cas d'une *structure itérative*, la complexité est celle du bloc d'instructions de la boucle multiplié par le nombre d'itérations.
 
-|**Instructions** | **Complexité** |
+|Instructions | Complexité |
+|:-----------|:---------:|
 |Pour i allant de p à q   | |
-|  instructions           |(q-p)*O(instructions) |
+|-- instructions           |(q-p)*O(instructions) |
 |Fin pour                 | |
 
 
 Pour illustrer évaluons la complexité de l'algorithme de calcul de la factorielle :
 
+|Instructions | Complexité |
+|:-----------|:---------:|
 |Fonction factorielle(n) | |
-|  res = 1 | O(1) |
-|  Si n ≠ 0 | O(1) |
-|    Pour i allant de 1 à n | |
-|      res = res * i | n*O(1) |
-|    Fin pour | |
-|  Fin si | |
-|  Retourner res | |
+|-- res = 1 | O(1) |
+|-- Si n ≠ 0 | O(1) |
+|---- Pour i allant de 1 à n | |
+|------ res = res * i | n*O(1) |
+|---- Fin pour | |
+|-- Fin si | |
+|-- Retourner res | |
 |Fin fonction| |
 
 
