@@ -760,7 +760,7 @@ Les complexités que l'on rencontre fréquemment sont les suivantes :
 
 ![Quelques classes de complexité](img/figure_2.png)
 
-Le tableau ci-dessous fournit des temps d'exécution pour le différentes classes de complexité et différentes tailles de données, en considérant que l'ordinateur traite 10<sup>6</sup> instructions par secondes (10<sup>6</sup> FLOPS; ce qui correspond à un ordinateur bureautique classique en 2016).
+Le tableau ci-dessous fournit des temps d'exécution en secondes pour le différentes classes de complexité et différentes tailles de données, en considérant que l'ordinateur traite 10<sup>6</sup> instructions par secondes (10<sup>6</sup> FLOPS; ce qui correspond à un ordinateur bureautique classique en 2016).
 
 
 | n        |  10  |  20  |  30  |  60  |
@@ -771,7 +771,7 @@ Le tableau ci-dessous fournit des temps d'exécution pour le différentes classe
 | n<sup>2</sup>    |  10<sup>-4</sup>  |  4.10<sup>-4</sup>  |  9.10<sup>-4</sup>  |  3,6.10<sup>-3</sup>  |
 | n<sup>3</sup>    |  10<sup>-3</sup>  |  8.10<sup>-3</sup>  |  2,7.10<sup>-2</sup>  |  2,16.10<sup>-1</sup>  |
 | 2<sup>n</sup>    |  1,02.10<sup>-3</sup>  |  1,05  |  1,07.10<sup>3</sup>  |  1,15.10<sup>12</sup>  |
-| n!       |    |    |    |    |
+| n!       |  3,6  |  2,4.10<sup>12</sup>  |  2,4.10<sup>26</sup>  |  8,3.10<sup>75</sup>  |
 
 Il est intéressant de remarquer que 10<sup>12</sup> secondes équivaut à environ 36 000 annnées !
 
