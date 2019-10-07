@@ -34,18 +34,22 @@ Durée : 16 demi journées.
 
 [Mise en pratique 2](diviser_pour_regner.md#exemple--recherche-dichotomique)
 
-### 7 & 8 (7 octobre 2019)
+### 7 (matin du 7 octobre 2019)
 [Introduction à la complexité](2019_Validite_logiciel_numerique_M1.md#complexité-en-algorithmie)
 
 [Mise en pratique des notions de complexité (Algorithmes de tri)](2019_Validite_logiciel_numerique_M1.md#application--comparaison-de-divers-algorithmes-de-tri)
 
-### 9 (matin du 8 octobre 2019)
+### 8 (après-midi du 7 octobre 2019)
 
 [Introduction à la théorie des graphes.](intro_tdg.md)
 
-### 10 & 11 (9 octobre 2019)
 [Mise en pratique de la théorie des graphes.](exercices_tdg.md)
 
+### 9 (matin du 8 octobre 2019)
+[Mise en pratique de la théorie des graphes.](exercices_tdg.md) (Correction)
+
+
+### 10 & 11 (9 octobre 2019)
 [Utilisation plus avancée de Python](intro_python.md#Documentation)
 
 
