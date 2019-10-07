@@ -37,6 +37,8 @@ Durée : 16 demi journées.
 ### 7 & 8 (7 octobre 2019)
 [Introduction à la complexité](2019_Validite_logiciel_numerique_M1.md#complexité-en-algorithmie)
 
+(TODO: corriger l'affichage du cours)
+
 [Mise en pratique des notions de complexité (Algorithmes de tri)](2019_Validite_logiciel_numerique_M1.md#application--comparaison-de-divers-algorithmes-de-tri)
 
 ### 9 (matin du 8 octobre 2019)
