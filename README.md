@@ -48,13 +48,11 @@ Durée : 16 demi journées.
 ### 9 (matin du 8 octobre 2019)
 [Mise en pratique de la théorie des graphes.](exercices_tdg.md) (Correction)
 
-
 ### 10 & 11 (9 octobre 2019)
-[Utilisation plus avancée de Python](intro_python.md#Documentation)
-
+[TP Python - Distance entre points](exercices_python.md#distance-entre-des-points)
 
 ### 12 (matin du 11 octobre 2019)
-[TP Python.](exercices_python.md)
+[Utilisation plus avancée de Python](intro_python.md#Documentation)
 
 ### 13 & 14 (15 octobre 2019)
 [TP Python.](exercices_python.md)
