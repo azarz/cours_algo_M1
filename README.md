@@ -55,7 +55,7 @@ Durée : 16 demi journées.
 [Utilisation plus avancée de Python](intro_python.md#Documentation)
 
 ### 13 & 14 (15 octobre 2019)
-[TP Python.](exercices_python.md)
+[TP Python - Gestion d'association](exercices_python.md#gestion-dassociation)
 
 ### 15 & 16 (16 octobre 2019)
 TP noté.
