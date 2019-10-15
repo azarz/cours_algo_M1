@@ -57,6 +57,8 @@ Durée : 16 demi journées.
 [TP Python - Généralisation cartographique](exercices_python.md#distance-entre-des-points#généralisation-cartographique)
 
 ### 12 (matin du 11 octobre 2019)
+[TP Python - Généralisation cartographique](exercices_python.md#distance-entre-des-points#généralisation-cartographique) (Correction)
+
 [Utilisation plus avancée de Python](intro_python.md#Documentation)
 
 ### 13 & 14 (15 octobre 2019)
