@@ -9,7 +9,6 @@
 
 ## TP graphes
 + Mettre à jour le lien de la documentation (ou l'enlever carrément)
-+ Réécrire le fichier graphml
 
 ## Divers
 + Mieux organiser les dossiers
