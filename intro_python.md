@@ -92,16 +92,230 @@ On pourra convertir un nombre quelconque en nombre entier via la fonction `int()
 
 ### Les booléens
 
+Une variable de type booléen ne pourra prendre que deux valeurs : `True` (vrai) et `False` (faux).
+
+Les opérations logiques retournent des booléens. La table suivante liste les opérateurs de comparaison. Ces opérateurs s'appliquent à tous les types de données, à condition que les types soient comparables (comparer 5 à "toto" n'a pas vraiment de sens).
+
+
+| Opérateur | Signification |
+| \> | Supérieur |
+| < | Inférieur |
+| \>= | Supérieur ou égal |
+| <= | Inférieur ou égal |
+| == | Egal |
+| != ou <> | Différent de |
+| is | Objet identique |
+| is not | Objet différent |
+
+Dans l'exemple ci-dessous, nous affectons à `x` le résultat de la comparaison `3 != 5`. Ce résultat est un booléen :
+```python
+>>> x = (3 != 5)
+>>> x 
+True
+```
+
+Le booléens peuvent être combinées entre eux à l'aide des mots clé `and`, `or` et `not`.
+
+Mini-exo : table de vérité
+
 
 ### Le type 'rien'
 
+Python propose un type spécial qui ne peut prendre qu'une seule valeur possible, `None`, et qui est utilisé pour signifier qu'une variable ne contient rien. Ou plus exactement, elle référence un objet et cet objet est l'objet "rien".
+
+Il s'agit d'une valeur qui est utilisée par défaut lorsqu'une opération n'a pas de retour explicite ou n'a pas pu être menée à son terme. Le type "rien" est ainsi utilisé pour vérifier que des parties de programme ont correctement fonctionné.
+
+
 ### Les chaînes de caractères
+
+#### Création d'une chaîne de caractères
+
+Les apostrophes et guillemets s'utilisent indifféremment pour définir une chaîne de caractères `"..."` ou `'...'`.
+
+
+L'intérêt d'utiliser l'une ou l'autre des deux formes est de pouvoir intégrer des apostrophes ou guillemets dans une chaîne :
+```python
+"aujourd'hui", 'le type "rien"'
+```
+
+Le caractère d'échappement dans une chaîne de caractères est le backslash `\`.
+```python
+'aujourd\'hui'
+```
+
+Python propose un troisième mode de définition de chaînes de caractères qui commence et se termine par trois guillemets : `"""..."""`. Cette syntaxe permet de conserver la mise en forme d'un bloc de texte.
+```python
+ """Les trois quotes : permettant d'enregistrer la mise en forme.
+
+=> y compris les sauts de ligne
+, les tabulations..."""
+```
+
+#### Manipulation de chaînes de caractères
+
+Les opérateurs suivants sont applicables aux chaînes de caractères.
+
+| Opérateur | Signification |
+| \+ | Concaténation de chaînes de caractères |
+| \* | Répétition d'une chaîne de caractères |
+| `in` | Inclusion d'une chaîne dans une autre |
+| `not in` | Non inclusion d'une chaîne dans une autre |
+| `[i]` | Caractère à la i-ième position dans la chaîne |
+| `[i:j]` | Caractères compris entre les i-ième et j-ième positions |
+
+De plus, on peut appliquer de nombreuses fonctions aux chaînes de caractères, qui sont décrites dans [la documentation officielle](https://docs.python.org/3/library/stdtypes.html#string-methods)
+
 
 ### Les listes
 
+Une liste est un tableau d'objets qui peuvent être de n'importe quel type. Il est possible de modifier, ajouter ou supprimer des éléments d'une liste sans avoir à la redéfinir.
+
+Une liste est définie par un ensemble de valeurs entre deux crochets :
+```python
+>>> a = [2016, "ENSG", 'Géomatique']
+>>> type(a)
+<class 'list'>
+>>> a
+[2016, 'ENSG', 'Géomatique']
+```
+
+Les listes peuvent également être imbriquées :
+```python
+>>> b = [a, [1, 2, 3, 4]]
+>>> b
+[[2016, 'ENSG', 'Géomatique'], [1, 2, 3, 4]]
+```
+
+Pour créer une liste vide, nous utilisons des crochets sans rien à l'intérieur :
+```python
+>>> c = []
+>>> type(c)
+<class 'list'>
+```
+
+Les listes supportent les opérateurs suivants :
+
+| Opérateur | Signification |
+| x in s | x est dans s |
+| x not in s | x n'est pas dans s |
+| s + t | concaténation de s et t |
+| s * n | ajouter n fois s à lui-même |
+| s[i] | élément à la i-ème position |
+| s[i:j] | sous-liste de s, de la i-ème à la (j-1)-ème position |
+| s[i:j:k] | sous-liste de s, de la i-ème à la (j-1)-ème position avec un pas de k |
+| len(s) | nombre d'éléments de la liste s |
+| min(s) | plus petit élément de la liste s (lorsque cela à un sens) |
+| max(s) | plus grand élément de la liste s (lorsque cela à un sens) |
+| sum(s) | somme des éléments de la liste s (lorsque cela à un sens) |
+| s.index(x, i, j) | index de la première occurence de x dans s, à partir de l'indice i et jusqu'à j |
+| s.count(x) | nombre d'occurence de x dans s |
+| L[i] = x | Elément à la position i remplacé par x |
+| L[i:j] = t | Partie entre les position i et j remplacé par la liste t |
+| del(L[i:j]) | Suppression des éléments entre les positions i et j. Equivalent à L[i:j] = [] |
+| L[i:j:k] = t | Partie entre les position i et j avec un pas de k remplacé par la liste t |
+| del(L[i:j:k]) | Suppression des éléments entre les positions i et j avec un pas de k. Equivalent à L[i:j:k] = [] |
+| L += t | Ajoute t à L |
+| L *= n | Ajoute n-1 fois L à elle-même |
+
+De plus, les listes implémentent un certain nombre de de fonctions, en voici quelques-unes :
++ `l.append(x)` : Ajoute l'élément x à la fin de la liste l
++ `l.reverse()` : Inverse l'ordre des éléments de la liste
++ `l.pop(i)` : Retourne et supprime de la liste l'élément à la position i 
++ `l.insert(i, x)` : Insertion de l'élément x à la position i
+
+D'autre fonctions existent, à l'aide d'un IDE une liste est disponible.
+
+
 ### Les dictionnaires
 
+Les dictionnaires sont des objets semblables aux listes mais plus souples en ce qui concerne le référencement des valeurs. Alors qu'une liste référence les éléments qu'elle contient à l'aide de leur position (un entier compris entre 0 et la taille de la liste), un dictionnaire se contente d'associer l'élément à __un autre élément de type immuable__ (entier, réel, chaîne, tuple). On dit que le dictionnaire __associe une valeur à une clé__.
+
+Les éléments d'un dictionnaire ne sont pas ordonnés (il n'est pas possible de les trier) et on y accède uniquement par leurs clés. La structure d'un dictionnaire n'est pas figée, on peut ajouter/modifier/supprimer des éléments sans avoir besoin de recréer le dictionnaire : le dictionnaire est modifiable.
+
+La syntaxe de création d'un dictionnaire est la suivante :
+```python
+>>> dico = {cle1: valeur1 , cle2: valeur2...}
+```
+
+On peut créer un dictionnaire vide :
+```python
+>>> dico = {} >>> dico = dict()
+```
+
+Pour accéder à la valeur d'un élément, la syntaxe est semblable à celle d'une liste, mais l'indice n'est plus uniquement un entier : `dico[cle]` retourne la valeur associé à la clé.
+```python
+>>> dico = {'prenom': 'paul', 'age': 24} >>> dico['prenom'] 'paul'
+```
+
+L'ajout d'une nouvel élément est assez aisé :
+```python
+>>> dico[0] = 'rouge' >>> dico {0: 'rouge', 'age': 24, 'prenom': 'paul'}
+```
+
+Les dictionnaires implémentent aussi un certain nombre de fonctions, dont en voici quelques unes :
++ `d.items()` : retourne une séquence des couples (clé, valeur) du dictionnaire
++ `d.keys()` : retourne une séquence des clés du dictionnaire
++ `d.values()` : retourne une séquence des valeurs du dictionnaire
+
+
 ### Les fichiers
+
+Dans ce paragraphe, nous nous attarderons sur le dernier type de base qui sera présenté dans ce cours : les fichiers. Nous montrerons comment lire ou écrire dans un fichier.
+
+#### Chemin d'accès aux fichiers
+
+Avant de commencer à manipuler les fichiers, précisons qu'il existe deux possibilités pour parcourir l'arborescence d'un système : utiliser des chemins absolus ou relatifs.
+Lorsque l'on utilise des chemins absolus, on décrit le fichier en partant de la racine du disque. Les chemins prennent la forme : `/home/user/cours-python/toto.txt`.
+
+
+Avec les chemins relatifs, on tient compte du répertoire courant, c'est à dire celui depuis lequel l'interpréteur Python est exécuté (si l'on exécute un fichier .py directement, le répertoire courant est celui contenant le programme; si on utilise l'interpréteur Python, le répertoire courant est celui contenant l'interpréteur). Ainsi, si on est dans le répertoire `/home/user/cours-python/` , on appellera la fichier `resultat.txt` de ce répertoire en saisissant tout simplement `resultat.txt`.
+
+#### Ouverture d'un fichier
+
+Pour ouvrir un fichier, on utilise la fonction open(). Elle prend en paramètre :
++ le chemin du fichier; 
++ le mode d'ouverture : 
+  - 'r' pour lire uniquement; 
+  - 'w' pour écrire uniquement (le contenu précédent est écrasé); 
+  - 'a' pour écrire à la finn uniquement (le contenu précédent est conservé);
+ Il est possible de combiner les modes pour, par exemple, lire et ajouter à la fin (en écrivant `ra`).
+
+
+Lorsque le fichier n'est plus utilisé par le programme, il est nécessaire de le fermer, sans quoi un verrou persiste empêchant son utilisation par une autre personne/un autre programme. On utilise la fonction close().
+
+
+#### Lecture d'un fichier
+
+Plusieurs modes de lecture d'un fichier sont possible. Les plus courants sont : 
++ la lecture en entier avec la fonction read() 
++ la lecture ligne par ligne avec la fonction readline()
+
+Un exemple de lecture :
+```python
+fichier = open("fichier.txt", 'r')
+contenu = fichier.read()
+fichier.close()
+```
+
+#### Ecriture dans un fichier
+
+Pour écrire dans un fichier, on utilise la méthode write(texte) en lui passant en paramètre la chaîne de caractères à écrire. Elle renvoie le nombre de caractères qui ont été écrits. Cette fonction peut être appelée plusieurs fois pour écrire plusieurs chaînes. Elle fonctionne que le fichier soit ouvert en mode 'w' ou 'a'.
+
+```python
+fichier = open("fichier.txt", 'w')
+fichier.write("J'écris pour la première fois dans un fichier texte via Python")
+fichier.close()
+```
+
+#### L'ouverture avec `with`
+L'ouverture et la manipulation de fichiers est une opération source d'erreurs en programmation. De plus, il est facile d'oublier de refermer un fichier après son utilisation, ce qui peut être problématique également.
+
+
+Pour simplifier l'utilisation des fichiers, Python permet d'utiliser un mot clé : `with`. Avec cette forme d'ouverture d'un fichier, la fermeture du fichier est automatique :
+```python
+with open("fichier.txt", 'r') as fichier:
+  contenu = fichier.read()
+```
 
 ## Syntaxe du langage
 
