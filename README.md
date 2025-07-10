@@ -12,12 +12,12 @@ Durée : 16 demi journées.
 ## Programme par demi-journées
 
 ### 1 (matin du 1er octobre 2019)
-[Architecture informatique](2019_Architecture_informatique_M1.md)
+[Architecture informatique](Architecture_informatique.md)
 
-[Validité des calculs dans un ordinateur](2019_Validite_logiciel_numerique_M1.md)
+[Validité des calculs dans un ordinateur](Validite_logiciel_numerique.md)
 
 ### 2 (après-midi du 1er octobre 2019)
-[Théorie de l'algorithmie](2019_Algorithmie_M1.md)
+[Théorie de l'algorithmie](Algorithmie.md)
 
 [Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md)
 
@@ -35,9 +35,9 @@ Durée : 16 demi journées.
 [Mise en pratique 2](diviser_pour_regner.md#exemple--recherche-dichotomique)
 
 ### 7 (matin du 7 octobre 2019)
-[Introduction à la complexité](2019_Validite_logiciel_numerique_M1.md#complexité-en-algorithmie)
+[Introduction à la complexité](Validite_logiciel_numerique.md#complexité-en-algorithmie)
 
-[Mise en pratique des notions de complexité (Algorithmes de tri)](2019_Validite_logiciel_numerique_M1.md#application--comparaison-de-divers-algorithmes-de-tri)
+[Mise en pratique des notions de complexité (Algorithmes de tri)](Validite_logiciel_numerique.md#application--comparaison-de-divers-algorithmes-de-tri)
 
 ### 8 (après-midi du 7 octobre 2019)
 

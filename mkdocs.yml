@@ -2,11 +2,11 @@ site_name: Cours d'initiation à l'algorithmie
 nav:
     - Accueil & Déroulement des séances: README.md
     - Algorithmie:
-        - "2019 Algorithmie M1": 2019_Algorithmie_M1.md
+        - "Algorithmie": Algorithmie.md
     - Architecture Informatique:
-        - "2019 Architecture Informatique M1": 2019_Architecture_informatique_M1.md
+        - "Architecture Informatique": Architecture_informatique.md
     - Validité Logiciel Numérique:
-        - "2019 Validité Logiciel Numérique M1": 2019_Validite_logiciel_numerique_M1.md
+        - "Validité Logiciel Numérique": Validite_logiciel_numerique.md
     - Diviser pour Régner:
         - "Diviser pour Régner": diviser_pour_regner.md
     - Exercices:
