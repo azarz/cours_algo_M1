@@ -1,0 +1,47 @@
+site_name: Cours d'initiation à l'algorithmie
+nav:
+    - Accueil & Déroulement des séances: README.md
+    - Algorithmie:
+        - "2019 Algorithmie M1": 2019_Algorithmie_M1.md
+    - Architecture Informatique:
+        - "2019 Architecture Informatique M1": 2019_Architecture_informatique_M1.md
+    - Validité Logiciel Numérique:
+        - "2019 Validité Logiciel Numérique M1": 2019_Validite_logiciel_numerique_M1.md
+    - Diviser pour Régner:
+        - "Diviser pour Régner": diviser_pour_regner.md
+    - Exercices:
+        - "Exercices d'Algorithmie": exercices_algo.md
+        - "Exercices de Python": exercices_python.md
+        - "Exercices de Théorie des Graphes": exercices_tdg.md
+    - Introduction à Python:
+        - "Introduction à Python": intro_python.md
+    - Introduction à la Théorie des Graphes:
+        - "Introduction à la Théorie des Graphes": intro_tdg.md
+    - TODO:
+        - "Liste des Tâches": todo.md
+    - README:
+        - "README": README.md
+markdown_extensions:
+    - attr_list
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - fenced_code
+    - toc:
+        baselevel: 2
+    - pymdownx.highlight:
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences
+theme:
+  name: material
+  language: fr
+  palette:
+    primary: blue grey
+    accent: deep purple
+  logo: logo.svg
+  features:
+    - content.code.copy
