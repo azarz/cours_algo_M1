@@ -1,6 +1,6 @@
 # Éléments de Théorie des Graphes
 
-Si vous voulez approfondir le cours, vous pouvez lire le [cours de Théorie des Graphes de Benoît Costes](cours_Cours_tdg.pdf) qui va beaucoup plus loin que cette page (qui en est un extrait).
+Si vous voulez approfondir le cours, vous pouvez lire le [cours de Théorie des Graphes de Benoît Costes](5.b_Cours_tdg.pdf) qui va beaucoup plus loin que cette page (qui en est un extrait).
 
 ## Un bref historique des graphes
 

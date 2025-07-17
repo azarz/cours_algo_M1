@@ -9,13 +9,6 @@
 Aucun
 
 
-## Auteurs ##
-
-* © IGN 2016 - Clément Delgrange - ValiLab (DRE)
-* © IGN 2019 - Amaury Zarzelli - Pôle Technique Géoportail (DSTI)
-
-
-
 # Introduction à l'algorithmie #
 
 Les grandes phases de la conception d'un programme sont : l'analyse, l'algorithmie et la programmation.

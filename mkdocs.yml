@@ -1,26 +1,26 @@
 site_name: Cours d'initiation à l'algorithmie
 nav:
     - Accueil & Déroulement des séances: README.md
-    - Algorithmie:
-        - "Algorithmie": Algorithmie.md
-    - Architecture Informatique:
-        - "Architecture Informatique": Architecture_informatique.md
-    - Validité Logiciel Numérique:
-        - "Validité Logiciel Numérique": Validite_logiciel_numerique.md
-    - Diviser pour Régner:
-        - "Diviser pour Régner": diviser_pour_regner.md
+    - 1 - Architecture logicielle: 1_Architecture_logicielle.md
+    - 2 - Validité Logiciel Numérique: 2_Validite_logiciel_numerique.md
+    - 3 - Algorithmie:
+        - "Introduction à l'algorithmie": 3_Algorithmie.md
+        - "Approche 'diviser pour mieux règner'": 3.b_diviser_pour_regner.md
+        - "Exercices": 3.c_exercices_algo.md
+    - 4 - Introduction à Python:
+        - "Introduction à Python": 4_intro_python.md
+        - "Exercices": 4.c_exercices_python.md
+        - "Cours détaillé (pdf)": 4.b_Cours_Python.pdf
+    - 5 - Introduction à la Théorie des Graphes:
+        - "Introduction à la Théorie des Graphes": 5_intro_tdg.md
+        - "Exercices": 5.c_exercices_tdg.md
+        - "Cours détaillé (pdf)": 5.b_Cours_tdg.pdf
     - Exercices:
-        - "Exercices d'Algorithmie": exercices_algo.md
-        - "Exercices de Python": exercices_python.md
-        - "Exercices de Théorie des Graphes": exercices_tdg.md
-    - Introduction à Python:
-        - "Introduction à Python": intro_python.md
-    - Introduction à la Théorie des Graphes:
-        - "Introduction à la Théorie des Graphes": intro_tdg.md
+        - "Exercices d'Algorithmie": 3.c_exercices_algo.md
+        - "Exercices de Python": 4.c_exercices_python.md
+        - "Exercices de Théorie des Graphes": 5.c_exercices_tdg.md
     - TODO:
         - "Liste des Tâches": todo.md
-    - README:
-        - "README": README.md
 markdown_extensions:
     - attr_list
     - pymdownx.emoji:

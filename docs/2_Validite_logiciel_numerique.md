@@ -9,12 +9,6 @@
 * Notions de base en architecture informatique
 
 
-## Auteurs ##
-
-* © IGN 2016 - Clément Delgrange - ValiLab (DRE)
-* © IGN 2019 - Amaury Zarzelli - Pôle Technique Géoportail (DSTI)
-
-
 # Introduction #
 
 L'algorithmie ou l'analyse informatique s'attachent à décrire des solutions informatiques théoriques à un problème posé. Ces solutions décrivent un cheminement pour aboutir au résultat excompté et ne souffrent d'aucune ambiguité : en toutes circonstances l'algorithme fournit un résultat.

@@ -1,6 +1,6 @@
 # Programmation avec Python
 
-Si vous voulez approfondir le cours, vous pouvez lire le [cours de Python de Clément Delgrange](Cours_Python.pdf) qui rentre dans beaucoup de détails et dont cette page est un extrait.
+Si vous voulez approfondir le cours, vous pouvez lire le [cours de Python de Clément Delgrange](4.b_Cours_Python.pdf) qui rentre dans beaucoup de détails et dont cette page est un extrait.
 
 ## Introduction
 
@@ -31,8 +31,8 @@ Nous définirons ainsi une variable comme l'association d'un nom et d'une valeur
 En Python, le nom (on parle parfois d'identificateur) :
   + ne peut contenir que des lettres, des chiffres et des blancs soulignés;
   + ne peut pas contenir d'espace ou de caractères spéciaux (&, ;...);
-  + ne peut pas commencer par un chiffre; 
-  + distingue minuscules et majuscules (on dit que le langage est sensible à la casse); 
+  + ne peut pas commencer par un chiffre;
+  + distingue minuscules et majuscules (on dit que le langage est sensible à la casse);
   + doit être unique. Par convention, pour les noms de variable, on séparera les mots par des blancs soulignés : mon_nom_de_variable. Les noms de variable commençant par deux _ et se terminant par deux _ sont réservés au langage (exemple : __str__). Certains mots-clé sont également réservés par le langage. Il n'est pas possible de créer une variable portant l'un de ces noms : `and else in return as except is true assert false lambda try break finally none while class for nonlocal with continue from not yield def global or del if pass elif import raise` ([liste exhaustive sur la documentation officielle](https://docs.python.org/3.3/reference/lexical_analysis.html#keywords))
 
 
@@ -43,8 +43,8 @@ Contrairement à d'autres langages, il n'est pas nécessaire de déclarer le typ
 Par exemple, lorsque l'on écrit `x = 3`, on crée une variable `x` à laquelle on associe l'objet 3 qui est stocké dans la mémoire de l'ordinateur. L'interpréteur Python détecte que 3 est un nombre entier et associe donc ce type à la variable `x`.
 
 À retenir :
- + une variable est créée lorsqu'on lui affecte pour la première fois une valeur; 
- + une variable n'est jamais associée à un type en Python. C'est l'objet qu'elle référence qui porte le type; 
+ + une variable est créée lorsqu'on lui affecte pour la première fois une valeur;
+ + une variable n'est jamais associée à un type en Python. C'est l'objet qu'elle référence qui porte le type;
  + une variable est automatiquement remplacée par l'objet qu'elle référence dans une expression.
 
 
@@ -110,7 +110,7 @@ Les opérations logiques retournent des booléens. La table suivante liste les o
 Dans l'exemple ci-dessous, nous affectons à `x` le résultat de la comparaison `3 != 5`. Ce résultat est un booléen :
 ```python
 >>> x = (3 != 5)
->>> x 
+>>> x
 True
 ```
 
@@ -220,7 +220,7 @@ Les listes supportent les opérateurs suivants :
 De plus, les listes implémentent un certain nombre de de fonctions, en voici quelques-unes :
 + `l.append(x)` : Ajoute l'élément x à la fin de la liste l
 + `l.reverse()` : Inverse l'ordre des éléments de la liste
-+ `l.pop(i)` : Retourne et supprime de la liste l'élément à la position i 
++ `l.pop(i)` : Retourne et supprime de la liste l'élément à la position i
 + `l.insert(i, x)` : Insertion de l'élément x à la position i
 
 D'autre fonctions existent, à l'aide d'un IDE une liste est disponible.
@@ -273,10 +273,10 @@ Avec les chemins relatifs, on tient compte du répertoire courant, c'est à dire
 #### Ouverture d'un fichier
 
 Pour ouvrir un fichier, on utilise la fonction open(). Elle prend en paramètre :
-+ le chemin du fichier; 
-+ le mode d'ouverture : 
-  - 'r' pour lire uniquement; 
-  - 'w' pour écrire uniquement (le contenu précédent est écrasé); 
++ le chemin du fichier;
++ le mode d'ouverture :
+  - 'r' pour lire uniquement;
+  - 'w' pour écrire uniquement (le contenu précédent est écrasé);
   - 'a' pour écrire à la finn uniquement (le contenu précédent est conservé);
  Il est possible de combiner les modes pour, par exemple, lire et ajouter à la fin (en écrivant `ra`).
 
@@ -286,8 +286,8 @@ Lorsque le fichier n'est plus utilisé par le programme, il est nécessaire de l
 
 #### Lecture d'un fichier
 
-Plusieurs modes de lecture d'un fichier sont possible. Les plus courants sont : 
-+ la lecture en entier avec la fonction read() 
+Plusieurs modes de lecture d'un fichier sont possible. Les plus courants sont :
++ la lecture en entier avec la fonction read()
 + la lecture ligne par ligne avec la fonction readline()
 
 Un exemple de lecture :

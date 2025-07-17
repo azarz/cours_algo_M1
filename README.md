@@ -12,57 +12,57 @@ Durée : 16 demi journées.
 ## Programme par demi-journées
 
 ### 1 (matin du 1er octobre 2019)
-[Architecture informatique](Architecture_informatique.md)
+[Architecture informatique](docs/Architecture_informatique.md)
 
-[Validité des calculs dans un ordinateur](Validite_logiciel_numerique.md)
+[Validité des calculs dans un ordinateur](docs/Validite_logiciel_numerique.md)
 
 ### 2 (après-midi du 1er octobre 2019)
-[Théorie de l'algorithmie](Algorithmie.md)
+[Théorie de l'algorithmie](docs/Algorithmie.md)
 
-[Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md)
+[Mise en pratique de la théorie de l'algorithmie.](docs/exercices_algo.md)
 
 ### 3 (matin du 2 octobre 2019)
-[Mise en pratique de la théorie de l'algorithmie.](exercices_algo.md#médiane)
+[Mise en pratique de la théorie de l'algorithmie.](docs/exercices_algo.md#médiane)
 
 ### 4 (après-midi du 2 octobre 2019)
-[Approche diviser pour régner.](diviser_pour_regner.md)
+[Approche diviser pour régner.](docs/diviser_pour_regner.md)
 
 ### 5 & 6 (4 octobre 2019)
-[Introduction à Python.](intro_python.md)
+[Introduction à Python.](docs/intro_python.md)
 
-[Mise en pratique](exercices_algo.md)
+[Mise en pratique](docs/exercices_algo.md)
 
-[Mise en pratique 2](diviser_pour_regner.md#exemple--recherche-dichotomique)
+[Mise en pratique 2](docs/diviser_pour_regner.md#exemple--recherche-dichotomique)
 
 ### 7 (matin du 7 octobre 2019)
-[Introduction à la complexité](Validite_logiciel_numerique.md#complexité-en-algorithmie)
+[Introduction à la complexité](docs/Validite_logiciel_numerique.md#complexité-en-algorithmie)
 
-[Mise en pratique des notions de complexité (Algorithmes de tri)](Validite_logiciel_numerique.md#application--comparaison-de-divers-algorithmes-de-tri)
+[Mise en pratique des notions de complexité (Algorithmes de tri)](docs/Validite_logiciel_numerique.md#application--comparaison-de-divers-algorithmes-de-tri)
 
 ### 8 (après-midi du 7 octobre 2019)
 
-[Introduction à la théorie des graphes.](intro_tdg.md)
+[Introduction à la théorie des graphes.](docs/intro_tdg.md)
 
-[Mise en pratique de la théorie des graphes.](exercices_tdg.md)
+[Mise en pratique de la théorie des graphes.](docs/exercices_tdg.md)
 
 ### 9 (matin du 8 octobre 2019)
-[Mise en pratique de la théorie des graphes.](exercices_tdg.md) (Correction)
+[Mise en pratique de la théorie des graphes.](docs/exercices_tdg.md) (Correction)
 
 ### 10 (matin du 9 octobre 2019)
-[TP Python - Distance entre points](exercices_python.md#distance-entre-des-points)
+[TP Python - Distance entre points](docs/exercices_python.md#distance-entre-des-points)
 
 ### 11 (après-midi du 9 octobre 2019)
-[TP Python - Distance entre points](exercices_python.md#distance-entre-des-points) (Correction)
+[TP Python - Distance entre points](docs/exercices_python.md#distance-entre-des-points) (Correction)
 
-[TP Python - Généralisation cartographique](exercices_python.md#distance-entre-des-points#généralisation-cartographique)
+[TP Python - Généralisation cartographique](docs/exercices_python.md#distance-entre-des-points#généralisation-cartographique)
 
 ### 12 (matin du 11 octobre 2019)
-[TP Python - Généralisation cartographique](exercices_python.md#distance-entre-des-points#généralisation-cartographique) (Correction)
+[TP Python - Généralisation cartographique](docs/exercices_python.md#distance-entre-des-points#généralisation-cartographique) (Correction)
 
-[Utilisation plus avancée de Python](intro_python.md#Documentation)
+[Utilisation plus avancée de Python](docs/intro_python.md#Documentation)
 
 ### 13 & 14 (15 octobre 2019)
-[TP Python - Gestion d'association](exercices_python.md#gestion-dassociation)
+[TP Python - Gestion d'association](docs/exercices_python.md#gestion-dassociation)
 
 ### 15 & 16 (16 octobre 2019)
 TP noté.
