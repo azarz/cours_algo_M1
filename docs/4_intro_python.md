@@ -1,16 +1,13 @@
 # Programmation avec Python
 
-Si vous voulez approfondir le cours, vous pouvez lire le [cours de Python de Clément Delgrange](4.b_Cours_Python.pdf) qui rentre dans beaucoup de détails et dont cette page est un extrait.
-
 ## Introduction
 
 Ce cours est une initiation au langage de programmation Python. Il n'est pas nécessaire de déjà connaître ce langage, ni d'avoir des notions avancées en programmation, pour pouvoir l'aborder. Dans la mesure du possible, chaque notion est illustrée d'exemple. Le cours se concentre sur la description du fonctionnement du langage et des syntaxes employées.
 
-La version 3 de Python est la seule utilisée tout au long du cours.
 
-Pour installer Python chez vous, il peut être pratique d'installer [Anaconda](https://www.anaconda.com/distribution/), ce qui permet d'avoir un environnement semblable à celui de l'école, avec notamment Spyder comme [IDE](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) pour profiter des fonctionnalités vues en cours.
+On utilisera l'[IDE](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) Visual Studio Code [(lien)](https://code.visualstudio.com/), qui permet d'écrire du code pour Python mais aussi bien d'autres langages (web, etc). On installera Python et l'extension Python pour VS Code en suivant le tutotriel suivant : [https://code.visualstudio.com/docs/languages/python](https://code.visualstudio.com/docs/languages/python).
 
-On choisira le package pour la version 3 de Python (3.7 au moment de l'écriture de ce texte) qui correspont à notre système d'exploitation.
+La version 3 de Python est la seule utilisée tout au long du cours. On privilégiera la dernière version (3.13 au moment de l'écriture de ce texte).
 
 ## Types et opérations
 
@@ -319,9 +316,377 @@ with open("fichier.txt", 'r') as fichier:
 
 ## Syntaxe du langage
 
+Au chapitre précédent, nous avons étudié les structures de base intégrées dans le langage Python. Maintenant que nous maîtrisons les différents types de données, nous pouvons commencer à construire nos premières expressions en Python.
+
+Dans ce chapitre, nous allons commencer par rappeler les règles générales de construction des expressions en Python, puis nous apprendrons à construire les structures élémentaires du langage.
+
+
+### Structure du code en Python
+
+En Python, la règle générale est que **la fin d’une ligne correspond à la fin d’une instruction**. Il n’y a pas de symbole de fin d’instruction comme dans d’autres langages.
+
+Exemple en Java :
+
+```java
+instruction1 ;
+instruction2 ;
+```
+
+En Python :
+
+```python
+instruction1
+instruction2
+```
+
+Pour définir un **bloc de code**, Python utilise l’**indentation**. De plus la ligne d’en-tête du bloc se termine par `:` :
+
+```python
+ligne_d_en_tete:
+    bloc_d_instructions
+```
+
+Par exemple, un test en Java :
+
+```java
+if (condition) {
+    instruction1;
+    instruction2;
+}
+```
+
+devient en Python :
+
+```python
+if condition:
+    instruction1
+    instruction2
+```
+
+Les **espaces et sauts de ligne** sont ignorés par l’interpréteur. Le code :
+
+```python
+ligne_d_en_tete:
+
+    instruction1
+
+    instruction2
+```
+
+est équivalent à :
+
+```python
+ligne_d_en_tete:
+    instruction1
+    instruction2
+```
+
+#### Commentaires
+
+- Commentaire simple : commence par `#`
+- Docstrings : délimitées par `"""`
+
+---
+
+### Les affectations
+
+Pour affecter une valeur à une variable :
+
+```python
+a = 3
+```
+
+Affectations multiples :
+
+```python
+a, b = 3, 2
+a = b = c = 3
+```
+
+#### Affectations augmentées
+
+```python
+a = 3
+a += 3  # équivalent à a = a + 3
+```
+
+Opérateurs disponibles : `+=`, `-=`, `*=`, `/=`, `//=`, `%=`, etc.
+
+---
+
+### Les tests
+
+```python
+if condition:
+    instruction1
+    instruction2
+```
+
+#### Avec `else`
+
+```python
+if x >= 0:
+    print("x positif")
+else:
+    print("x négatif")
+```
+
+#### Avec `elif`
+
+```python
+if x > 0:
+    print("x positif")
+elif x < 0:
+    print("x négatif")
+else:
+    print("x est nul")
+```
+
+---
+
+### Les boucles
+
+#### Boucle `while`
+
+```python
+i = 0
+while i < 3:
+    print(i)
+    i += 1
+```
+
+#### Boucle `for`
+
+```python
+for i in [1, 2, 3]:
+    print(i)
+```
+
+Avec `range` :
+
+```python
+for i in range(5):
+    print(i)
+```
+
+#### `break`
+
+Interrompre la boucle :
+
+```python
+for i in range(10):
+    if i == 3:
+        break
+    print(i)
+```
+
+#### `continue`
+
+Passer à l’itération suivante :
+
+```python
+for i in range(5):
+    if i == 2:
+        continue
+    print(i)
+```
 
 ## Modules et fonctions
 
+### Modules
+
+Python propose une grande quantité de **modules** standards. Pour les utiliser, il suffit de les **importer**.
+
+Exemple avec le module `math` :
+
+```python
+import math
+print(math.sqrt(16))  # racine carrée
+```
+
+On peut aussi importer une **fonction spécifique** :
+
+```python
+from math import sqrt
+print(sqrt(25))
+```
+
+Ou tout le module (**fortement déconseillé**) :
+
+```python
+from math import *
+```
+
+Il est également possible de **renommer** un module à l’import :
+
+```python
+import math as m
+print(m.sqrt(36))
+```
+
+### Création de modules
+
+Un module Python est simplement un **fichier `.py`** contenant du code (fonctions, classes, etc.).
+
+Exemple dans `monmodule.py` :
+
+```python
+def bonjour():
+    print("Bonjour depuis monmodule")
+```
+
+Utilisation :
+
+```python
+import monmodule
+monmodule.bonjour()
+```
+
+Le module doit être **dans le même dossier** ou dans le **PYTHONPATH**.
+
+### Fonctions
+
+Les fonctions s’écrivent avec le mot-clé `def` :
+
+```python
+def salut():
+    print("Salut !")
+```
+
+Appel :
+
+```python
+salut()
+```
+
+Avec arguments :
+
+```python
+def dire_bonjour(nom):
+    print("Bonjour", nom)
+
+dire_bonjour("Alice")
+```
+
+Avec valeur de retour :
+
+```python
+def carre(x):
+    return x * x
+
+print(carre(4))  # 16
+```
+
+### Paramètres par défaut
+
+```python
+def saluer(nom="inconnu"):
+    print("Salut", nom)
+
+saluer()
+saluer("Bob")
+```
+
+### Arguments nommés
+
+```python
+def personne(nom, age):
+    print(f"{nom} a {age} ans")
+
+personne(age=30, nom="Alice")
+```
+
+### Portée des variables
+
+- Variables **locales** : définies dans une fonction
+- Variables **globales** : définies hors fonction
+
+```python
+x = 5  # globale
+
+def afficher():
+    x = 10  # locale
+    print(x)
+
+afficher()  # 10
+print(x)    # 5
+```
+
+Pour modifier une variable globale depuis une fonction :
+
+```python
+x = 5
+
+def modifier():
+    global x
+    x = 20
+
+modifier()
+print(x)  # 20
+```
 
 
 ## Documentation et tests
+
+### La documentation
+
+La documentation est essentielle pour expliquer le rôle, le fonctionnement, et les paramètres d’une fonction ou d’un module.
+
+Python permet d’associer une **chaîne de documentation** à une fonction, classe ou module grâce aux **docstrings** :
+
+```python
+def addition(a, b):
+    """Retourne la somme de a et b."""
+    return a + b
+```
+
+On peut consulter cette documentation avec :
+
+```python
+help(addition)
+```
+
+Ou encore :
+
+```python
+print(addition.__doc__)
+```
+
+Les docstrings peuvent suivre la convention [PEP 257](https://peps.python.org/pep-0257/) pour être lisibles par des outils de génération de documentation.
+
+### Les tests
+
+#### Test simple avec `assert`
+
+Pour des tests légers, on peut aussi utiliser `assert` directement dans le code :
+
+```python
+def somme(a, b):
+    return a + b
+
+assert somme(2, 3) == 5
+assert somme(-1, 1) == 0
+```
+
+Si l’assertion échoue, Python lève une exception `AssertionError`.
+
+#### Contexte d'exécution des tests
+
+Une manière d'exécuter les tests est d'appeler les fonctions et de faire des assertions au niveau du module, dans un bloc `if __name__ == "__main__"`:
+
+```python
+# fichier somme.py
+def somme(a, b):
+    return a + b
+
+if __name__ == "__main__": # sera exécuté avec la commande `python somme.py`, ne sera pas exécuté avec la commande `pyton main.py`
+    print("Testing somme.py...")
+    assert somme(2, 3) == 5
+    assert somme(-1, 1) == 0
+```
+```python
+# fichier main.py
+import somme as s
+
+print(s.somme(3, 4))
+```

@@ -10,7 +10,6 @@ nav:
     - 4 - Introduction à Python:
         - "Introduction à Python": 4_intro_python.md
         - "Exercices": 4.c_exercices_python.md
-        - "Cours détaillé (pdf)": 4.b_Cours_Python.pdf
     - 5 - Introduction à la Théorie des Graphes:
         - "Introduction à la Théorie des Graphes": 5_intro_tdg.md
         - "Exercices": 5.c_exercices_tdg.md
