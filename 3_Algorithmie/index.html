@@ -1,0 +1,1448 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../2_Validite_logiciel_numerique/">
+      
+      
+        <link rel="next" href="../3.b_diviser_pour_regner/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Introduction à l'algorithmie - Cours d'initiation à l'algorithmie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objectifs" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-header__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours d'initiation à l'algorithmie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction à l'algorithmie
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-nav__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    Cours d'initiation à l'algorithmie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil & Déroulement des séances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Architecture_logicielle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Architecture logicielle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_Validite_logiciel_numerique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Validité Logiciel Numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3 - Algorithmie
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3 - Algorithmie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction à l'algorithmie
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à l'algorithmie
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-a-lalgorithmie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à l'algorithmie
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction à l'algorithmie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-et-affectation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable et affectation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operateurs-et-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opérateurs et expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boucles-avec-bornes-et-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles avec bornes et pas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucles-tant-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles tant que
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorties-de-boucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sorties de boucle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucles-ensembliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles ensembliste
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalences-de-boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equivalences de boucles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinaisons-de-boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinaisons de boucles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-test-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le test simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-test-a-choix-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le test à choix multiple
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les fonctions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les fonctions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursivite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Récursivité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.b_diviser_pour_regner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approche 'diviser pour mieux règner'
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4 - Introduction à Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4 - Introduction à Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_intro_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5 - Introduction à la Théorie des Graphes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5 - Introduction à la Théorie des Graphes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_intro_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.b_Cours_tdg.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours détaillé (pdf)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices d'Algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-a-lalgorithmie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction à l'algorithmie
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction à l'algorithmie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variable-et-affectation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variable et affectation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operateurs-et-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opérateurs et expressions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boucles-avec-bornes-et-pas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles avec bornes et pas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucles-tant-que" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles tant que
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sorties-de-boucle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sorties de boucle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucles-ensembliste" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucles ensembliste
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equivalences-de-boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equivalences de boucles
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinaisons-de-boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Combinaisons de boucles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-test-simple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le test simple
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-test-a-choix-multiple" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le test à choix multiple
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les fonctions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les fonctions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recursivite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Récursivité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Introduction à l'algorithmie</h1>
+
+<h3 id="objectifs">Objectifs</h3>
+<ul>
+<li>Savoir écrire des algorithmes en pseudo code;</li>
+<li>Notamment, des applications aux cas de la géomatique.</li>
+</ul>
+<h3 id="pre-requis">Pré-requis</h3>
+<p>Aucun</p>
+<h2 id="introduction-a-lalgorithmie">Introduction à l'algorithmie</h2>
+<p>Les grandes phases de la conception d'un programme sont : l'analyse, l'algorithmie et la programmation.</p>
+<p><img alt="Étapes de la programmation" src="../img/etapes_prog.png" /></p>
+<p>Cette partie du cours se concentre sur la seconde phase : l'écriture d'algorithmes. Les méthodes d'analyse seront étudiées ultérieurement. Pour la programmation, nous nous appuierons sur le langage Python pour illustrer lors de ce cours la dernière phase de réalisation d'un logiciel.</p>
+<p>La programmation doit se résumer à transposer dans un langage de programmation des algorithmes déjà écrits lors de la formulation de la solution.</p>
+<h3 id="definition">Définition</h3>
+<blockquote>
+<p>Un algorithme est l'expression claire et condensée d'un ensemble de traitements à effectuer pour résoudre un problème.</p>
+</blockquote>
+<p>Comme pour les langages de programmation, il existe différents langages d'algorithmie (comme le pseudo-code paar exemple qui est souvent utilisé). Dans ce cours nous utiliserons le langage ADL qui présente l'avantage de posséder une syntaxe très concise et plus abstraite.</p>
+<p>Un programme est l'implémentation d'un algorithme dans un langage de programmation donné. L'algorithme se différencie notamment du programme par son indépendance à l'architecture d'une machine : on n'a par exemple pas à se soucier dans un algorithme de la gestion de la mémoire comme on devrait le faire en C.</p>
+<p>L'intérêt de passer par une phase d'algorithmie avant de commencer à coder est donc de pouvoir se concentrer sur les méthodes plutôt que sur les spécificités d'un langage de programmation.</p>
+<p>Pour écrire des algorithmes, nous utiliserons un pseudo-code, c'est-à-dire des instructions écrites ne dépendant d'aucun langage de programmation.</p>
+<h3 id="variable-et-affectation">Variable et affectation</h3>
+<p>Pour résoudre un problème, un algorithme décrit une suite d'opérations à effectuer. Pour ce faire, nous allons avoir besoin de manipuler des valeurs (résultats de calculs, données saisies par l'utilisateur...). A chaque fois que nous aurons besoin de stocker une information, nous utiliserons une <strong>variable</strong>.</p>
+<blockquote>
+<p>Une variable permet d'associer un <em>nom</em> à une <em>valeur</em>, cette dernière pouvant évoluer au cours de l'algorithme.</p>
+</blockquote>
+<p>De manière imagée, une variable est une boîte, identifiée à l'aide d'une étiquette (son nom), dans laquelle une donnée (sa valeur) peut être stockée. Bien entendu, un ordinateur n'est pas composé de boîte, ni d'étiquettes : la mémoire de l'ordinateur est composée d'emplacement repéré par leur adresse binaire.</p>
+<p>L'instruction qui permet de créer une variable, c'est à dire de lui donner un nom, est appellée la <strong>déclaration</strong>. En programmation, avec certains langages, il ne suffit pas de donner un nom à une variable pour pouvoir la déclarer : il faut également préciser le type de données qu'elle contiendra. Cet aspect ne concerne pas l'algorithmie.</p>
+<p>Le nom de la variable est composé de lettres majuscules ou minuscules (la distinction est respectée), des chiffres et le caractère blanc souligné. Il ne peut commencer que par une lettre. Le caractère blanc souligné ne peut être écrit deux fois consécutivement, ni terminer le nom de variable. On parle également d'<em>identificateur</em> pour le nom de variable.</p>
+<p>L'<strong>affectation</strong> est, quand à elle, l'opération consistant à associer une valeur à une variable.</p>
+<p>On utilisera comme symbole de l'affectation le symbole <code>=</code></p>
+<p>Exemple : j'affecte la valeur 4 à la variable mon_entier
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mon_entier = 4
+</span></code></pre></div></p>
+<h3 id="operateurs-et-expressions">Opérateurs et expressions</h3>
+<blockquote>
+<p>Un opérateur est un signe qui relie deux valeurs pour produire un résultat.</p>
+</blockquote>
+<p>Assez naturellement les opérateurs dépendent du types des valeurs sur lesquels ils s'appliquent : diviser des chaînes de caractères n'a pas de sens par exemple.</p>
+<p>Nous ne présenterons dans ce paragraphe que les opérateurs de base, déjà connus de tous, sans rechercher l'exhaustivité. Nous introduirons petit à petit dans la suite du cours les différents opérateurs qui nous seront utiles.</p>
+<ul>
+<li>opérateurs arithmétiques : + - * / ^ % (modulo)</li>
+<li>comparateurs : &lt; &lt;= = != &gt;= &gt;</li>
+<li>opérateurs logiques : ET OU NON</li>
+<li>opérateur de concaténation : &amp;</li>
+</ul>
+<blockquote>
+<p>Une expression représente une succession d'opérations sur des valeurs. Le résultat de l'expression équivaut à une seule valeur.</p>
+</blockquote>
+<p>Exemple :</p>
+<ul>
+<li>4 + 3</li>
+<li>"bla" &amp; "bla" &amp; "bla"</li>
+</ul>
+<h3 id="instructions">Instructions</h3>
+<blockquote>
+<p>Une instruction désigne une étape d'un algorithme.</p>
+</blockquote>
+<p>L'affectation est un exemple d'instruction : <code>a = 4</code>. Les boucles ou tests que nous étudierons dans les prochaines parties sont d'autres types d'instructions de base qui sont fréquement utilisées en algorithmie.</p>
+<p>Considérons l'algorithme suivant :
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>a = 4
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>b = 2
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>c = a + b
+</span></code></pre></div></p>
+<p>Il est composé de 3 instructions : 2 affectations et une opération qui permet d'effectuer la somme des deux variables a et b pour l'affecter à une troisième (c).</p>
+<p>Nous entendrons parfois parler de <strong>bloc d'instructions</strong>. Il s'agit simplement de plusieurs instructions qui sont exécutées successivement. Un algorithme est ainsi constitué d'un ou plusieurs blocs d'instructions.</p>
+<h3 id="boucles">Boucles</h3>
+<p>La notion de boucle est fondamentale en algorithmie.</p>
+<blockquote>
+<p>Une boucle permet de répéter plusieurs fois un bloc d'instructions.</p>
+</blockquote>
+<p>Imaginons que nous voulions ajouter 1 aux valeurs contenues dans un tableau T de trois éléments (T<sub>0</sub>, T<sub>1</sub> et T<sub>2</sub>). L'algorithme naïf serait le suivant :</p>
+<p>T<sub>0</sub> = T<sub>0</sub> + 1;
+T<sub>1</sub> = T<sub>1</sub> + 1;
+T<sub>2</sub> = T<sub>2</sub> + 1;</p>
+<p>Nous recopions en fait trois fois quasiment la même chose, ce qui est inutile et devriendrait très fastidieux si nous devions travailler sur un tableau avec 10000 éléments...</p>
+<p>Il est alors plus élégant d'abstraire un peu la méthode en écrivant : T<sub>i</sub> = T<sub>i</sub> + 1  et en faisant varier la valeur de i qui est la seule chose qui change dans les opérations à réaliser.</p>
+<p>Ce faisant, nous utilisons une boucle sur i, qui est alors appellée variable muette.</p>
+<p>Remarque : nous pouvons appeler cette variable muette j, k, l ou n'importe quoi d'autre; la lettre i est habituellement choisie car, en fait, il s'agit d'un <em>itérateur</em>.</p>
+<h4 id="boucles-avec-bornes-et-pas">Boucles avec bornes et pas</h4>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Pour i allant de bi à bf avec un pas de p
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    bloc d&#39;instructions
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Fin pour
+</span></code></pre></div>
+<ul>
+<li>i est le compteur de la boucle</li>
+<li>bi la borne initiale</li>
+<li>bf la borne finale</li>
+<li>p le pas</li>
+</ul>
+<p>Compteur, bornes et pas sont de type entier. Les bornes et le pas peuvent être peuvent être des identificateurs, des constantes ou encore des expressions.</p>
+<p>A l'entrée dans la boucle, i prend la valeur de la borne initiale bi et à chaque passage dans la boucle, le compteur i est incrémenté de la valeur du pas p. Lorsque i atteint une valeur strictement supérieure à la borne finale bf, le programme sort de la boucle.</p>
+<p>Dans le langage courant, on parle plus volontier de <em>boucle for</em>. Elle est présentée comme la plus simple, car c'est celle dans laquelle sont précisés la totalité des bornes ainsi que le pas d'incrément (le nombre qui s'ajoute à la variable muette entre deux étapes).</p>
+<p>Lorsque la pas est égal à 1, ce qui est le plus courant, il n'est pas obligatoire de l'écrire.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Pour i allant de bi à bf avec un pas de 1
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Pour i allant de de bi à bf
+</span></code></pre></div>
+<p>Si nous retournons à notre exemple initial, nous pouvons maintenant simplement écrire :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Pour i allant de de 0 à 2
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    T[i] = T[i] + 1
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Fin pour
+</span></code></pre></div>
+<p>Note : une fois sorti de la boucle, le compteur n'a plus aucune valeur. Il est ainsi possible d'enchaîner deux boucles avec un compteur nommé, dans les deux cas, i sans que cela pose de problème.</p>
+<h4 id="boucles-tant-que">Boucles tant que</h4>
+<p>La boucle <em>tant que</em>, ou boucle <em>while</em>, permet d'éxécuter un bloc d'instructions tant qu'une condition est réalisée. Elle comporte une condition qui est testée avant chaque passage dans la boucle (y compris lors du premier passage).
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Tant que condition
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    bloc d&#39;instructions
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Fin tant que
+</span></code></pre></div></p>
+<p>Par exemple :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>n = 0
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Tant que n &lt; 5
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    n = n + 1
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Fin tant que
+</span></code></pre></div>
+<p>ajoute 1 à la valeur de la variable n à chaque passage dans la boucle tant que la valeur de n est inférieur à 5. Ainsi, à la sortie de la boucle, n vaut 5.</p>
+<h4 id="sorties-de-boucle">Sorties de boucle</h4>
+<p>Pour des raisons de simplification des algorithmes (pour éviter de parcourir un bloc d'inscruction si cela n'a pas d'intérêt dans la résolution du problème), il est utile de disposer d'<em>opérateurs de débranchement</em> qui permettent de passer directement à la valeur suivante de l'itérateur ou de sortir directement de la boucle en cours.</p>
+<p>Ces deux <em>fonctionnalité</em> des boucles sont notées :</p>
+<ul>
+<li><em>continue</em>, qui permet de passer à la valeur suivante;</li>
+<li><em>break</em>, qui permet de sortir de la boucle, les expressions conservent leurs valeurs, et on continue l'exécution du programme à partir de la première expression qui suit la fin de boucle courante (c'est à dire à la suite de l’accolade fermante).</li>
+</ul>
+<h4 id="boucles-ensembliste">Boucles ensembliste</h4>
+<p>La boucle ensembliste est utilisé pour extécuter un bloc d'instructions sur toutes les entités d'un ensemble d'éléments.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Pour elem dans tabl
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>    bloc d&#39;instructions
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Fin pour
+</span></code></pre></div>
+<p>Par exemple, si <code>premiers</code> est l'ensemble des nombres premiers inférieurs à 100, l'algorithme suivant calcule la somme de ses nombres premiers :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>resultat = 0
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Pour nb_premier dans premiers
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    resultat = resultat + nb_premier
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>Fin pour
+</span></code></pre></div>
+<p>La boucle ensembliste est essentiellement utilisée pour la gestion des listes que nous étudierons ultérieurement.</p>
+<h4 id="equivalences-de-boucles">Equivalences de boucles</h4>
+<p>Nous remarquerons qu'un algorithme écrit avec une boucle <em>avec borne et pas</em> pourra également l'être avec une boucle <em>tant que</em>.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>n = 0
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Pour i allant de 0 à 4
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>    n = n + i
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>Fin pour
+</span></code></pre></div>
+<p>Est équivalent, avec une boucle <em>tant que</em> à :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>n = 0
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>i = 0
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Tant que i &lt; 5
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>    n = n + i
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    i = i + 1
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Fin tant que
+</span></code></pre></div>
+<p>De manière plus générale, il sera souvent possible d'écrire un algorithme en utilisant l'un ou l'autre des types de boucle. Il arrivera qu'un type de boucle soit plus adapté dans un contexte particulier.</p>
+<h4 id="combinaisons-de-boucles">Combinaisons de boucles</h4>
+<p>Si les boucles peuvent être imbriquées les unes dans les autres ou successives, elles ne peuvent jamais être croisées.</p>
+<p>Par exemple, pour calculer la somme des éléments d'une matrice (notée <code>mat</code>, de <code>n</code> lignes et <code>p</code> colonnes, <code>mat[i][j]</code> étant l'élément à la i-ème ligne et j-ième colonne), nous écrirons l'algorithme suivant :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>s = 0
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Pour i allant de 0 à n - 1
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    Pour j allant de 0 à p - 1
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        s = s + mat[i][j]
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    Fin pour
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>Fin pour
+</span></code></pre></div>
+<h3 id="les-tests">Les tests</h3>
+<p>Nous étudierons dans ce paragraphe les <em>tests "simples"</em> et les <em>tests à choix multiples</em> qui sont deux structures alternatives.</p>
+<h4 id="le-test-simple">Le test simple</h4>
+<p>Imaginons que nous voulions écrire un programme permettant de déterminer si un nombre entier est pair, par exemple pour savoir si une adresse se situe du côté gauche ou droit d'une rue. La structure générale du programme serait la suivante :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Si le nombre est pair alors
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    adresse côté droit
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Sinon
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    adresse côté gauche
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Fin si
+</span></code></pre></div>
+<p>Précisons que les blocs d'instructions des parties <em>si</em> et <em>sinon</em> peuvent être vides (l'un ou l'autre, les deux vides n'ayant aucun intérêt).</p>
+<p>Par exemple, si nous souhaitons déterminer le maximum de deux variables A et B pour le mettre dans une variable max, nous pouvons écrire l'algorithme suivant :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Si a &gt; b alors
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    max = a
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>Sinon
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    max = b
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>Fin si
+</span></code></pre></div>
+<h4 id="le-test-a-choix-multiple">Le test à choix multiple</h4>
+<p>Il est parfois nécessaire d'évaluer plusieurs cas pour déterminer l'action à effectuer. Immaginons par exemple vouloir écrire un programme calculant le nombre de jours d'un mois donné. La structure générale du programme serait la suivante :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Si le numéro du mois est 1, 3, 5, 7, 8, 10 ou 12 alors
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>    le mois compte 31 jours
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Fin si
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Si le numéro du mois est 4, 6, 9, 11 alors
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    le mois compte 30 jours
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>Fin si
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>Si le numéro du mois est 2 alors
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>    Si l&#39;année est bisextile alors
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>        le mois compte 29 jours
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>    Sinon
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>        le moins compte 28 jours
+</span><span id="__span-15-12"><a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>    Fin si
+</span><span id="__span-15-13"><a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>Fin si
+</span><span id="__span-15-14"><a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>Si le numéro de mois est supérieur à 12 alors
+</span><span id="__span-15-15"><a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>    il y a un problème
+</span><span id="__span-15-16"><a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>Fin si
+</span></code></pre></div>
+<p>Il est tout à fait possible d'enchaîner les conditions comme nous l'avons fait ci-dessus, mais cela n'est pas très élégant. A la place, on préférera utiliser la structure du test à choix multiples :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Selon le numéro du mois
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    cas 1  instruction 1
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    cas 2  instruction 2
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    ....
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>    sinon  instuction n
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>Fin selon
+</span></code></pre></div>
+<h3 id="les-fonctions">Les fonctions</h3>
+<p>Lors de l'écriture de programmes, nous allons être confronté à une réalité : les mêmes problèmes reviennent avec une récurrence importante. Aussi afin de ne pas avoir à ré-écrire les mêmes portions de code à chaque fois, nous allons utiliser une structure permettant de faire référence facilement à tout un ensemble d'instructions : les <strong>fonctions</strong>.</p>
+<p>Nous verrons que l'organisation des algorithmes en fonctions facilite également leur compréhension : au lieu d'avoir un bloc contenant de nombreuses instructions, nous manipulerons plusieurs blocs d'instructions réalisant chacun une tache très spécifique.</p>
+<h4 id="definition_1">Définition</h4>
+<blockquote>
+<p>Une fonction est une séquence d'instructions, identifiée par un nom, et fonctionnnant à l'aide <em>paramètres</em>.</p>
+</blockquote>
+<p>Une fonction est composée de deux parties : une <strong>en-tête</strong>, définissant le nom et les paramètres, et un <strong>corps</strong>, décrivant ce qu'effectue l'algorithme.</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Fonction ǹom_de_la_fonction (a,  b,  c)
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    bloc d&#39;instructions
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Fin fonction
+</span></code></pre></div>
+La syntaxe pour l'appel d'une fonction est la suivante :
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>ǹom_de_la_fonction(a, b, c)
+</span></code></pre></div></p>
+<p>Une fonction peut éventuellement retourner une valeur. On utilisera alors l'instruction <code>Retourner</code> :</p>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Fonction plus_un (a)
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    Retourner a + 1
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Fin fonction
+</span></code></pre></div>
+Pour l'appel d'une fonction retournant une valeur et l'affectation de cette valeur, on écrira :
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>a_plus_un = plus_un(a)
+</span></code></pre></div>
+L'instruction <code>Retourner</code> correspond à la fin de la fonction. Toutes les instructions situées dans la fonction mais après l'instruction <code>Retourner</code> ne seront pas executées.</p>
+<p>Remarque : on pourra parler de procédure pour une fonction ne retournant aucune valeur, et de fonction (tout court) pour celles retournant une valeur.</p>
+<h3 id="recursivite">Récursivité</h3>
+<p>Un algorithme est dit récursif s'il est défini à partir de lui même.</p>
+<p>On prendra pour exemple la fonction qui calcule la somme des n premiers entiers. En mode itératif, elle s'écrit :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Fonction somme(n)
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>  res = 0
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>  Pour i allant de 0 à n
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    res = res + i
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>  Fin pour
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>  Retourner res
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>Fin fonction
+</span></code></pre></div>
+<p>En mode récursif, on l'écrira :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Fonction somme_recursive(n)
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>  Si n = 0
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>    Retourner 0
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>  Sinon
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>    res = n + somme_recursive(n-1)
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    Retourner res
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>  Fin si
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>Fin fonction
+</span></code></pre></div>
+<p>Pour bien se convaincre que ça marche (car le fonctionnement est contre-intuitif), on peut dérouler les étapes réalisées par la fonction.</p>
+<p>En faisant cela, on remarque que la condition d'arrêt des appels récursifs est primordiale, car sinon la fonction s'exécuterait à l'infini.</p>
+<p>La récursivité est similaire aux démonstrations par récurrence : la condition d'arrêt correspond au cas trivial (initiation), et la partie recursive à l'hérédité.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

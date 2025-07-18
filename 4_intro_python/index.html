@@ -1,0 +1,2191 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../3.c_exercices_algo/">
+      
+      
+        <link rel="next" href="../4.c_exercices_python/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Introduction à Python - Cours d'initiation à l'algorithmie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programmation-avec-python" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-header__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours d'initiation à l'algorithmie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction à Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-nav__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    Cours d'initiation à l'algorithmie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil & Déroulement des séances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Architecture_logicielle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Architecture logicielle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_Validite_logiciel_numerique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Validité Logiciel Numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3 - Algorithmie
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3 - Algorithmie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Algorithmie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à l'algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.b_diviser_pour_regner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approche 'diviser pour mieux règner'
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4 - Introduction à Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4 - Introduction à Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction à Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à Python
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programmation-avec-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programmation avec Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programmation avec Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-et-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types et opérations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types et opérations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-et-types-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables et types en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables et types en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Généralités
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types de base
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-types-numeriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les types numériques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-booleens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les booléens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-type-rien" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le type 'rien'
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les chaînes de caractères
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les chaînes de caractères">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-dune-chaine-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'une chaîne de caractères
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulation-de-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulation de chaînes de caractères
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les listes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-dictionnaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les dictionnaires
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les fichiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chemin-dacces-aux-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chemin d'accès aux fichiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ouverture-dun-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ouverture d'un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lecture-dun-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lecture d'un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecriture-dans-un-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ecriture dans un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#louverture-avec-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'ouverture avec with
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntaxe-du-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe du langage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntaxe du langage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-du-code-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure du code en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure du code en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commentaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentaires
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-affectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les affectations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les affectations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#affectations-augmentees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affectations augmentées
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-elif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec elif
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les boucles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les boucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucle-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    <span class="md-ellipsis">
+      break
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      continue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules-et-fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules et fonctions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules et fonctions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-de-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création de modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametres-par-defaut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paramètres par défaut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arguments-nommes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments nommés
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portee-des-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Portée des variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-et-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation et tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation et tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      La documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tests_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-simple-avec-assert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test simple avec assert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexte-dexecution-des-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexte d'exécution des tests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5 - Introduction à la Théorie des Graphes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5 - Introduction à la Théorie des Graphes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_intro_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.b_Cours_tdg.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours détaillé (pdf)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices d'Algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#programmation-avec-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Programmation avec Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Programmation avec Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-et-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types et opérations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types et opérations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables-et-types-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables et types en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Variables et types en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generalites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Généralités
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-de-base" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types de base
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-types-numeriques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les types numériques
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-booleens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les booléens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-type-rien" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le type 'rien'
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les chaînes de caractères
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les chaînes de caractères">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creation-dune-chaine-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création d'une chaîne de caractères
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manipulation-de-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulation de chaînes de caractères
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les listes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-dictionnaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les dictionnaires
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les fichiers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les fichiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chemin-dacces-aux-fichiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chemin d'accès aux fichiers
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ouverture-dun-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ouverture d'un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lecture-dun-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lecture d'un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ecriture-dans-un-fichier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ecriture dans un fichier
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#louverture-avec-with" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'ouverture avec with
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syntaxe-du-langage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntaxe du langage
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Syntaxe du langage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#structure-du-code-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure du code en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structure du code en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commentaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Commentaires
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-affectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les affectations
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les affectations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#affectations-augmentees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affectations augmentées
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-else" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec else
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-elif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec elif
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-boucles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les boucles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les boucles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boucle-while" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle while
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boucle-for" class="md-nav__link">
+    <span class="md-ellipsis">
+      Boucle for
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#break" class="md-nav__link">
+    <span class="md-ellipsis">
+      break
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#continue" class="md-nav__link">
+    <span class="md-ellipsis">
+      continue
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules-et-fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules et fonctions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modules et fonctions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-de-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Création de modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fonctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametres-par-defaut" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paramètres par défaut
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arguments-nommes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arguments nommés
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portee-des-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Portée des variables
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#documentation-et-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation et tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation et tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      La documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-tests_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-simple-avec-assert" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test simple avec assert
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contexte-dexecution-des-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexte d'exécution des tests
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Introduction à Python</h1>
+
+<h2 id="programmation-avec-python">Programmation avec Python</h2>
+<h3 id="introduction">Introduction</h3>
+<p>Ce cours est une initiation au langage de programmation Python. Il n'est pas nécessaire de déjà connaître ce langage, ni d'avoir des notions avancées en programmation, pour pouvoir l'aborder. Dans la mesure du possible, chaque notion est illustrée d'exemple. Le cours se concentre sur la description du fonctionnement du langage et des syntaxes employées.</p>
+<p>On utilisera l'<a href="https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement">IDE</a> Visual Studio Code <a href="https://code.visualstudio.com/">(lien)</a>, qui permet d'écrire du code pour Python mais aussi bien d'autres langages (web, etc). On installera Python et l'extension Python pour VS Code en suivant le tutotriel suivant : <a href="https://code.visualstudio.com/docs/languages/python">https://code.visualstudio.com/docs/languages/python</a>.</p>
+<p>La version 3 de Python est la seule utilisée tout au long du cours. On privilégiera la dernière version (3.13 au moment de l'écriture de ce texte).</p>
+<h3 id="types-et-operations">Types et opérations</h3>
+<p>Ce chapitre va nous permettre de commencer à utiliser le langage Python. Nous nous limiterons pour commencer à des opérations basiques comme des opérations mathématiques ou des manipulations de chaînes de caractères. Plus précisément, nous nous limiterons dans ce chapitre aux opérations sur des types de base définis dans le langage.</p>
+<p>Avant cela, nous définirons ce que sont une variable et un type en informatique. Nous introduirons un concept important en Python, le typage dynamique, et montrerons comment sont gérées données dans ce langage.</p>
+<h4 id="variables-et-types-en-python">Variables et types en Python</h4>
+<h5 id="generalites">Généralités</h5>
+<p>La programmation consiste essentiellement à manipuler des données. Ces données de natures diverses sont stockées sous forme binaire dans la mémoire de l'ordinateur. Pour y accéder, un programme définit des <strong>variables</strong>.</p>
+<p>Nous définirons ainsi une variable comme l'association d'un nom et d'une valeur. Le nom est utile au programmeur pour savoir quelle donnée il manipule, tandis que l'ordinateur utilise la valeur associée. De manière imagée, le nom peut être vu comme une simple étiquette sur une donnée.</p>
+<p>En Python, le nom (on parle parfois d'identificateur) :
+  + ne peut contenir que des lettres, des chiffres et des blancs soulignés;
+  + ne peut pas contenir d'espace ou de caractères spéciaux (&amp;, ;...);
+  + ne peut pas commencer par un chiffre;
+  + distingue minuscules et majuscules (on dit que le langage est sensible à la casse);
+  + doit être unique. Par convention, pour les noms de variable, on séparera les mots par des blancs soulignés : mon_nom_de_variable. Les noms de variable commençant par deux _ et se terminant par deux _ sont réservés au langage (exemple : <strong>str</strong>). Certains mots-clé sont également réservés par le langage. Il n'est pas possible de créer une variable portant l'un de ces noms : <code>and else in return as except is true assert false lambda try break finally none while class for nonlocal with continue from not yield def global or del if pass elif import raise</code> (<a href="https://docs.python.org/3.3/reference/lexical_analysis.html#keywords">liste exhaustive sur la documentation officielle</a>)</p>
+<p>En Python, la valeur d'une variable est une référence vers une adresse mémoire (un emplacement précis dans la mémoire vive de l'ordinateur). Le contenu de la variable est stocké à cette adresse mémoire sous forme d'une suite de nombres binaires. Pour distinguer les différents contenus, les langages de programmation utilisent des types de variable qui permettent de spécifier le contenu attendu.</p>
+<p>Contrairement à d'autres langages, il n'est pas nécessaire de déclarer le type d'une variable avant de pouvoir l'utiliser. Plus précisément, l'interpréteur Python détecte lui-même le type de l'objet en référence lorsque la variable est utilisée dans une expression.</p>
+<p>Par exemple, lorsque l'on écrit <code>x = 3</code>, on crée une variable <code>x</code> à laquelle on associe l'objet 3 qui est stocké dans la mémoire de l'ordinateur. L'interpréteur Python détecte que 3 est un nombre entier et associe donc ce type à la variable <code>x</code>.</p>
+<p>À retenir :
+ + une variable est créée lorsqu'on lui affecte pour la première fois une valeur;
+ + une variable n'est jamais associée à un type en Python. C'est l'objet qu'elle référence qui porte le type;
+ + une variable est automatiquement remplacée par l'objet qu'elle référence dans une expression.</p>
+<h5 id="types-de-base">Types de base</h5>
+<p>Python met à disposition du programmeur un certain nombre de types ou structures de données. On parle de types intégrés (builtins). Il est également possible de définir ses propres structures de données.</p>
+<p>Quel est donc l'intérêt d'utiliser les structures de données intégrés au langage ? Tout d'abord, nous remarquerons que ces types de base sont des composants naturels des structures manipulées dans les programmes (on manipule naturellement des entiers, des chaînes de caractères). Cela facilite donc grandement la programmation : il n'y a pas besoin de tout redéfinir pour chaque nouveau programme. Enfin, ces structures de données sont plus effcaces que des structures de données que l'on aurait reconstruites (les algorithmes ont été optimisés, écrit dans des langages performants comme le C).</p>
+<p>| Type | Exemples de valeur |
+| Nombre | 3, 1.1456, -3.5 |
+| Chaîne de caractères | 'mot', 'petit texte' |
+| Liste | [1, 2, 3], ['a', 'b'], ['a', 5, 2.3, 'f'] |
+| Tuple | (1, 3), ('a', 'b', 'c') |
+| Ensemble | set('abc'), 'a', 'b', 'c' |
+| Dictionnaire | 1 :'a', 2 :'b'  |
+| Fichier | open('fichier.txt') |
+| Booléen | True, False |
+| Rien | None |</p>
+<h4 id="les-types-numeriques">Les types numériques</h4>
+<p>Les nombres sont des objets relativement basiques et dont l'utilisation est assez naturelle. Python inclus les types numériques "classiques", que l'on retrouve dans la plupart des langages de programmation : nombres entier, nombres à virgule; mais également d'autres moins courants : nombres complexes, nombres rationnels. Ces types couvrent la plupart des besoins standards.</p>
+<p>| Type | Exemple de valeur |
+| Integer | 2, -3, 156235789 |
+| Float | 2.3, -4.12, 1.0, 189489.23891 |
+| Complex | 2 + 3j |
+| Decimal | Decimal('0.1') |
+| Fraction | Fraction(1, 3) |</p>
+<p>Les nombres Python supportent les opérations mathématiques classiques listées dans la table c-dessous. Dans le cas d'expression avec des parenthèses, Python applique la règle mathématique classique et calcule en premier les sous-expressions entre parenthèses.</p>
+<p>| Opérateur | Signification |
+| + | Addition |
+| - | Soustraction |
+| * | Multiplication |
+| ** | Puissance |
+| / | Division |
+| // | Division entière |
+| % | Reste d'une division entière (modulo) |</p>
+<p>On pourra convertir un nombre quelconque en nombre entier via la fonction <code>int()</code> ou en nombre réel via la fonction <code>float()</code></p>
+<h4 id="les-booleens">Les booléens</h4>
+<p>Une variable de type booléen ne pourra prendre que deux valeurs : <code>True</code> (vrai) et <code>False</code> (faux).</p>
+<p>Les opérations logiques retournent des booléens. La table suivante liste les opérateurs de comparaison. Ces opérateurs s'appliquent à tous les types de données, à condition que les types soient comparables (comparer 5 à "toto" n'a pas vraiment de sens).</p>
+<p>| Opérateur | Signification |
+| &gt; | Supérieur |
+| &lt; | Inférieur |
+| &gt;= | Supérieur ou égal |
+| &lt;= | Inférieur ou égal |
+| == | Egal |
+| != ou &lt;&gt; | Différent de |
+| is | Objet identique |
+| is not | Objet différent |</p>
+<p>Dans l'exemple ci-dessous, nous affectons à <code>x</code> le résultat de la comparaison <code>3 != 5</code>. Ce résultat est un booléen :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span> <span class="o">!=</span> <span class="mi">5</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kc">True</span>
+</span></code></pre></div></p>
+<p>Le booléens peuvent être combinées entre eux à l'aide des mots clé <code>and</code>, <code>or</code> et <code>not</code>.</p>
+<p>Mini-exo : table de vérité</p>
+<h4 id="le-type-rien">Le type 'rien'</h4>
+<p>Python propose un type spécial qui ne peut prendre qu'une seule valeur possible, <code>None</code>, et qui est utilisé pour signifier qu'une variable ne contient rien. Ou plus exactement, elle référence un objet et cet objet est l'objet "rien".</p>
+<p>Il s'agit d'une valeur qui est utilisée par défaut lorsqu'une opération n'a pas de retour explicite ou n'a pas pu être menée à son terme. Le type "rien" est ainsi utilisé pour vérifier que des parties de programme ont correctement fonctionné.</p>
+<h4 id="les-chaines-de-caracteres">Les chaînes de caractères</h4>
+<h5 id="creation-dune-chaine-de-caracteres">Création d'une chaîne de caractères</h5>
+<p>Les apostrophes et guillemets s'utilisent indifféremment pour définir une chaîne de caractères <code>"..."</code> ou <code>'...'</code>.</p>
+<p>L'intérêt d'utiliser l'une ou l'autre des deux formes est de pouvoir intégrer des apostrophes ou guillemets dans une chaîne :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="s2">&quot;aujourd&#39;hui&quot;</span><span class="p">,</span> <span class="s1">&#39;le type &quot;rien&quot;&#39;</span>
+</span></code></pre></div></p>
+<p>Le caractère d'échappement dans une chaîne de caractères est le backslash <code>\</code>.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="s1">&#39;aujourd</span><span class="se">\&#39;</span><span class="s1">hui&#39;</span>
+</span></code></pre></div></p>
+<p>Python propose un troisième mode de définition de chaînes de caractères qui commence et se termine par trois guillemets : <code>"""..."""</code>. Cette syntaxe permet de conserver la mise en forme d'un bloc de texte.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w"> </span><span class="sd">&quot;&quot;&quot;Les trois quotes : permettant d&#39;enregistrer la mise en forme.</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">=&gt; y compris les sauts de ligne</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">, les tabulations...&quot;&quot;&quot;</span>
+</span></code></pre></div></p>
+<h5 id="manipulation-de-chaines-de-caracteres">Manipulation de chaînes de caractères</h5>
+<p>Les opérateurs suivants sont applicables aux chaînes de caractères.</p>
+<p>| Opérateur | Signification |
+| + | Concaténation de chaînes de caractères |
+| * | Répétition d'une chaîne de caractères |
+| <code>in</code> | Inclusion d'une chaîne dans une autre |
+| <code>not in</code> | Non inclusion d'une chaîne dans une autre |
+| <code>[i]</code> | Caractère à la i-ième position dans la chaîne |
+| <code>[i:j]</code> | Caractères compris entre les i-ième et j-ième positions |</p>
+<p>De plus, on peut appliquer de nombreuses fonctions aux chaînes de caractères, qui sont décrites dans <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">la documentation officielle</a></p>
+<h4 id="les-listes">Les listes</h4>
+<p>Une liste est un tableau d'objets qui peuvent être de n'importe quel type. Il est possible de modifier, ajouter ou supprimer des éléments d'une liste sans avoir à la redéfinir.</p>
+<p>Une liste est définie par un ensemble de valeurs entre deux crochets :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="s2">&quot;ENSG&quot;</span><span class="p">,</span> <span class="s1">&#39;Géomatique&#39;</span><span class="p">]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">[</span><span class="mi">2016</span><span class="p">,</span> <span class="s1">&#39;ENSG&#39;</span><span class="p">,</span> <span class="s1">&#39;Géomatique&#39;</span><span class="p">]</span>
+</span></code></pre></div></p>
+<p>Les listes peuvent également être imbriquées :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">[[</span><span class="mi">2016</span><span class="p">,</span> <span class="s1">&#39;ENSG&#39;</span><span class="p">,</span> <span class="s1">&#39;Géomatique&#39;</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+</span></code></pre></div></p>
+<p>Pour créer une liste vide, nous utilisons des crochets sans rien à l'intérieur :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">&lt;</span><span class="k">class</span> <span class="err">&#39;</span><span class="nc">list</span><span class="s1">&#39;&gt;</span>
+</span></code></pre></div></p>
+<p>Les listes supportent les opérateurs suivants :</p>
+<p>| Opérateur | Signification |
+| x in s | x est dans s |
+| x not in s | x n'est pas dans s |
+| s + t | concaténation de s et t |
+| s * n | ajouter n fois s à lui-même |
+| s[i] | élément à la i-ème position |
+| s[i:j] | sous-liste de s, de la i-ème à la (j-1)-ème position |
+| s[i:j:k] | sous-liste de s, de la i-ème à la (j-1)-ème position avec un pas de k |
+| len(s) | nombre d'éléments de la liste s |
+| min(s) | plus petit élément de la liste s (lorsque cela à un sens) |
+| max(s) | plus grand élément de la liste s (lorsque cela à un sens) |
+| sum(s) | somme des éléments de la liste s (lorsque cela à un sens) |
+| s.index(x, i, j) | index de la première occurence de x dans s, à partir de l'indice i et jusqu'à j |
+| s.count(x) | nombre d'occurence de x dans s |
+| L[i] = x | Elément à la position i remplacé par x |
+| L[i:j] = t | Partie entre les position i et j remplacé par la liste t |
+| del(L[i:j]) | Suppression des éléments entre les positions i et j. Equivalent à L[i:j] = [] |
+| L[i:j:k] = t | Partie entre les position i et j avec un pas de k remplacé par la liste t |
+| del(L[i:j:k]) | Suppression des éléments entre les positions i et j avec un pas de k. Equivalent à L[i:j:k] = [] |
+| L += t | Ajoute t à L |
+| L *= n | Ajoute n-1 fois L à elle-même |</p>
+<p>De plus, les listes implémentent un certain nombre de de fonctions, en voici quelques-unes :
++ <code>l.append(x)</code> : Ajoute l'élément x à la fin de la liste l
++ <code>l.reverse()</code> : Inverse l'ordre des éléments de la liste
++ <code>l.pop(i)</code> : Retourne et supprime de la liste l'élément à la position i
++ <code>l.insert(i, x)</code> : Insertion de l'élément x à la position i</p>
+<p>D'autre fonctions existent, à l'aide d'un IDE une liste est disponible.</p>
+<h4 id="les-dictionnaires">Les dictionnaires</h4>
+<p>Les dictionnaires sont des objets semblables aux listes mais plus souples en ce qui concerne le référencement des valeurs. Alors qu'une liste référence les éléments qu'elle contient à l'aide de leur position (un entier compris entre 0 et la taille de la liste), un dictionnaire se contente d'associer l'élément à <strong>un autre élément de type immuable</strong> (entier, réel, chaîne, tuple). On dit que le dictionnaire <strong>associe une valeur à une clé</strong>.</p>
+<p>Les éléments d'un dictionnaire ne sont pas ordonnés (il n'est pas possible de les trier) et on y accède uniquement par leurs clés. La structure d'un dictionnaire n'est pas figée, on peut ajouter/modifier/supprimer des éléments sans avoir besoin de recréer le dictionnaire : le dictionnaire est modifiable.</p>
+<p>La syntaxe de création d'un dictionnaire est la suivante :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="o">=</span> <span class="p">{</span><span class="n">cle1</span><span class="p">:</span> <span class="n">valeur1</span> <span class="p">,</span> <span class="n">cle2</span><span class="p">:</span> <span class="n">valeur2</span><span class="o">...</span><span class="p">}</span>
+</span></code></pre></div></p>
+<p>On peut créer un dictionnaire vide :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="o">=</span> <span class="p">{}</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+</span></code></pre></div></p>
+<p>Pour accéder à la valeur d'un élément, la syntaxe est semblable à celle d'une liste, mais l'indice n'est plus uniquement un entier : <code>dico[cle]</code> retourne la valeur associé à la clé.
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;prenom&#39;</span><span class="p">:</span> <span class="s1">&#39;paul&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">}</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span><span class="p">[</span><span class="s1">&#39;prenom&#39;</span><span class="p">]</span> <span class="s1">&#39;paul&#39;</span>
+</span></code></pre></div></p>
+<p>L'ajout d'une nouvel élément est assez aisé :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;rouge&#39;</span> <span class="o">&gt;&gt;&gt;</span> <span class="n">dico</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="s1">&#39;rouge&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="s1">&#39;prenom&#39;</span><span class="p">:</span> <span class="s1">&#39;paul&#39;</span><span class="p">}</span>
+</span></code></pre></div></p>
+<p>Les dictionnaires implémentent aussi un certain nombre de fonctions, dont en voici quelques unes :
++ <code>d.items()</code> : retourne une séquence des couples (clé, valeur) du dictionnaire
++ <code>d.keys()</code> : retourne une séquence des clés du dictionnaire
++ <code>d.values()</code> : retourne une séquence des valeurs du dictionnaire</p>
+<h4 id="les-fichiers">Les fichiers</h4>
+<p>Dans ce paragraphe, nous nous attarderons sur le dernier type de base qui sera présenté dans ce cours : les fichiers. Nous montrerons comment lire ou écrire dans un fichier.</p>
+<h5 id="chemin-dacces-aux-fichiers">Chemin d'accès aux fichiers</h5>
+<p>Avant de commencer à manipuler les fichiers, précisons qu'il existe deux possibilités pour parcourir l'arborescence d'un système : utiliser des chemins absolus ou relatifs.
+Lorsque l'on utilise des chemins absolus, on décrit le fichier en partant de la racine du disque. Les chemins prennent la forme : <code>/home/user/cours-python/toto.txt</code>.</p>
+<p>Avec les chemins relatifs, on tient compte du répertoire courant, c'est à dire celui depuis lequel l'interpréteur Python est exécuté (si l'on exécute un fichier .py directement, le répertoire courant est celui contenant le programme; si on utilise l'interpréteur Python, le répertoire courant est celui contenant l'interpréteur). Ainsi, si on est dans le répertoire <code>/home/user/cours-python/</code> , on appellera la fichier <code>resultat.txt</code> de ce répertoire en saisissant tout simplement <code>resultat.txt</code>.</p>
+<h5 id="ouverture-dun-fichier">Ouverture d'un fichier</h5>
+<p>Pour ouvrir un fichier, on utilise la fonction open(). Elle prend en paramètre :
++ le chemin du fichier;
++ le mode d'ouverture :
+  - 'r' pour lire uniquement;
+  - 'w' pour écrire uniquement (le contenu précédent est écrasé);
+  - 'a' pour écrire à la finn uniquement (le contenu précédent est conservé);
+ Il est possible de combiner les modes pour, par exemple, lire et ajouter à la fin (en écrivant <code>ra</code>).</p>
+<p>Lorsque le fichier n'est plus utilisé par le programme, il est nécessaire de le fermer, sans quoi un verrou persiste empêchant son utilisation par une autre personne/un autre programme. On utilise la fonction close().</p>
+<h5 id="lecture-dun-fichier">Lecture d'un fichier</h5>
+<p>Plusieurs modes de lecture d'un fichier sont possible. Les plus courants sont :
++ la lecture en entier avec la fonction read()
++ la lecture ligne par ligne avec la fonction readline()</p>
+<p>Un exemple de lecture :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">fichier</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fichier.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">contenu</span> <span class="o">=</span> <span class="n">fichier</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">fichier</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div></p>
+<h5 id="ecriture-dans-un-fichier">Ecriture dans un fichier</h5>
+<p>Pour écrire dans un fichier, on utilise la méthode write(texte) en lui passant en paramètre la chaîne de caractères à écrire. Elle renvoie le nombre de caractères qui ont été écrits. Cette fonction peut être appelée plusieurs fois pour écrire plusieurs chaînes. Elle fonctionne que le fichier soit ouvert en mode 'w' ou 'a'.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">fichier</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fichier.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">fichier</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;J&#39;écris pour la première fois dans un fichier texte via Python&quot;</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">fichier</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</span></code></pre></div>
+<h5 id="louverture-avec-with">L'ouverture avec <code>with</code></h5>
+<p>L'ouverture et la manipulation de fichiers est une opération source d'erreurs en programmation. De plus, il est facile d'oublier de refermer un fichier après son utilisation, ce qui peut être problématique également.</p>
+<p>Pour simplifier l'utilisation des fichiers, Python permet d'utiliser un mot clé : <code>with</code>. Avec cette forme d'ouverture d'un fichier, la fermeture du fichier est automatique :
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;fichier.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fichier</span><span class="p">:</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  <span class="n">contenu</span> <span class="o">=</span> <span class="n">fichier</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</span></code></pre></div></p>
+<h3 id="syntaxe-du-langage">Syntaxe du langage</h3>
+<p>Au chapitre précédent, nous avons étudié les structures de base intégrées dans le langage Python. Maintenant que nous maîtrisons les différents types de données, nous pouvons commencer à construire nos premières expressions en Python.</p>
+<p>Dans ce chapitre, nous allons commencer par rappeler les règles générales de construction des expressions en Python, puis nous apprendrons à construire les structures élémentaires du langage.</p>
+<h4 id="structure-du-code-en-python">Structure du code en Python</h4>
+<p>En Python, la règle générale est que <strong>la fin d’une ligne correspond à la fin d’une instruction</strong>. Il n’y a pas de symbole de fin d’instruction comme dans d’autres langages.</p>
+<p>Exemple en Java :</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">instruction1</span><span class="w"> </span><span class="p">;</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">instruction2</span><span class="w"> </span><span class="p">;</span>
+</span></code></pre></div>
+<p>En Python :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">instruction1</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">instruction2</span>
+</span></code></pre></div>
+<p>Pour définir un <strong>bloc de code</strong>, Python utilise l’<strong>indentation</strong>. De plus la ligne d’en-tête du bloc se termine par <code>:</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="n">ligne_d_en_tete</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">bloc_d_instructions</span>
+</span></code></pre></div>
+<p>Par exemple, un test en Java :</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">condition</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="n">instruction1</span><span class="p">;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="n">instruction2</span><span class="p">;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>devient en Python :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="n">instruction1</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="n">instruction2</span>
+</span></code></pre></div>
+<p>Les <strong>espaces et sauts de ligne</strong> sont ignorés par l’interpréteur. Le code :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">ligne_d_en_tete</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="n">instruction1</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>    <span class="n">instruction2</span>
+</span></code></pre></div>
+<p>est équivalent à :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="n">ligne_d_en_tete</span><span class="p">:</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">instruction1</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>    <span class="n">instruction2</span>
+</span></code></pre></div>
+<h5 id="commentaires">Commentaires</h5>
+<ul>
+<li>Commentaire simple : commence par <code>#</code></li>
+<li>Docstrings : délimitées par <code>"""</code></li>
+</ul>
+<hr />
+<h4 id="les-affectations">Les affectations</h4>
+<p>Pour affecter une valeur à une variable :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+</span></code></pre></div>
+<p>Affectations multiples :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="n">a</span> <span class="o">=</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">3</span>
+</span></code></pre></div>
+<h5 id="affectations-augmentees">Affectations augmentées</h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="n">a</span> <span class="o">+=</span> <span class="mi">3</span>  <span class="c1"># équivalent à a = a + 3</span>
+</span></code></pre></div>
+<p>Opérateurs disponibles : <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>//=</code>, <code>%=</code>, etc.</p>
+<hr />
+<h4 id="les-tests">Les tests</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>    <span class="n">instruction1</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>    <span class="n">instruction2</span>
+</span></code></pre></div>
+<h5 id="avec-else">Avec <code>else</code></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x positif&quot;</span><span class="p">)</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x négatif&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h5 id="avec-elif">Avec <code>elif</code></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x positif&quot;</span><span class="p">)</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x négatif&quot;</span><span class="p">)</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x est nul&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
+<h4 id="les-boucles">Les boucles</h4>
+<h5 id="boucle-while">Boucle <code>while</code></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></code></pre></div>
+<h5 id="boucle-for">Boucle <code>for</code></h5>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Avec <code>range</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></code></pre></div>
+<h5 id="break"><code>break</code></h5>
+<p>Interrompre la boucle :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>        <span class="k">break</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></code></pre></div>
+<h5 id="continue"><code>continue</code></h5>
+<p>Passer à l’itération suivante :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>        <span class="k">continue</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="modules-et-fonctions">Modules et fonctions</h3>
+<h4 id="modules">Modules</h4>
+<p>Python propose une grande quantité de <strong>modules</strong> standards. Pour les utiliser, il suffit de les <strong>importer</strong>.</p>
+<p>Exemple avec le module <code>math</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kn">import</span> <span class="nn">math</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">16</span><span class="p">))</span>  <span class="c1"># racine carrée</span>
+</span></code></pre></div>
+<p>On peut aussi importer une <strong>fonction spécifique</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">25</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Ou tout le module (<strong>fortement déconseillé</strong>) :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="o">*</span>
+</span></code></pre></div>
+<p>Il est également possible de <strong>renommer</strong> un module à l’import :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">36</span><span class="p">))</span>
+</span></code></pre></div>
+<h4 id="creation-de-modules">Création de modules</h4>
+<p>Un module Python est simplement un <strong>fichier <code>.py</code></strong> contenant du code (fonctions, classes, etc.).</p>
+<p>Exemple dans <code>monmodule.py</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">def</span> <span class="nf">bonjour</span><span class="p">():</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour depuis monmodule&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Utilisation :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kn">import</span> <span class="nn">monmodule</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="n">monmodule</span><span class="o">.</span><span class="n">bonjour</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Le module doit être <strong>dans le même dossier</strong> ou dans le <strong>PYTHONPATH</strong>.</p>
+<h4 id="fonctions">Fonctions</h4>
+<p>Les fonctions s’écrivent avec le mot-clé <code>def</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="k">def</span> <span class="nf">salut</span><span class="p">():</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Salut !&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Appel :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">salut</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Avec arguments :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="k">def</span> <span class="nf">dire_bonjour</span><span class="p">(</span><span class="n">nom</span><span class="p">):</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bonjour&quot;</span><span class="p">,</span> <span class="n">nom</span><span class="p">)</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="n">dire_bonjour</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Avec valeur de retour :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="k">def</span> <span class="nf">carre</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>
+</span><span id="__span-41-4"><a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">carre</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>  <span class="c1"># 16</span>
+</span></code></pre></div>
+<h4 id="parametres-par-defaut">Paramètres par défaut</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="k">def</span> <span class="nf">saluer</span><span class="p">(</span><span class="n">nom</span><span class="o">=</span><span class="s2">&quot;inconnu&quot;</span><span class="p">):</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Salut&quot;</span><span class="p">,</span> <span class="n">nom</span><span class="p">)</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="n">saluer</span><span class="p">()</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="n">saluer</span><span class="p">(</span><span class="s2">&quot;Bob&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="arguments-nommes">Arguments nommés</h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="k">def</span> <span class="nf">personne</span><span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> a </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans&quot;</span><span class="p">)</span>
+</span><span id="__span-43-3"><a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>
+</span><span id="__span-43-4"><a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a><span class="n">personne</span><span class="p">(</span><span class="n">age</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">nom</span><span class="o">=</span><span class="s2">&quot;Alice&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h4 id="portee-des-variables">Portée des variables</h4>
+<ul>
+<li>Variables <strong>locales</strong> : définies dans une fonction</li>
+<li>Variables <strong>globales</strong> : définies hors fonction</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>  <span class="c1"># globale</span>
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+</span><span id="__span-44-3"><a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a><span class="k">def</span> <span class="nf">afficher</span><span class="p">():</span>
+</span><span id="__span-44-4"><a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># locale</span>
+</span><span id="__span-44-5"><a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-44-6"><a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>
+</span><span id="__span-44-7"><a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a><span class="n">afficher</span><span class="p">()</span>  <span class="c1"># 10</span>
+</span><span id="__span-44-8"><a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>    <span class="c1"># 5</span>
+</span></code></pre></div>
+<p>Pour modifier une variable globale depuis une fonction :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a><span class="k">def</span> <span class="nf">modifier</span><span class="p">():</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>    <span class="k">global</span> <span class="n">x</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>    <span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a><span class="n">modifier</span><span class="p">()</span>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># 20</span>
+</span></code></pre></div>
+<h3 id="documentation-et-tests">Documentation et tests</h3>
+<h4 id="la-documentation">La documentation</h4>
+<p>La documentation est essentielle pour expliquer le rôle, le fonctionnement, et les paramètres d’une fonction ou d’un module.</p>
+<p>Python permet d’associer une <strong>chaîne de documentation</strong> à une fonction, classe ou module grâce aux <strong>docstrings</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="k">def</span> <span class="nf">addition</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Retourne la somme de a et b.&quot;&quot;&quot;</span>
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span></code></pre></div>
+<p>On peut consulter cette documentation avec :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">help</span><span class="p">(</span><span class="n">addition</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Ou encore :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">addition</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Les docstrings peuvent suivre la convention <a href="https://peps.python.org/pep-0257/">PEP 257</a> pour être lisibles par des outils de génération de documentation.</p>
+<h4 id="les-tests_1">Les tests</h4>
+<h5 id="test-simple-avec-assert">Test simple avec <code>assert</code></h5>
+<p>Pour des tests légers, on peut aussi utiliser <code>assert</code> directement dans le code :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-49-2"><a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span><span id="__span-49-3"><a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>
+</span><span id="__span-49-4"><a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a><span class="k">assert</span> <span class="n">somme</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</span><span id="__span-49-5"><a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a><span class="k">assert</span> <span class="n">somme</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</span></code></pre></div>
+<p>Si l’assertion échoue, Python lève une exception <code>AssertionError</code>.</p>
+<h5 id="contexte-dexecution-des-tests">Contexte d'exécution des tests</h5>
+<p>Une manière d'exécuter les tests est d'appeler les fonctions et de faire des assertions au niveau du module, dans un bloc <code>if __name__ == "__main__"</code>:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="c1"># fichier somme.py</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="k">def</span> <span class="nf">somme</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+</span><span id="__span-50-3"><a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>    <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</span><span id="__span-50-4"><a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>
+</span><span id="__span-50-5"><a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> <span class="c1"># sera exécuté avec la commande `python somme.py`, ne sera pas exécuté avec la commande `pyton main.py`</span>
+</span><span id="__span-50-6"><a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Testing somme.py...&quot;</span><span class="p">)</span>
+</span><span id="__span-50-7"><a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>    <span class="k">assert</span> <span class="n">somme</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span>
+</span><span id="__span-50-8"><a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>    <span class="k">assert</span> <span class="n">somme</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="c1"># fichier main.py</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="kn">import</span> <span class="nn">somme</span> <span class="k">as</span> <span class="nn">s</span>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">somme</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+</span></code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

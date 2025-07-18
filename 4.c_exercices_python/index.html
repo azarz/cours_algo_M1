@@ -1,0 +1,1043 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../3.c_exercices_algo/">
+      
+      
+        <link rel="next" href="../5.c_exercices_tdg/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Exercices de Python - Cours d'initiation à l'algorithmie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercices-de-mise-en-pratique-de-python" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-header__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours d'initiation à l'algorithmie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercices de Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-nav__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    Cours d'initiation à l'algorithmie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil & Déroulement des séances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Architecture_logicielle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Architecture logicielle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_Validite_logiciel_numerique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Validité Logiciel Numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3 - Algorithmie
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3 - Algorithmie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Algorithmie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à l'algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.b_diviser_pour_regner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approche 'diviser pour mieux règner'
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4 - Introduction à Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4 - Introduction à Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_intro_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5 - Introduction à la Théorie des Graphes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5 - Introduction à la Théorie des Graphes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_intro_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.b_Cours_tdg.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours détaillé (pdf)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices d'Algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Exercices de Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Python
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-de-mise-en-pratique-de-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices de mise en pratique de Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercices de mise en pratique de Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tp-distance-entre-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      TP — Distance entre points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TP — Distance entre points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapes-du-tp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étapes du TP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tp-generalisation-cartographique" class="md-nav__link">
+    <span class="md-ellipsis">
+      TP — Généralisation cartographique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TP — Généralisation cartographique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithme-de-douglas-peucker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithme de Douglas-Peucker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapes-du-tp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étapes du TP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-dassociation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion d'association
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-de-mise-en-pratique-de-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices de mise en pratique de Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercices de mise en pratique de Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tp-distance-entre-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      TP — Distance entre points
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TP — Distance entre points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#etapes-du-tp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étapes du TP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tp-generalisation-cartographique" class="md-nav__link">
+    <span class="md-ellipsis">
+      TP — Généralisation cartographique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TP — Généralisation cartographique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithme-de-douglas-peucker" class="md-nav__link">
+    <span class="md-ellipsis">
+      Algorithme de Douglas-Peucker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapes-du-tp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Étapes du TP
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-dassociation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestion d'association
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Exercices de Python</h1>
+
+<h2 id="exercices-de-mise-en-pratique-de-python">Exercices de mise en pratique de Python</h2>
+<h3 id="tp-distance-entre-points">TP — Distance entre points</h3>
+<p>Dans ce TP, nous cherchons à évaluer la <strong>dispersion de points</strong> tirés aléatoirement dans un carré de côté 1.
+Nous nous intéresserons aux <strong>distances minimale, maximale et moyenne</strong> entre les points,
+ainsi qu’à la <strong>position du centre de gravité</strong> du semis de points.</p>
+<p>Tout au long du TP, un point sera représenté par un couple de coordonnées <code>(x, y)</code>.</p>
+<h4 id="etapes-du-tp">Étapes du TP</h4>
+<ul>
+<li>
+<p>Écrire une <strong>fonction de tirage aléatoire</strong> d’un point dans une emprise définie par les coordonnées <code>((xmin, ymin), (xmax, ymax))</code></p>
+</li>
+<li>
+<p>Écrire une <strong>fonction de tirage de <code>n</code> points aléatoires</strong> dans cette emprise :</p>
+</li>
+<li>
+<p><strong>Modifier votre fonction</strong> précédente pour que, si les coordonnées de l’emprise <strong>ne sont pas précisées</strong>, elles soient par défaut <code>((0, 0), (1, 1))</code></p>
+</li>
+<li>
+<p>Compléter votre programme avec une <strong>fonction calculant le centre de gravité</strong> d’un ensemble de points (c’est-à-dire la <strong>position moyenne</strong> des points).</p>
+</li>
+<li>
+<p>Ajouter une <strong>fonction calculant</strong> les :</p>
+</li>
+<li><strong>distances minimale et maximale</strong> entre deux points de l’ensemble</li>
+<li>
+<p><strong>distance moyenne</strong> entre tous les points</p>
+</li>
+<li>
+<p><strong>Observer comment évoluent</strong> ces valeurs lorsque le <strong>nombre de points</strong> du semis augmente.</p>
+</li>
+</ul>
+<h3 id="tp-generalisation-cartographique">TP — Généralisation cartographique</h3>
+<h4 id="algorithme-de-douglas-peucker">Algorithme de Douglas-Peucker</h4>
+<p>L’algorithme de Douglas-Peucker est utilisé pour <strong>simplifier une polyligne</strong>, en supprimant des points non significatifs de la forme globale de la géométrie.</p>
+<p>La simplification proposée consiste à <strong>remplacer une polyligne</strong> de plusieurs points par une ligne à deux points si la <strong>distance du point le plus éloigné</strong> de la droite formée par les extrémités de la polyligne est inférieure à un <strong>seuil</strong>.</p>
+<p><img alt="Figure 1" src="../img/dougpeuck-0.png" /></p>
+<blockquote>
+<p>Figure 1 – Principe de simplification d’une polyligne</p>
+</blockquote>
+<p>Le principe de l’algorithme est le suivant :</p>
+<ul>
+<li>À l’étape initiale, les extrémités de la polyligne sont sélectionnées.</li>
+<li>Pour chacun des points entre ces deux extrémités, on calcule alors la <strong>distance du point à la droite</strong> liant les extrémités.</li>
+</ul>
+<p>La suite du traitement dépend de la valeur de la distance maximale ainsi calculée :</p>
+<ol>
+<li>S’il n’y a <strong>aucun point</strong>, l’algorithme se termine (la ligne n’est pas simplifiable) ;</li>
+<li>Si la <strong>distance maximale est inférieure à un seuil donné</strong>, on supprime tous les points (ils sont non significatifs) ;</li>
+<li>Si la <strong>distance maximale est supérieure au seuil</strong>, la ligne n’est pas simplifiable :</li>
+<li>on <strong>divise</strong> la polyligne en deux parties allant :<ul>
+<li>de la première extrémité au point intermédiaire le plus distant</li>
+<li>du point intermédiaire le plus distant à la deuxième extrémité</li>
+</ul>
+</li>
+<li>on <strong>répète l’opération sur les deux parties</strong>.</li>
+</ol>
+<p><img alt="Figure 2" src="../img/dougpeuck-1.png" /></p>
+<blockquote>
+<p>Figure 2 – Principe de l’algorithme de Douglas-Peucker — source Wikipedia</p>
+</blockquote>
+<hr />
+<p>Dans tout ce qui suit :</p>
+<ul>
+<li>un <strong>point</strong> est représenté par un couple de coordonnées <code>(x, y)</code></li>
+<li>une <strong>droite ou un segment</strong> est représenté par un couple de couples de coordonnées :
+  <code>((x_a, y_a), (x_b, y_b))</code></li>
+</ul>
+<p>Nous commencerons par écrire des <strong>fonctions générales</strong> qui seront utiles pour l’implémentation de l’algorithme à la question suivante.</p>
+<hr />
+<h4 id="etapes-du-tp_1">Étapes du TP</h4>
+<ul>
+<li>Écrire une fonction <strong>calculant la pente d’une droite</strong></li>
+<li>
+<p>Écrire une fonction <strong>calculant l’ordonnée à l’origine</strong> d’une droite
+  (elle prend en paramètre les coordonnées d’un point A de la droite ainsi que sa pente)</p>
+</li>
+<li>
+<p>Ajouter une fonction <code>distance(point, droite)</code>
+  Cette fonction calcule la distance d’un point A à une droite.
+  Elle devra <strong>gérer les cas particuliers</strong> des droites verticales ou horizontales.</p>
+</li>
+</ul>
+<p>Dans le cas général, pour une droite d’équation :
+<code>y = p * x + m</code>
+la distance d’un point <code>A(xA, yA)</code> à cette droite est donnée par la formule :</p>
+<p><img alt="d = abs(p * xA - yA + m) / sqrt(1 + p²)" src="../img/dougpeuck-2.png" /></p>
+<ul>
+<li>
+<p>Écrire une fonction <code>douglas_peuker(points, e)</code>
+  Cette fonction <strong>simplifie une liste de points</strong> selon la méthode de Douglas-Peucker, avec un <strong>seuil <code>e</code></strong></p>
+</li>
+<li>
+<p>Tester différents seuils sur la liste de points suivante : <code>(0,0), (1,0), (10,1), (11,1), (15,2), (17,1), (20,1), (27,0), (28,4), (30,6), (33,8), (34,0)</code></p>
+</li>
+</ul>
+<h3 id="gestion-dassociation">Gestion d'association</h3>
+<p><a href="../tp/TP_association.pdf">TP_association.pdf</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>

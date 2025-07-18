@@ -1,0 +1,2214 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1_Architecture_logicielle/">
+      
+      
+        <link rel="next" href="../3_Algorithmie/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>2 - Validité Logiciel Numérique - Cours d'initiation à l'algorithmie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#objectifs" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-header__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours d'initiation à l'algorithmie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2 - Validité Logiciel Numérique
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-nav__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    Cours d'initiation à l'algorithmie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil & Déroulement des séances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Architecture_logicielle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Architecture logicielle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    2 - Validité Logiciel Numérique
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    2 - Validité Logiciel Numérique
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validite-des-calculs-dans-un-ordinateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validité des calculs dans un ordinateur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validité des calculs dans un ordinateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-differentes-bases-notations-utilisees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les différentes bases - Notations utilisées
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decomposition-dans-une-base-et-calcul-de-la-valeur-en-base-naturelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Décomposition dans une base et calcul de la valeur en base naturelle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passage-de-la-base-naturelle-a-une-base-quelconque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passage de la base naturelle à une base quelconque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-premier-probleme-de-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un premier problème de précision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetique-dans-les-bases-differentes-de-la-base-naturelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmétique dans les bases différentes de la base naturelle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representation-des-nombres-en-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Représentation des nombres en machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Représentation des nombres en machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cas-des-nombres-negatifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cas des nombres négatifs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cas-des-nombres-decimaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cas des nombres décimaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-sur-les-nombres-en-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opérations sur les nombres en machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limites-de-la-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limites de la représentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representation-des-caracteres-en-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Représentation des caractères en machine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complexite-en-algorithmie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexité en algorithmie
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complexité en algorithmie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminaison-et-validite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminaison et validité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexité
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complexité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#petit-historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Petit historique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notion-de-complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notion de complexité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notations-de-landau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notations de Landau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-de-complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes de complexité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculs-de-complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculs de complexité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-comparaison-de-divers-algorithmes-de-tri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application : comparaison de divers algorithmes de tri
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3 - Algorithmie
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3 - Algorithmie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Algorithmie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à l'algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.b_diviser_pour_regner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approche 'diviser pour mieux règner'
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4 - Introduction à Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4 - Introduction à Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_intro_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5 - Introduction à la Théorie des Graphes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5 - Introduction à la Théorie des Graphes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_intro_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.b_Cours_tdg.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours détaillé (pdf)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices d'Algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectifs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pre-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pré-requis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validite-des-calculs-dans-un-ordinateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validité des calculs dans un ordinateur
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Validité des calculs dans un ordinateur">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#les-differentes-bases-notations-utilisees" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les différentes bases - Notations utilisées
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decomposition-dans-une-base-et-calcul-de-la-valeur-en-base-naturelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Décomposition dans une base et calcul de la valeur en base naturelle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passage-de-la-base-naturelle-a-une-base-quelconque" class="md-nav__link">
+    <span class="md-ellipsis">
+      Passage de la base naturelle à une base quelconque
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-premier-probleme-de-precision" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un premier problème de précision
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetique-dans-les-bases-differentes-de-la-base-naturelle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arithmétique dans les bases différentes de la base naturelle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representation-des-nombres-en-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Représentation des nombres en machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Représentation des nombres en machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cas-des-nombres-negatifs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cas des nombres négatifs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cas-des-nombres-decimaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cas des nombres décimaux
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operations-sur-les-nombres-en-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Opérations sur les nombres en machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limites-de-la-representation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limites de la représentation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#representation-des-caracteres-en-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Représentation des caractères en machine
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complexite-en-algorithmie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexité en algorithmie
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complexité en algorithmie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminaison-et-validite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminaison et validité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexité
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Complexité">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#petit-historique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Petit historique
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notion-de-complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notion de complexité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notations-de-landau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notations de Landau
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#classes-de-complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classes de complexité
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculs-de-complexite" class="md-nav__link">
+    <span class="md-ellipsis">
+      Calculs de complexité
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#application-comparaison-de-divers-algorithmes-de-tri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Application : comparaison de divers algorithmes de tri
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>2 - Validité Logiciel Numérique</h1>
+
+<h3 id="objectifs">Objectifs</h3>
+<ul>
+<li>Etre sensibilisé aux problèmes de précision, de capacité et de puissance de calculs des ordinateurs.</li>
+</ul>
+<h3 id="pre-requis">Pré-requis</h3>
+<ul>
+<li>Concepts élémentaires en algorithmie</li>
+<li>Notions de base en architecture informatique</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>L'algorithmie ou l'analyse informatique s'attachent à décrire des solutions informatiques théoriques à un problème posé. Ces solutions décrivent un cheminement pour aboutir au résultat excompté et ne souffrent d'aucune ambiguité : en toutes circonstances l'algorithme fournit un résultat.</p>
+<p>La mise en oeuvre pratique de ces solutions n'est pas aussi évidente et se trouve confronté à plusieurs limitations : une solution théorique apportant une réponse à un problème peut apporter un résultat imprécis une fois transposée sur un ordinateur ou résoudre le problème mais dans des échelles de temps non acceptables. C'est ce que nous nous proposons d'étudier dans ce cours.</p>
+<p>Typiquement, l'implémentation d'une solution sur un ordinateur peut être confrontée à trois types de problèmes :</p>
+<ul>
+<li>des problèmes de <strong>précision</strong> : 0,1+0,1+0,1-0,3 n'est pas strictement égal à 0 en arithmétique d'un ordinateur;</li>
+<li>des problèmes de <strong>capacité</strong> : charger dans la mémoire vive d'un ordinateur une matrice carré de 100000 lignes, avec des entiers stockés sur 8 bits, demande environ 10 Go de RAM;</li>
+<li>des problèmes de <strong>puissance</strong> : pour un ordinateur grand marché effectuant 10<sup>6</sup> opérations par secondes, un tri naif d'un tableau de 1000000 d'éléments prend plus d'une semaine.</li>
+</ul>
+<p>Si les problèmes de capacité sont pratiquement résolus avec les évolutions récentes des ordinateurs, hormis pour quelques applications très poussées (il est tout de même assez rare de manipuler des matrices de 100000 lignes!), les problèmes de précision et de puissance sont encore au coeurs des problématiques actuelles.</p>
+<p>Nous commencerons ce cours en revenant sur la représentration des nombres en machine pour montrer quelle imprécisions sur les calculs elle peut engendrer. Puis nous nous intéresserons à la complèxité des algorithmes qui nous permettra de comprendre pourquoi des algorithmes seront plus performants que d'autres en terme de temps de calcul.</p>
+<h2 id="validite-des-calculs-dans-un-ordinateur">Validité des calculs dans un ordinateur</h2>
+<p>Si les informations traîtées par un ordinateurs peuvent être de différentes
+nature (nombre, texte, etc.), elles sont représentées et manipulées par
+l'ordinateur sous forme binaire (suite de 0 et de 1). Le <strong>bit</strong>
+(<em>binary digit</em>) est l'unité de base de la représentation binaire. Chaque 0 ou
+1 est un bit. "1001" est par exemple composé de 4 bits.</p>
+<p>Cette représentation sous forme binaire a des conséquences sur les résultats de
+certaines opérations. L'opération "0,1 + 0,1 + 0,1 - 0,3" ne retourne par
+exemple pas exactement 0 en arithmétique d'ordinateur.</p>
+<p>Dans ce chapitre, nous nous attarderons sur la représentation des nombres en
+machine (et les opérations associées), pour montrer comment elle peut induire
+des imprécisions sur les résultats de certains calculs.</p>
+<h3 id="les-differentes-bases-notations-utilisees">Les différentes bases - Notations utilisées</h3>
+<p>Dans la vie courante, nous utilisons des chiffres de 0 à 9 : il s'agit de la
+base 10, composée de 10 symboles (les 10 chiffres). Nous parlerons aussi de
+base naturelle. Pour représenter un nombre en base 10, nous l'écrirons
+simplement, comme nous avons l'habitude de le faire (par exemple : 2016).</p>
+<p>Il est pourtant possible d'utiliser n'importe quelle autre base que la base 10.</p>
+<ul>
+<li>les égyptiens utilisaient une base 12 (duodecimal) pour compter les heures
+  et les mois</li>
+<li>les mayas et azteques ont employé une base 20 (vigésimal). Au moyen âge en
+  france on a également employé cette base (d'où le quatre-vingt).</li>
+<li>la base 60 (sexagésimal) était utilisée par les sumériens. Il sert toujours
+  pour mesurer les heures, minutes, secondes.</li>
+</ul>
+<p>Pour écrire un nombre dans une autre base que la base naturelle, nous l'écrirons
+entre parenthèses et indiquerons la base en indice.</p>
+<p>Par exemple (146)<sub>8</sub> représente le nombre <em>146</em> dans la base 8.</p>
+<p>Dans le domaine de l'infomatique, la base naturelle est la base 2, ou
+représentation <em>binaire</em>.
+Les bases 8 et 16 (respectivement 8 et 16 symboles) sont également souvent
+utilisées en informatique. En effet, ces bases sont des puissances de 2 et
+chaque symbole correspond exactement à un groupe de bits (respectivement 3 et 4
+bits) ce qui rend les conversions très simples tout en apportant une écriture
+plus compacte que le binaire.</p>
+<p>En hexadécimal (base 16), comme notre écriture ne comporte que 10 chiffres, nous
+utilisons des lettres pour compléter : 0 1 2 3 4 5 6 7 8 9 A B C D E F.
+"A" vaut 10, "B" 11, etc.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Hexadécimal</strong></th>
+<th style="text-align: center;"><strong>Valeur</strong></th>
+<th style="text-align: center;"><strong>Binaire</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0000</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0001</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0010</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0011</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0100</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0101</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0110</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0111</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">1000</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">1001</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">1010</td>
+</tr>
+<tr>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">1011</td>
+</tr>
+<tr>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">1100</td>
+</tr>
+<tr>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">1101</td>
+</tr>
+<tr>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">1110</td>
+</tr>
+<tr>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">1111</td>
+</tr>
+</tbody>
+</table>
+<p>En octal (base 8), chaque symbole correspond à un groupe de 3 bits. L'écriture
+est moins compacte que l'héxadécimal mais présente l'avantage de ne pas requérir
+de symbole supplémentaire.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Octal</strong></th>
+<th style="text-align: center;"><strong>Valeur</strong></th>
+<th style="text-align: center;"><strong>Binaire</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">000</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">001</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">010</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">011</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">100</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">101</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">110</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">111</td>
+</tr>
+</tbody>
+</table>
+<h3 id="decomposition-dans-une-base-et-calcul-de-la-valeur-en-base-naturelle">Décomposition dans une base et calcul de la valeur en base naturelle</h3>
+<p>Pour comprendre comment s'effectue la décomposition d'un nombre exprimé dans
+une base donnée, nous partirons d'un exemple d'un nombre en base naturelle (base
+10).</p>
+<p>Nous pouvons tous facilement établir que :</p>
+<p>2019 = 2 * 1000 + 0 * 100 + 1 * 10 + 6 * 1</p>
+<p>Si nous utilisont des puissances de 10, cela donne alors :</p>
+<p>2019 =  2 * 10<sup>3</sup>) + 0 * 10<sup>2</sup>) + 1 * 10<sup>1</sup>) + 9 * 10<sup>0</sup>)</p>
+<p>Qui est la décomposition en base 10 de 2019.</p>
+<p>La décomposition dans une autre base respecte le même schéma. La décomposition
+de (146)<sub>8</sub> s'écrira ainsi :</p>
+<p>(146)<sub>8</sub> = 1 * 8<sup>2</sup>) + 4 * 8<sup>1</sup>) + 6 * 8<sup>0</sup>)</p>
+<p>Pour évaluer la valeur de ce nombre en base naturelle, il ne reste qu'à évaluer
+les différents termes de la décomposition :</p>
+<p>(146)<sub>8</sub> = 1 * 64 + 4 * 8 + 6 * 1 = 102</p>
+<p>(146)<sub>8</sub> est égal à 102 en base naturelle.</p>
+<p>La décomposition des nombres décimaux n'apporte pas de changement majeurs. Pour
+comprendre comment cela fonctionne, revenons à un exemple en base 10 :</p>
+<p>2019,125 = 2 * 1000 + 1 * 10 + 9 * 1 + 1 * 0,1 + 2 * 0,01 + 5 * 0,001</p>
+<p>Soit en utilisant des puissances de 10 :</p>
+<p>2019,125 = 2 * 10<sup>3</sup> + 1 * 10<sup>1</sup> + 9 * 10<sup>0</sup> + 1 * 10<sup>-1</sup> + 2 * 10<sup>-2</sup> + 5 * 10<sup>-3</sup></p>
+<p>Dans une autre base que la base naturelle, cela donnera par exemple :</p>
+<p>(1010,101)<sub>2</sub> = 1 * 2<sup>3</sup> + 0 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 0 * 2<sup>0</sup> + 1 * 2<sup>-1</sup> + 0 * 2<sup>-2</sup> + 1 * 2<sup>-3</sup></p>
+<p>Ce qui nous permet d'évaluer la nombre : (1010,101)<sub>2</sub> = 10,625</p>
+<p>Pour finir ce paragraphe, nous remarquerons que le principe reste le même en
+hexadécimal, même si nous devons utiliser de nouveaux symboles :</p>
+<p>(2A3F)<sub>16</sub> = 2 * 16<sup>3</sup> + A * 16<sup>2</sup> + 3 * 16<sup>1</sup> + F * 16<sup>0</sup></p>
+<p>Soit en remplaçant les lettres par leur valeurs en base 10 :</p>
+<p>(2A3F)<sub>16</sub> = 2 * 16<sup>3</sup> + 10 * 16<sup>2</sup> + 3 * 16<sup>1</sup> + 15 * 16<sup>0</sup> = 10815</p>
+<h3 id="passage-de-la-base-naturelle-a-une-base-quelconque">Passage de la base naturelle à une base quelconque</h3>
+<p>Pouvoir utiliser toutes ces bases sera d'autant plus intéressant si nous
+disposons de moyens pour passer d'une représentation dans une base à une
+représentation dans une autre base. Dans le paragraphe précédent, nous avons
+montré comment décomposer un nombre écrit dans une base quelconque, ce qui
+permettait ensuite de l'évaluer. Ce faisant, nous avons réalisé le passage d'une
+base quelconque à la base 10.</p>
+<p>Il nous reste à effectuer l'opération inverse. Pour ce faire, nous allons
+utiliser une propriété mathématique illustrée par l'égalité suivante :</p>
+<p>2 * 16<sup>3</sup> + 10 * 16<sup>2</sup> + 3 * 16<sup>1</sup> + 15 * 16<sup>0</sup> = ((2 * 16 + 10) * 16 + 3) * 16 + 15</p>
+<p>Le principe de cette égalité va nous permettre de retrouver, par divisions
+entières successives, l'écriture dans une base quelconque.</p>
+<blockquote>
+<p><strong>Division entière</strong> : soient a et b deux entiers positifs (b &gt; 0). Il exite
+un unique couple d'entiers positifs (q, r) tels que
+a = b * q + r avec 0 ≤ r &lt; b. q est le <em>quotient</em> de la division entière
+de a par b et r est le <em>reste</em> de cette division entière.</p>
+</blockquote>
+<p>Pour écrire 10815 en base 16, nous commencerons donc par effectuer la division
+entière de 10815 par 16 :</p>
+<p>10815 = 675 * 16 + 15</p>
+<p>Puis nous repartons du quotient sur lequel nous effectuons à nouveau une
+divison entière :</p>
+<p>675 = 42 * 16 + 3</p>
+<p>Et nous répétons l'opération jusqu'à ce que le quotient de la division entière
+soit nul :</p>
+<p>42 = 2 * 16 + 10</p>
+<p>2 = 0 * 16 + 2</p>
+<p>Pour reconstituer la représentation en base 16, il ne nous reste plus qu'à
+assembler les restes des divisions entières en partant du dernier vers le
+premier :</p>
+<p>10815 = (2 "10" 3 "15")<sub>16</sub> = (2A3F)<sub>16</sub></p>
+<p>Le principe est le même pour convertir vers une n'importe quelle autre base.
+Par exemple, pour retrouver l'écriture en base de 2 de 52 :</p>
+<p>52 = 26 * 2 + 0</p>
+<p>26 = 13 * 2 + 0</p>
+<p>13 = 6 * 2 + 1</p>
+<p>6 = 3 * 2 + 0</p>
+<p>3 = 1 * 2 + 1</p>
+<p>1 = 0 * 2 + 1</p>
+<p>Soit au final :</p>
+<p>52 = (110100)<sub>2</sub></p>
+<p>Dans le cas de nombres à virgules, nous distinguerons les parties entières et
+décimales et traiterons chacune d'elles de manière séparée. Nous savons déjà
+traiter la partie entière et il nous reste à trouver une méthode pour la partie
+décimale. Pour comprendre comment opérer, repartons de la décomposition en base
+10 de 0,125 :</p>
+<p>0,125 = 1 * 10<sup>-1</sup> + 2 * 10<sup>-2</sup> + 5 * 10<sup>-3</sup></p>
+<p>Comme pour la partie entière, nous pouvons factoriser les 10<sup>-1</sup> pour
+obtenir :</p>
+<p>0,125 = 10<sup>-1</sup> * ( 1 + 10<sup>-1</sup> * ( 2 + 10<sup>-1</sup> * 5))</p>
+<p>Pour éviter d'avoir à manipuler des puissance négatives, prenons le problème
+dans l'autre sens :</p>
+<p>0,125 * 10 = 1 + 0,25</p>
+<p>0,25 * 10 = 2 + 0,5</p>
+<p>0,5 * 10 = 5 + 0,0</p>
+<p>A chaque étape, nous séparons ainsi les partie entières et décimale puis
+multiplions par la partie décimale par la base. La décomposition finale est
+égale à la suite des parties entières.</p>
+<p>Tentons par exemple de convertir 10,25 en base 2. Pour la partie entière,
+nous pouvons établir que :</p>
+<p>10 = (1010)<sub>2</sub></p>
+<p>Puis, pour la partie décimale :</p>
+<p>0,25 * 2 = 0 + 0,5</p>
+<p>0,5 * 2 = 1 + 0,0</p>
+<p>Ce qui donne donc pour la partie décimale :</p>
+<p>0,25 = (0,010)<sub>2</sub></p>
+<p>Soit au final en réassemblant les deux parties :</p>
+<p>10,25 = (1010,010)<sub>2</sub></p>
+<h3 id="un-premier-probleme-de-precision">Un premier problème de précision</h3>
+<p>Revennons ici à notre problématique de départ : les erreurs lors de certaines
+opérations en mahcines. Pour ce faire, nous essayerons simplement de
+représenter 0,1 en base 2.</p>
+<p>0,1 * 2 = 0,2</p>
+<p>0,2 * 2 = 0,4</p>
+<p>0,4 * 2 = 0,8</p>
+<p>0,8 * 2 = 1,6</p>
+<p>0,6 * 2 = 1,2</p>
+<p>0,2 * 2 = 0,4</p>
+<p>0,4 * 2 = 0,8</p>
+<p>0,8 * 2 = 1,6</p>
+<p>0,6 * 2 = 1,2</p>
+<p>...</p>
+<p>Nous pourrions poursuivre ainsi indéfiniement! Au même titre qu'il n'existe pas
+de représentation exacte de 1/3 en base naturelle
+(1 / 3  ≈  (0,333)<sub>10</sub>), il n'existe pas de réprésentation exacte de 0,1
+en base 2 : (0,2)<sub>10</sub>  ≈  (0,00110011)<sub>2</sub>.</p>
+<h3 id="arithmetique-dans-les-bases-differentes-de-la-base-naturelle">Arithmétique dans les bases différentes de la base naturelle</h3>
+<p>montrer juste ici quelques exemples d'additions et soustraction en base 2, 8 et 16 par exemple</p>
+<h3 id="representation-des-nombres-en-machine">Représentation des nombres en machine</h3>
+<p>Dans les paragraphes précédents nous avons vu comment passer d'une base à une
+autre et comment effectuer des opérations dans ces différentes bases. Nous
+avons également montré comment traiter le cas des nombres décimaux. Si nous
+n'avons pas porté une attention particulière aux nombres négatifs, c'est que
+ceux-ci ne présentent pas de difficultés particulières : il suffit d'ajouter le
+signe "-" devant le nombre à représenter.</p>
+<p>Dans cette partie, nous nous concentrons sur la représentation des nombres dans
+un ordinateur. La base utilisée sera donc la base 2. Quelques spécificités
+propres à l'architecture des ordinateurs viendront s'ajouter à cette
+représentation en binaire. Nous mettrons en évidence les problèmes résultants.</p>
+<blockquote>
+<p>Remarque : convention</p>
+<p>Dans cette partie, nous ne manipulerons que les bases 2 et 10 qui ne
+seront plus nécessairement indiquées en indice des nombres.</p>
+</blockquote>
+<h4 id="cas-des-nombres-negatifs">Cas des nombres négatifs</h4>
+<p>Un premier problème se pose pour la réprésentation des nombres négatifs en
+machine. En effet, un ordinateur ne parle que le binaire (0 et 1). Il devient
+donc inenvisageable d'utiliser un signe "-" qui n'est pas compris par
+l'ordinateur.</p>
+<p>La solution la plus simple consiste à utiliser un nombre fixe de bits
+(généralement 8, 16, 32 ou 64 bits) et à réserver celui le plus à gauche (le
+<em>bit de poids fort</em>) pour le signe : 0 pour positif, 1 pour négatif.</p>
+<p>En appliquant cette règle et en utilisant un stockage sur 8 bits :</p>
+<ul>
+<li>2 = 00000010</li>
+<li>(-2) = 10000010</li>
+</ul>
+<p>Cette représentation possède deux inconvénients majeurs :</p>
+<ul>
+<li>le nombre 0 possède deux représentations : 00000000 et 10000000;</li>
+<li>l'addition "classique" ne fonctionne plus si un des nombres est négatif :<ul>
+<li>(-3) = 10000011</li>
+<li>2 = 00000010</li>
+<li>Donc (-3) + 2 = 10000011 + 00000010 = 10000101, soit -5.</li>
+</ul>
+</li>
+</ul>
+<p>Afin d'améliorer la représentation, nous utiliserons alors une notation en
+<strong>complément à deux</strong>. Elle est obtenue de la manière suivante :</p>
+<ul>
+<li>les nombres positifs sont écrits normalement;</li>
+<li>pour les nombres négatifs :<ul>
+<li>inversion des bits de l'écriture binaire;</li>
+<li>ajout de 1 au résultat.</li>
+</ul>
+</li>
+</ul>
+<p>Par exemple, pour représenter -3 :</p>
+<ul>
+<li>3 = (00000011)<sub>2</sub></li>
+<li>inversion des bits : 11111100</li>
+<li>ajout de 1 : 11111101</li>
+<li>soit (-3) = 11111101</li>
+</ul>
+<p>L'opération (-3) + 2 est maintenant traduite en :</p>
+<p>11111101 + 00000010 = 11111111</p>
+<p>qui si l'on revient à une représentation en base naturelle donne :</p>
+<ul>
+<li>un nombre négatif (commence par un "1"), on enlève 1 : 11111110</li>
+<li>invertion des bits : 00000001</li>
+<li>soit finalement -1.</li>
+</ul>
+<p>Le résultat de l'addition en utilisant la représentation en complément à deux
+est exact.</p>
+<blockquote>
+<p>Remarque : nombres minimum et maximum représentables</p>
+<p>En utilisant le représentation en complément à deux et un stockage sur e bits,
+(e-1) bits restent disponible pour indiquer la valeur du nombre. Celle-ci peut
+donc être comprise entre -2<sup>e-1</sup> et 2<sup>e-1</sup> - 1.</p>
+</blockquote>
+<p>Par exemple :</p>
+<ul>
+<li>sur 8 bits : entre -128 et 127;</li>
+<li>sur 16 bits : entre -256 et 255.</li>
+</ul>
+<h4 id="cas-des-nombres-decimaux">Cas des nombres décimaux</h4>
+<p>De même que pour les nombres négatifs, il n'est pas envisageable d'utiliser de
+virgule, non interprétable par un ordinateur parlant le binaire, pour
+représenter les nombres décimaux.</p>
+<p>Nous avons par ailleurs vu que pour représenter les nombres négatifs en machine,
+nous utilisons un nombre de bits fixe en réservant le bits de poids
+fort pour le signe.</p>
+<p>En s'inspirant de ce qui est fait pour les nombres négatifs, une première
+approche pour représenter les nombres décimaux serait d'utiliser un nombre fixe
+de bits en en réservant certains bits pour la partie entière et d'autres pour
+la partie décimale. Si cette représentation est opérationnelle, en pratique,
+nous constatons que les nombres manuipulés possèdent généralement :</p>
+<ul>
+<li>soit beaucoup de chiffres avant la virgule et peu après
+  (ex : coordonnée d'un point d'intérêt en Lambert 93);</li>
+<li>soit beaucoup de décimales mais peu de chiffres avant le virgules
+  (ex : longitudes/latitude en radian).</li>
+</ul>
+<p>Sans remettre en cause le fonctionnement de notre représentation, cela présente
+tout de même quelques inconvénients. Les nombres utiliseront soit beaucoup de
+bits pour la partie entière et peu pour la partie décimale, soit l'inverse. Il
+devient dès lors difficile de réserver un nombre de bits adéquats pour chacune
+des parties et nous utiliserons beaucoup d'espace pour stocker des 0.</p>
+<p>Pour palier aux limites de cette première approche, nous utiliserons une
+<strong>représentation en virgule flottante</strong> qui consiste à utiliser une forme
+normalisée de la représentation binaire du type x =  a * 2<sup>n</sup> où :</p>
+<ul>
+<li>a est la <em>mantisse</em> comprise entre 1 et 2;</li>
+<li>n est un entier relatif appelé <em>exposant</em>.</li>
+</ul>
+<p>Par exemple :</p>
+<p>9,5 = (1001,1)<sub>2</sub> = (1,0011)<sub>2</sub>*2<sup>3</sup></p>
+<p>Le stockage de ce nombre dans l'ordinateur s'effectuera alors sous la forme
+d'un triplet (signe, exposant, mantisse) avec :</p>
+<ul>
+<li>1 bit pour le signe : 0 pour positif / 1 pour négatif;</li>
+<li>e bits pour l'exposant;</li>
+<li>m bits pour la mantisse.</li>
+</ul>
+<p>La norme IEEE-754 définit plusieurs formats basés sur ce modèle, différant par
+la précision de chacun d'eux :</p>
+<ul>
+<li>la simple précision utilise 1 bit de signe, 8 d'exposant et 23 de mantisse</li>
+<li>la double précison utilise 1 bit de signe, 11 d'exposant et 52 de mantisse</li>
+</ul>
+<p>Elle précise également quelques règles améliorant la précision des nombres
+représentables :</p>
+<ul>
+<li>en binaire, la partie entière de la mantisse vaut toujours 1. Seule la valeur
+  de la partie décimale sera donc stockée;</li>
+<li>pour éviter d'avoir à stocker des exposants négatifs, un <em>décalage</em> de</li>
+<li>(2<sup>e-1</sup> - 1) est appliqué à la valeur des exposants (127, par exemple, en
+  simple précision).</li>
+</ul>
+<p>Pour calculer la valeur correspondant à un triplet stocké en respectant la norme
+IEEE-754, nous appliquerons finalement la formule :</p>
+<p>valeur = (-1)<sup>s</sup> * (m + 1) * 2<sup>e - decalage</sup></p>
+<p>où :</p>
+<ul>
+<li>s = 0 pour un nombre positif / 1 pour un nombre négatif</li>
+<li>m = nombre compris entre 0 et 1</li>
+<li>e = exposant décalé compris entre -2<sup>e-1</sup> + 1 et 2<sup>e-1</sup></li>
+</ul>
+<p><img alt="Norme IEEE-754, représentation en simple précision" src="../img/norme_ieee.png" /></p>
+<p>Par exemple :</p>
+<p>9,5 = 0  10000010  00110000000000000000000</p>
+<p>0,15625 = 0  01111100  01000000000000000000000</p>
+<p>-2,25 = 1  10000000  00100000000000000000000</p>
+<p>Quelques exceptions à cette règle existent toutefois. En effet la représentation n'est pas correcte pour les nombres valant 0 ou proche de 0. Si l'exposant vaut 0, la règle est alors de ne pas ajouter 1 à la mantisse. De même, si l'exposant vaut 2<sup>e - 1</sup>, la norme indique que le nombre vaut l'infini.</p>
+<p>Le tableau suivant résume les formes normalisées/non normalisées de la norme :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Exposant décalé</strong></th>
+<th style="text-align: center;"><strong>Mantisse</strong></th>
+<th style="text-align: center;"><strong>Type</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">=! 0</td>
+<td style="text-align: center;">(-1)<sup>s</sup>.m.2<sup>1-d</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">de 1 à 2^e - 2</td>
+<td style="text-align: center;">quelconque</td>
+<td style="text-align: center;">(-1)<sup>s</sup>.(m+1).2<sup>1-d</sup></td>
+</tr>
+<tr>
+<td style="text-align: center;">2^e - 1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">infini</td>
+</tr>
+<tr>
+<td style="text-align: center;">2^e - 1</td>
+<td style="text-align: center;">=! 0</td>
+<td style="text-align: center;">NaN</td>
+</tr>
+</tbody>
+</table>
+<h4 id="operations-sur-les-nombres-en-machine">Opérations sur les nombres en machine</h4>
+<p>La norme IEEE-754 consistant à représenter les nombres sous une forme du type
+\pm a * 2^n, l'addition de deux nombres ne sera possible que si leurs
+exposants sont identiques. L'opération consistera alors simplement à
+additionner les mantisses.</p>
+<p>Une addition sera donc constituée de trois étapes :</p>
+<ul>
+<li><em>alignement des mantisses</em> afin d'avoir deux exposants égaux</li>
+<li>addition des mantisses</li>
+<li>renormalisation si le résultat ne respecte plus la norme</li>
+</ul>
+<p>Au cours de ces étapes, il faudra veiller à gérer correctement le
+<em>bit implicite</em> (partie entière de la mantisse non représentée dans la norme
+IEEE-754).</p>
+<p>Illustrons avec un exemple, en tentant de calculer <strong>9,5 + 1,75</strong> :</p>
+<p>9,5  = 0 10000010 00110000000000000000000</p>
+<p>1,75 = 0 01111111 11000000000000000000000</p>
+<p>L'exposant de 9,5 vaut 130 et celui de 1,75 vaut 127. Il faut donc décaler la
+mantisse de 1,75 (plus petit exposant) de 3 vers la droite, sans oublire
+d'insérer le bit implicite (entre parenthèse si dessous) :</p>
+<p>0  01111111 (1) 11000000000000000000000</p>
+<p>0  10000010 (0) 00<strong>1</strong>11000000000000000000</p>
+<p>Il est maintenant possible d'additionner les mantisses :</p>
+<p>0  10000010 (1) 00110000000000000000000
++
+0  10000010 (0) 00111000000000000000000
+\=
+0  10000010 (1) 01101000000000000000000</p>
+<p>La représentation est déjà normalisée (bit implicite valant 1). L'addition
+est terminée.</p>
+<p>Pour contrôler le résultat, évaluons le en base naturelle :</p>
+<p>0 10000010 01101000000000000000000</p>
+<p>= (-1)<sup>0</sup> * (1,01101)<sub>2</sub> * 2<sup>130-127</sup>
+= (1011,01)<sub>2</sub>
+ = 11,25</p>
+<p>Le résultat est correct !</p>
+<p>Autres exemples intéressants (nécessite de bien gérer le bit implicite) :</p>
+<ul>
+<li>9,5 + 9,25</li>
+<li>9,875 - 1,75</li>
+<li>9,75 - 9,5</li>
+</ul>
+<h4 id="limites-de-la-representation">Limites de la représentation</h4>
+<p>L'alignement des mantisses peut faire disparaître des bits "utiles" (ie.
+différents de 0) de la représentation.</p>
+<p>Par exemple :
+* 9,5 + 1,7500001
+    * le 0,0000001 est perdu : cela revient à additionner 9,5 + 1,75
+* 10<sup>16</sup> + 0,1
+    * le 0,1 est perdu : cela revient à additionner 0
+* 9,500000953674316 - 9,5
+* (1000000 + 0,01171875) - 1000000</p>
+<p><strong>0,1 + 0,1 + 0,1 - 0,3</strong>.</p>
+<p>Les réprésentation de 0,1 et 0,3 sont :</p>
+<p>0,1 = 0 01111011 10011001100110011001101</p>
+<p>0,3 = 0 01111101 00110011001100110011010</p>
+<p>On calcule 0,1+0,1 :</p>
+<p>0 01111011 ( 1) 10011001100110011001101
++
+0 01111011 ( 1) 10011001100110011001101
+\=
+0 10000010 (11) 00110011001100110011010</p>
+<p>On ajoute encore 0,1 :</p>
+<p>0 01111011 ( 11) 00110011001100110011010
++
+0 01111011 (  1) 10011001100110011001101
+\=
+0 10000010 (100) 11001100110011001100111</p>
+<p>Renormalisation de la mantisse de <strong>0,1+0,1+0,1</strong> :</p>
+<p>0 01111011 (100) 11001100110011001100111
+0 01111101   (1) 00110011001100110011001</p>
+<p>Et on retire 0,3, le principe pour les soustractions étant le même que pour les additions (alignement des mantisses, opération sur les mantisses, renormalisation, le tout sans oublier de gérer le bit implicite.</p>
+<p>Soustraction des mantisses :</p>
+<p>0 01111011 ( 1) 00110011001100110011001
+-
+0 01111101 ( 1) 00110011001100110011010
+\=
+1 01111101 ( 0) 00000000000000000000001</p>
+<p>Il reste à renormaliser la mantisse :</p>
+<p>1 01111101 (0) 0000000000000000000000<strong>1</strong>
+1 01100110 (<strong>1</strong>) 00000000000000000000000</p>
+<p>Soit en évaluant l'expression : -2<sup>-25</sup> = -3 * 10<sup>-8</sup></p>
+<h3 id="representation-des-caracteres-en-machine">Représentation des caractères en machine</h3>
+<p>Une chaîne de caractères est représentée comme une suite de caractères. Le codage des caractères est fait grace à une table de correspondance indiquant l'équivalent binaire de chacun des caractères. La table de correspondance la plus utilisée est l'ASCII (Américan Standard code for Information Interchange). Chaque caractère y est représenté sur 7 bits. Notons que le code ASCII étendu, utilisant 8 bits, permet de coder des caractères supplémentaires (accents, etc.) non présent initialement dans la langue anglaise.</p>
+<p>Le codage ASCII utilisant 7 bits, la table complète permet de représenter 128 caractères (2^7). Les caractères correspondant au codes 0 à 31 et 127 représentant des caractères de contrôles (retour à la ligne ou autres actions spécifiques), restent 95 caractères affichables.</p>
+<p><img alt="Caractères représentables en ASCII" src="../img/ascii_caracteres.png" /></p>
+<p>Nous avons vu qu'il était courant, dans un ordinateur, de représenter les chiffres binaires sur un nombre fixe de bits (32 ou 64 bits pour la norme IEEE-754 par exemple). Ces représentations trouvent ainsi une forme condensée sur 4 ou 8 octets en hexadecimal, ce qui simplifie grandement l'écriture : 4 caractères en hexadécimal contre 32 en binaire...</p>
+<p>Exemple : Extrait de la table ASCII</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>En base 10</strong></th>
+<th style="text-align: center;"><strong>En base 16</strong></th>
+<th style="text-align: center;"><strong>En base 2</strong></th>
+<th style="text-align: center;"><strong>Symbole ASCII</strong></th>
+<th style="text-align: left;"><strong>Détail</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">63</td>
+<td style="text-align: center;">3F</td>
+<td style="text-align: center;">00111111</td>
+<td style="text-align: center;">?</td>
+<td style="text-align: left;">Point d'interrogation</td>
+</tr>
+<tr>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">01000000</td>
+<td style="text-align: center;">@</td>
+<td style="text-align: left;">Arobase8</td>
+</tr>
+<tr>
+<td style="text-align: center;">65</td>
+<td style="text-align: center;">41</td>
+<td style="text-align: center;">01000001</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: left;">Lettre latine capitale A</td>
+</tr>
+<tr>
+<td style="text-align: center;">66</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">01000010</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: left;">Lettre latine capitale B</td>
+</tr>
+<tr>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">43</td>
+<td style="text-align: center;">01000011</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Lettre latine capitale C</td>
+</tr>
+</tbody>
+</table>
+<h2 id="complexite-en-algorithmie">Complexité en algorithmie</h2>
+<p>La théorie de la <strong>complexité algorithmique</strong> s'intéresse à l'estimation de l'efficacité des algorithmes. Elle s'attache à répondre à diverses questions sur un algorithme :</p>
+<ul>
+<li>l'algorithme apporte-t-il une réponse au problème posé ? C'est la notion de <strong>terminaison</strong></li>
+<li>l'algorithme apporte-t-il la bonne réponse au problème posé ? Notion de <strong>validité</strong></li>
+<li>l'algorithme apporte-t-il la bonne réponse dans un temps acceptable ? Notion de <strong>complexité</strong></li>
+</ul>
+<p>Afin de définir précisément ces trois notions, commençons par redéfinir de manière plus mathématique un algorithme.</p>
+<blockquote>
+<p>Un algorithme est formé d'un ensemble fini d'opérations liées par une structure de contrôle et dont les opérandes portent sur un ensemble fini de variables.</p>
+</blockquote>
+<p>Un algorithme résoud le problème qui est posé si la suite des opérations est finie (<em>condition de terminaison</em>) et si, lors de la terminaison, le sous-ensemble des variables de sortie contient le résultat du problème (<em>condition de validité</em>).</p>
+<p>Prouver un algorithme c'est démontrer mathématiquement que les conditions de terminaison et de validité sont satisfaites.</p>
+<p>S'intéresser à l'estimation du nombre d'opérations nécessaires, à une constante près, pour résoudre le problème sur un sous-ensemble de taille fixe n, c'est établir la classe de complexité de l'algorithme.</p>
+<h3 id="terminaison-et-validite">Terminaison et validité</h3>
+<p>Nous illustrerons par quelques exemples la démonstration des preuves de terminaison et de validité d'un algorithme.</p>
+<p>Considérons l'algorithme effectuant la somme des éléments d'un tableau.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Fonction somme (tableau, taille)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  resultat = 0
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  Pour i allant de 1 à taille
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    rasultat = resultat + tableau[i]
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  Fin pour
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  Retourner resultat
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Fin fonction
+</span></code></pre></div>
+<p>La terminaison est évidente puisque l'algorithme est constituée d'une boucle qui exécute n fois une somme et une affectation (opérations s'exécutant en temps fini).</p>
+<p>Pour démontrer la validité, nous procédons par récurrence sur la taille du tableau. Nous devons démontrer que la formule S(n) = ∑T<sub>i</sub> (pour i allant jusqu'à n).</p>
+<ul>
+<li>Si le tableau est composé de zero élément, la somme est initialisée à 0 avant la boucle et la boucle est parcourue 0-fois. La somme est donc correcte.</li>
+<li>Si le tableau est composé d'un élément, la somme calculée par l'algorithme est toujous correcte : elle est initialisée à 0 pour T<sub>1</sub> est ajouté (S = 0 + T<sub>1</sub> = T<sub>1</sub>), ce qui est correct.</li>
+<li>Si l'algorithme est vrai pour un tableau de p éléments, nous devons démontrer qu'elle l'est pour un tableau de p+1 éléments. S(p+1) = S(p) + T(p+1) =  ∑T<sub>i</sub>. La formule est donc correcte.</li>
+</ul>
+<h3 id="complexite">Complexité</h3>
+<h4 id="petit-historique">Petit historique</h4>
+<p>A l'origine des analyses de complexité algorithmique, on indiquait, pour chaque algorithme trouvé, le temps de calcul pour un nombre donnée d'éléments en entrée, sur un processeur et avec un langage donnés. Cette méthode souffrait d'une grande faiblaisse : il était quasiment impossibilité de comparer les algorithmes entre eux.</p>
+<p>La nécessité de disposer d'une approche indépendante des facteurs matériels s'est alors fait sentir.</p>
+<p>L'idée de compter le nombre d'opérations élémentaires d'un algorithme est alors apparue.</p>
+<p>La taille des données pouvant avoir un impact sur la performance d'un algorithme, elle peut également être prise en compte.</p>
+<h4 id="notion-de-complexite">Notion de complexité</h4>
+<p>La complexité mesure le nombre d'opérations fondamentales qu'effectue un algorithme sur un jeu de données pour aboutir au résultat. Elle est exprimée en fonction de la taille du jeu de données, souvent noté n.</p>
+<p>Nous ne nous intéresserons ici qu'à des jeux de données de grande taille (n &gt; 1000). En effet, lorsque les jeux de données sont petits les ordinateurs actuels sont suffisamment puissant pour retourner un résultat en quelques millisecondes, même lorsque l'algorithme est mauvais. Nous dirons parfois que la complexité mesure la <em>performance asymptotique</em> d'un algorithme pour signifier qu'il s'agit de la performance lorsque la taille du jeu de données tend vers l'infini.</p>
+<p>Les <em>opérations élémentaires</em> dont il est questions pour évaluer la complexité d'un algorithme sont au nombre de quatre :
+* adition, soustraction, multiplication, division
+* accès mémoire
+* comparaisons
+* calculs sur les pointeurs</p>
+<p>Nous distinguons trois types de complexité :</p>
+<ul>
+<li>la <strong>complexité dans le meilleur des cas</strong> : plus petit nombre d'opérations qu'aura à effectuer l'algorithme sur le jeu de données;</li>
+<li>la <strong>complexité dans le pire des cas</strong> : plus grand nombre d'opérations qu'aura à effectuer l'algorithme sur le jeu de données;</li>
+<li>la <strong>complexité dans le cas moyen</strong> : moyenne des nombres d'opérations de l'algorithme sur des jeux de données de même taille.</li>
+</ul>
+<p>C'est généralement l'analyse de la complexité dans le pire des cas qui focalisera l'attention. En effet nous observons que les algorithmes fonctionnent souvent dans des situations les plus mauvaises pour eux. L'analyse du pire des cas nous fournit alors une limite supérieure de temps de calculs : les performances seront toujours meilleures que dans ce cas. Dans la suite de ce cours, nous ne nous intéresserons qu'à la complexité dans le pire des cas.</p>
+<p>Lorsque plusieurs algorithmes retournent le même résultat à partir d'un jeu de données (par exemple les différents algorithmes de tri), l'algorithme est dit <strong>optimal</strong> si sa complexité est la plus faible de tous.</p>
+<h4 id="notations-de-landau">Notations de Landau</h4>
+<p>La notation de Landau est utilisée pour définir rigoureusement la notion de complexité.</p>
+<ul>
+<li>O(f) pour le pire des cas</li>
+<li>Omega(f) pour le meilleur des cas</li>
+<li>Theta(f) pour le cas moyen</li>
+</ul>
+<p>Pour le pire des cas, qui nous intéresse ici exclusivement, cette notation exprime une borne supérieure d'une fonction.</p>
+<p>Si le nombre d'opération effectué par l'algorithme suit une fonction f(n), nous noterons O(g(n)) la complexité de l'algorithme avec f(n) = 0(g(n)).</p>
+<p><img alt="Borne asymptotique supérieure" src="../img/borne_asymtotique_sup.png" /></p>
+<p>Les règles suivantes s'appliquent lorsque l'on effectue des opérations :</p>
+<ul>
+<li>les constantes multiplicatives sont omises : O(c * g(n)) = c * O(g(n) = O(g(n))</li>
+<li>ainsi les termes constants sont notés O(1) (<em>O(k) = O(k * 1) = O(1)</em>)</li>
+<li>l'addition est réalisée en ne retenant que le maximum : O(f(n) + g(n)) = O(f(n)) + O(g(n)) = max(O(f(n)), O(g(n)))</li>
+<li>la multiplication est "classique" : O(f(n) * g(n)) = O(f(n)) * O(g(n))</li>
+</ul>
+<p>Par exemple, si un algorithme présente une complexité dans le pire des cas fonction de g(n) = 3 * n<sup>3</sup> + 10 * n<sup>2</sup> + 5, elle sera noté O(n<sup>3</sup>).</p>
+<h4 id="classes-de-complexite">Classes de complexité</h4>
+<p>Les complexités que l'on rencontre fréquemment sont les suivantes :</p>
+<ul>
+<li>O(1) : accès constant</li>
+<li>O(log(n)) : logarithmique</li>
+<li>O(n) : linéaire</li>
+<li>O(n.log(n)) : quasi-linéaire</li>
+<li>O(n<sup>2</sup>) : quadratique</li>
+<li>O(n<sup>3</sup>) : cubique</li>
+<li>O(n<sup>p</sup>) : polynomiale</li>
+<li>O(2<sup>n</sup>) : exponentielle</li>
+<li>O(n!) : factorielle</li>
+</ul>
+<p><img alt="Quelques classes de complexité" src="../img/figure_2.png" /></p>
+<p>Le tableau ci-dessous fournit des temps d'exécution en secondes pour le différentes classes de complexité et différentes tailles de données, en considérant que l'ordinateur traite 10<sup>6</sup> instructions par secondes (10<sup>6</sup> FLOPS; ce qui correspond à un ordinateur bureautique classique en 2016).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">n</th>
+<th style="text-align: center;">10</th>
+<th style="text-align: center;">20</th>
+<th style="text-align: center;">30</th>
+<th style="text-align: center;">60</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">log(n)</td>
+<td style="text-align: center;">2,3.10<sup>-6</sup></td>
+<td style="text-align: center;">3,0.10<sup>-6</sup></td>
+<td style="text-align: center;">3,4.10<sup>-6</sup></td>
+<td style="text-align: center;">4,09.10<sup>-6</sup></td>
+</tr>
+<tr>
+<td style="text-align: left;">n</td>
+<td style="text-align: center;">1.10<sup>-5</sup></td>
+<td style="text-align: center;">2.10<sup>-5</sup></td>
+<td style="text-align: center;">3.10<sup>-5</sup></td>
+<td style="text-align: center;">6.10<sup>-5</sup></td>
+</tr>
+<tr>
+<td style="text-align: left;">n.log(n)</td>
+<td style="text-align: center;">2,3.10<sup>-5</sup></td>
+<td style="text-align: center;">5,99.10<sup>-5</sup></td>
+<td style="text-align: center;">1,02.10<sup>-4</sup></td>
+<td style="text-align: center;">2,46.10<sup>-4</sup></td>
+</tr>
+<tr>
+<td style="text-align: left;">n<sup>2</sup></td>
+<td style="text-align: center;">10<sup>-4</sup></td>
+<td style="text-align: center;">4.10<sup>-4</sup></td>
+<td style="text-align: center;">9.10<sup>-4</sup></td>
+<td style="text-align: center;">3,6.10<sup>-3</sup></td>
+</tr>
+<tr>
+<td style="text-align: left;">n<sup>3</sup></td>
+<td style="text-align: center;">10<sup>-3</sup></td>
+<td style="text-align: center;">8.10<sup>-3</sup></td>
+<td style="text-align: center;">2,7.10<sup>-2</sup></td>
+<td style="text-align: center;">2,16.10<sup>-1</sup></td>
+</tr>
+<tr>
+<td style="text-align: left;">2<sup>n</sup></td>
+<td style="text-align: center;">1,02.10<sup>-3</sup></td>
+<td style="text-align: center;">1,05</td>
+<td style="text-align: center;">1,07.10<sup>3</sup></td>
+<td style="text-align: center;">1,15.10<sup>12</sup></td>
+</tr>
+<tr>
+<td style="text-align: left;">n!</td>
+<td style="text-align: center;">3,6</td>
+<td style="text-align: center;">2,4.10<sup>12</sup></td>
+<td style="text-align: center;">2,4.10<sup>26</sup></td>
+<td style="text-align: center;">8,3.10<sup>75</sup></td>
+</tr>
+</tbody>
+</table>
+<p>Il est intéressant de remarquer que 10<sup>12</sup> secondes équivaut à environ 36 000 annnées !</p>
+<h3 id="calculs-de-complexite">Calculs de complexité</h3>
+<p>Dans ce paragraphe, nous donnons les éléments de base permettant de calculer la complexité d'un algorithme.</p>
+<ul>
+<li>
+<p>Une <em>instruction simple</em> (lecture, écriture, affectation...) s'effectue en accès constant : O(1)</p>
+</li>
+<li>
+<p>Dans le cas d'une <em>suite d'instructions simples</em>, la complexité est égale à la somme des complexités.</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Instructions</th>
+<th style="text-align: center;">Complexité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">a = 2</td>
+<td style="text-align: center;">O(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">b = 3</td>
+<td style="text-align: center;">O(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">c = a + b</td>
+<td style="text-align: center;">O(1)</td>
+</tr>
+</tbody>
+</table>
+<p>Complexité résultante : O(1)+O(1)+O(1) = max(O(1), O(1), O(1)) = O(1)</p>
+<ul>
+<li>Dans le cas d'un <em>traitement conditionnel</em>, la complexité au pire des cas est retenue est celle du bloc d'instructions le moins performant :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Instructions</th>
+<th style="text-align: center;">Complexité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Si condition</td>
+<td style="text-align: center;">O(condition)</td>
+</tr>
+<tr>
+<td style="text-align: left;">-- instructionsA</td>
+<td style="text-align: center;">O(instructionsA)</td>
+</tr>
+<tr>
+<td style="text-align: left;">sinon</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">-- insctructionsB</td>
+<td style="text-align: center;">O(instructionsB)</td>
+</tr>
+<tr>
+<td style="text-align: left;">fin si</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Complexité résultante : O(condition) + max(O(instructionsA), O(instructionsB))</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Dans le cas d'une <em>structure itérative</em>, la complexité est celle du bloc d'instructions de la boucle multiplié par le nombre d'itérations.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Instructions</th>
+<th style="text-align: center;">Complexité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Pour i allant de p à q</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">-- instructions</td>
+<td style="text-align: center;">(q-p)*O(instructions)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Fin pour</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>Pour illustrer évaluons la complexité de l'algorithme de calcul de la factorielle :</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Instructions</th>
+<th style="text-align: center;">Complexité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Fonction factorielle(n)</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">-- res = 1</td>
+<td style="text-align: center;">O(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">-- Si n ≠ 0</td>
+<td style="text-align: center;">O(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">---- Pour i allant de 1 à n</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">------ res = res * i</td>
+<td style="text-align: center;">n*O(1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">---- Fin pour</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">-- Fin si</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">-- Retourner res</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Fin fonction</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>La complexité est donc en O(1) + O(1) + max(O(1), O(0)) + n*O(1) = O(n)</p>
+<h3 id="application-comparaison-de-divers-algorithmes-de-tri">Application : comparaison de divers algorithmes de tri</h3>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Tri_par_s%C3%A9lection">tri par sélection</a> (trouver le plus petit et le mettre au début)</li>
+<li>tri par sélection récursif (trouver le plus grand, le mettre à la fin et recommancer sur le tableau 0:n-1)</li>
+<li><a href="https://fr.wikipedia.org/wiki/Tri_par_insertion">tri par insertion</a> (tri des 2 premiers éléments, insertion du 3ème, etc.)</li>
+<li><a href="https://fr.wikipedia.org/wiki/Tri_fusion">tri fusion</a> (découper en deux et trier chaque partie puis fusionner)</li>
+<li><a href="https://fr.wikipedia.org/wiki/Tri_%C3%A0_bulles">tri à bulles</a> (comparer chaque élément à son suivant et recommencer)</li>
+<li><a href="https://fr.wikipedia.org/wiki/Tri_rapide">tri rapide</a> (choisir un pivot, placer les plus petits avant, les plus grands après et trier chaque partie)</li>
+</ul>
+<p>Illustration en codant les algorithmes sous Python (plateforme de test : Ubuntu 14.04 64bits / 7,7Gio RAM / Intel® Core™ i5-3337U CPU @ 1.80GHz × 4  / Python 3.4). Moyennes sur 10 exécutions de tri d'un tableau de 10000 entiers aléatoires entre 0 et 1000 :</p>
+<ul>
+<li>Tri par sélection : 3.2706s</li>
+<li>Tri par sélection récursif : 3.1255s</li>
+<li>Tri par insertion : 4.0774s</li>
+<li>Tri fusion : 0.0434s</li>
+<li>Tri à bulles : 5.2502s</li>
+<li>Tri rapide : 0.000005s</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
