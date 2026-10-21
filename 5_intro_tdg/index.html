@@ -1,0 +1,1230 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../4.c_exercices_python/">
+      
+      
+        <link rel="next" href="../5.c_exercices_tdg/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+    
+    
+      
+        <title>Introduction à la Théorie des Graphes - Cours d'initiation à l'algorithmie</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#elements-de-theorie-des-graphes" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-header__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Cours d'initiation à l'algorithmie
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Introduction à la Théorie des Graphes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Cours d&#39;initiation à l&#39;algorithmie" class="md-nav__button md-logo" aria-label="Cours d'initiation à l'algorithmie" data-md-component="logo">
+      
+  <img src="../logo.svg" alt="logo">
+
+    </a>
+    Cours d'initiation à l'algorithmie
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accueil & Déroulement des séances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Architecture_logicielle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Architecture logicielle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_Validite_logiciel_numerique/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Validité Logiciel Numérique
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3 - Algorithmie
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            3 - Algorithmie
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Algorithmie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à l'algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.b_diviser_pour_regner/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Approche 'diviser pour mieux règner'
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    4 - Introduction à Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            4 - Introduction à Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_intro_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    5 - Introduction à la Théorie des Graphes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            5 - Introduction à la Théorie des Graphes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Introduction à la Théorie des Graphes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la Théorie des Graphes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elements-de-theorie-des-graphes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Éléments de Théorie des Graphes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Éléments de Théorie des Graphes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-bref-historique-des-graphes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un bref historique des graphes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premieres-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premières définitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Premières définitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-intuitive-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition intuitive d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-oriente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe orienté
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-non-oriente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe non orienté
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordre-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordre d'un graphe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordre d'un graphe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-elements-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les éléments d'un graphe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relations entre les éléments d'un graphe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-sommets-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les sommets d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-sommets-et-les-arcs-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les sommets et les arcs d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-arcs-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les arcs d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicite-et-degre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplicité et degré
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-partiel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe partiel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-et-sous-graphe-connexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe et sous-graphe connexes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modes-de-representation-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modes de représentation d'un graphe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modes de représentation d'un graphe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrice-dadjacence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrice d'adjacence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrice-dincidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrice d'incidence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrice-sif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrice SIF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.b_Cours_tdg.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours détaillé (pdf)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3.c_exercices_algo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices d'Algorithmie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.c_exercices_python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5.c_exercices_tdg/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices de Théorie des Graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#elements-de-theorie-des-graphes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Éléments de Théorie des Graphes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Éléments de Théorie des Graphes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#un-bref-historique-des-graphes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un bref historique des graphes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#premieres-definitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Premières définitions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Premières définitions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definition-intuitive-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définition intuitive d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-oriente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe orienté
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-non-oriente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe non orienté
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordre-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ordre d'un graphe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ordre d'un graphe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-elements-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les éléments d'un graphe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Relations entre les éléments d'un graphe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-sommets-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les sommets d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-sommets-et-les-arcs-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les sommets et les arcs d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relations-entre-les-arcs-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relations entre les arcs d'un graphe
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiplicite-et-degre" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multiplicité et degré
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-partiel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe partiel
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphe-et-sous-graphe-connexes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe et sous-graphe connexes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modes-de-representation-dun-graphe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modes de représentation d'un graphe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modes de représentation d'un graphe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matrice-dadjacence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrice d'adjacence
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrice-dincidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrice d'incidence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrice-sif" class="md-nav__link">
+    <span class="md-ellipsis">
+      Matrice SIF
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Introduction à la Théorie des Graphes</h1>
+
+<h2 id="elements-de-theorie-des-graphes">Éléments de Théorie des Graphes</h2>
+<p>Si vous voulez approfondir le cours, vous pouvez lire le <a href="../5.b_Cours_tdg.pdf">cours de Théorie des Graphes de Benoît Costes</a> qui va beaucoup plus loin que cette page (qui en est un extrait).</p>
+<h3 id="un-bref-historique-des-graphes">Un bref historique des graphes</h3>
+<p>La théorie des graphes est généralement rattachée au problème des sept ponts de Königsberg. En 1736, Leonhard Euler représente les rives et les îles par des sommets et les ponts par des liens. Il montre qu'il est impossible de parcourir chacun des sept ponts exactement une fois.</p>
+<p><img alt="Carte historique des sept ponts de Königsberg" src="../img/tdg/euler.png" /></p>
+<p><em>Le plan historique de Königsberg et ses ponts.</em></p>
+<p><img alt="Modélisation des ponts de Königsberg par un graphe non orienté" src="../img/tdg/euler2.png" /></p>
+<p><em>Les lieux sont représentés par des sommets et les ponts par des arêtes.</em></p>
+<p>Le problème du cavalier sur l'échiquier est étudié au XVIIIe siècle. Au XIXe siècle, Arthur Cayley travaille sur les arbres et James Joseph Sylvester introduit le terme « graphe » en 1878. Le premier ouvrage entièrement consacré à la théorie des graphes est publié par Dénes Kőnig en 1936. Claude Berge contribue ensuite à structurer et diffuser la discipline, notamment avec ses ouvrages d'introduction et ses travaux sur les graphes parfaits et les hypergraphes. Le problème des quatre couleurs est démontré par Kenneth Appel et Wolfgang Haken en 1976.</p>
+<p>Les graphes servent aujourd'hui à modéliser des réseaux et leurs relations : réseaux de transport ou de communication, relations sociales, et bien d'autres structures.</p>
+<h3 id="premieres-definitions">Premières définitions</h3>
+<h4 id="definition-intuitive-dun-graphe">Définition intuitive d'un graphe</h4>
+<p>Un graphe est une structure composée de sommets, qui représentent des objets, et de liens entre ces sommets. Le dessin choisi pour représenter les sommets et les liens n'est pas essentiel : ce sont les relations entre sommets qui définissent le graphe. Deux dessins différents peuvent donc représenter le même graphe.</p>
+<p>Dans la suite, on emploie « arc » pour un lien orienté et « arête » pour un lien non orienté. Le PDF emploie parfois « arc » au sens général.</p>
+<h4 id="graphe-oriente">Graphe orienté</h4>
+<p>Un graphe orienté est noté <code>G = (V, E)</code>, où <code>V</code> est l'ensemble des sommets et <code>E</code> un ensemble de couples ordonnés de sommets. Un arc <code>a = (x, y)</code> part de <code>x</code> et arrive en <code>y</code>. L'ordre compte : la présence de <code>(x, y)</code> n'implique pas celle de <code>(y, x)</code>. On peut aussi noter l'arc <code>xy</code>.</p>
+<p><img alt="Exemple de graphe orienté" src="../img/tdg/example_full.png" /></p>
+<p><em>Les flèches indiquent le sens des arcs; le graphe contient aussi une boucle et des arcs multiples.</em></p>
+<h4 id="graphe-non-oriente">Graphe non orienté</h4>
+<p>Un graphe non orienté est également noté <code>G = (V, E)</code>, mais les liens n'ont pas de direction. Une arête reliant <code>x</code> et <code>y</code> est identique à celle reliant <code>y</code> et <code>x</code> : l'ordre des extrémités ne compte pas. Dans une représentation graphique, les arcs sont dessinés avec des flèches et les arêtes sans flèches.</p>
+<p><img alt="Exemple de graphe non orienté" src="../img/tdg/example_undirected.png" /></p>
+<p><em>Les arêtes ne portent pas de flèche; ce graphe comporte également une boucle et des arêtes multiples.</em></p>
+<h4 id="ordre-dun-graphe">Ordre d'un graphe</h4>
+<p>L'ordre d'un graphe fini est le nombre de ses sommets, c'est-à-dire le cardinal de <code>V</code>, noté <code>|V|</code>.</p>
+<h5 id="relations-entre-les-elements-dun-graphe">Relations entre les éléments d'un graphe</h5>
+<h6 id="relations-entre-les-sommets-dun-graphe">Relations entre les sommets d'un graphe</h6>
+<p>Pour un arc <code>a = (x, y)</code>, <code>y</code> est un successeur de <code>x</code> et <code>x</code> un prédécesseur de <code>y</code>. Les deux sommets sont voisins ou adjacents. On note <code>Γ⁺(x)</code> l'ensemble des successeurs de <code>x</code>, <code>Γ⁻(x)</code> celui de ses prédécesseurs, et <code>Γ(x) = Γ⁺(x) ∪ Γ⁻(x)</code> l'ensemble de ses voisins. Un sommet ayant un seul voisin est dit pendant.</p>
+<h6 id="relations-entre-les-sommets-et-les-arcs-dun-graphe">Relations entre les sommets et les arcs d'un graphe</h6>
+<p>Les sommets reliés par un arc en sont les extrémités. Pour un arc orienté <code>(x, y)</code>, <code>x</code> est l'extrémité initiale (ou origine) et <code>y</code> l'extrémité finale (ou destination). L'arc est sortant de <code>x</code> et entrant en <code>y</code>. Un arc pendant est incident à un sommet pendant.</p>
+<p>Une boucle est un arc dont les deux extrémités sont le même sommet, de la forme <code>(x, x)</code>.</p>
+<p><img alt="Boucle dans un graphe orienté" src="../img/tdg/loop_directed.png" /></p>
+<p><em>La boucle est orientée vers son sommet.</em></p>
+<p><img alt="Boucle dans un graphe non orienté" src="../img/tdg/loop_undirected.png" /></p>
+<p><em>Une boucle non orientée est une arête qui revient au même sommet.</em></p>
+<h6 id="relations-entre-les-arcs-dun-graphe">Relations entre les arcs d'un graphe</h6>
+<p>Deux arcs sont adjacents lorsqu'ils ont au moins une extrémité commune.</p>
+<h5 id="multiplicite-et-degre">Multiplicité et degré</h5>
+<p>La multiplicité d'une paire de sommets <code>(x, y)</code> est le nombre d'arcs allant de <code>x</code> vers <code>y</code>. On la note <code>m⁺_G(x, y)</code>; la multiplicité dans le sens inverse est <code>m⁻_G(x, y) = m⁺_G(y, x)</code>. La multiplicité totale est la somme des deux. Pour une boucle, la convention du cours compte deux incidences au sommet.</p>
+<p><img alt="Liste des paires de sommets et de leurs multiplicités" src="../img/tdg/condensed_incidency.png" /></p>
+<p><em>Une représentation condensée indique chaque paire de sommets et le nombre d'arcs qui la relient.</em></p>
+<p>Le demi-degré sortant <code>d⁺_G(x)</code> est le nombre d'arcs ayant <code>x</code> pour extrémité initiale; le demi-degré entrant <code>d⁻_G(x)</code> est le nombre d'arcs ayant <code>x</code> pour extrémité finale. Le degré total est <code>d_G(x) = d⁺_G(x) + d⁻_G(x)</code>. Une boucle contribue deux au degré total.</p>
+<h4 id="graphe-partiel">Graphe partiel</h4>
+<p>Si <code>A</code> est un sous-ensemble des arcs <code>E</code>, le graphe partiel correspondant est <code>G' = (V, A)</code>. Il conserve tous les sommets de <code>G</code>, mais ne garde que les arcs de <code>A</code>; les sommets qui n'ont alors plus d'arcs incidents restent présents et deviennent isolés.</p>
+<h4 id="graphe-et-sous-graphe-connexes">Graphe et sous-graphe connexes</h4>
+<p>Un sous-graphe induit par un ensemble <code>X</code> de sommets conserve les sommets de <code>X</code> et tous les arcs de <code>G</code> dont les deux extrémités appartiennent à <code>X</code>. Un sous-graphe partiel résulte de la combinaison de ces opérations : on choisit des sommets, puis éventuellement une partie seulement des arcs entre eux.</p>
+<p>Une chaîne relie deux sommets si elle permet de passer de l'un à l'autre en suivant des arêtes de proche en proche. Un graphe est connexe si toute paire de sommets est reliée par une chaîne. Cette définition ignore l'orientation des arcs; pour un graphe orienté, on parle de connexité forte lorsque chaque sommet peut atteindre chaque autre en suivant le sens des arcs.</p>
+<p>La relation « être égal ou être relié par une chaîne » est une relation d'équivalence sur les sommets. Les sous-graphes induits par ses classes d'équivalence sont les composantes connexes. Le nombre de composantes est le nombre de connexité; le graphe est connexe si et seulement si ce nombre vaut un.</p>
+<h3 id="modes-de-representation-dun-graphe">Modes de représentation d'un graphe</h3>
+<h4 id="matrice-dadjacence">Matrice d'adjacence</h4>
+<p>Pour un graphe d'ordre <code>n</code>, la matrice d'adjacence est une matrice carrée <code>n × n</code>, dont les lignes et les colonnes correspondent aux sommets. Le coefficient en ligne <code>i</code>, colonne <code>j</code> est le nombre d'arcs allant du sommet <code>i</code> au sommet <code>j</code>.</p>
+<p>La matrice représente les boucles sur sa diagonale. Pour un graphe non orienté, elle est symétrique; l'absence de boucle se traduit par une diagonale nulle. La somme de la ligne <code>i</code> donne le demi-degré sortant du sommet <code>i</code>, et la somme de la colonne <code>j</code> son demi-degré entrant. La puissance <code>k</code> de cette matrice permet aussi de compter les parcours de longueur <code>k</code> entre deux sommets, en considérant chaque arc de longueur un.</p>
+<p><img alt="Matrice d'adjacence d'un graphe orienté" src="../img/tdg/adjacency_matrix.png" /></p>
+<p><em>Les lignes et les colonnes suivent l'ordre des sommets <code>a</code> à <code>h</code>; la valeur <code>2</code> signale deux arcs de <code>f</code> vers <code>e</code>.</em></p>
+<h4 id="matrice-dincidence">Matrice d'incidence</h4>
+<p>Pour un graphe orienté sans boucle, la matrice d'incidence a <code>n</code> lignes (les sommets) et <code>m</code> colonnes (les arcs). Pour chaque arc, le coefficient vaut <code>-1</code> au sommet initial, <code>+1</code> au sommet final et <code>0</code> pour les autres sommets.</p>
+<p>Pour un graphe non orienté, le coefficient vaut <code>1</code> si le sommet est une extrémité de l'arête et <code>0</code> sinon; une boucle est représentée par <code>2</code> au sommet concerné. Avec la convention orientée <code>-1/+1</code>, une boucle orientée ne peut pas être représentée correctement, car ses deux contributions s'annulent.</p>
+<p><img alt="Matrice d'incidence sommets-arcs" src="../img/tdg/incidency_matrix.png" /></p>
+<p><em>Chaque colonne correspond à un arc numéroté; <code>-1</code> marque son origine et <code>+1</code> sa destination.</em></p>
+<h3 id="matrice-sif">Matrice SIF</h3>
+<p>La matrice SIF (« Sommets Initiaux et Finaux ») représente un graphe par une matrice de taille <code>m × 2</code>. Chaque ligne correspond à un arc; la première colonne indique son sommet initial et la seconde son sommet final. Cette représentation condensée évite les grandes matrices d'adjacence ou d'incidence lorsque la plupart de leurs coefficients sont nuls.</p>
+<p><img alt="Matrice SIF avec l'origine et la destination de chaque arc" src="../img/tdg/matrice_sif.png" /></p>
+<p><em>Les arcs numérotés sont décrits par leur sommet initial <code>Si</code> et leur sommet final <code>Sf</code>.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      
+    
+  </body>
+</html>
