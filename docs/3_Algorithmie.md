@@ -24,13 +24,59 @@ La programmation doit se résumer à transposer dans un langage de programmation
 
 > Un algorithme est l'expression claire et condensée d'un ensemble de traitements à effectuer pour résoudre un problème.
 
-Comme pour les langages de programmation, il existe différents langages d'algorithmie (comme le pseudo-code paar exemple qui est souvent utilisé). Dans ce cours nous utiliserons le langage ADL qui présente l'avantage de posséder une syntaxe très concise et plus abstraite.
+Le pseudo-code est une façon de décrire les étapes d'un algorithme avec des mots et des notations simples, sans suivre la syntaxe exacte d'un langage exécutable comme Python ou C. Il n'existe pas une syntaxe universelle du pseudo-code : l'important est que les instructions, les conditions et les répétitions soient précises et compréhensibles.
 
 Un programme est l'implémentation d'un algorithme dans un langage de programmation donné. L'algorithme se différencie notamment du programme par son indépendance à l'architecture d'une machine : on n'a par exemple pas à se soucier dans un algorithme de la gestion de la mémoire comme on devrait le faire en C.
 
 L'intérêt de passer par une phase d'algorithmie avant de commencer à coder est donc de pouvoir se concentrer sur les méthodes plutôt que sur les spécificités d'un langage de programmation.
 
-Pour écrire des algorithmes, nous utiliserons un pseudo-code, c'est-à-dire des instructions écrites ne dépendant d'aucun langage de programmation.
+Un algorithme peut également être représenté graphiquement par un diagramme d'activité. Celui-ci montre l'enchaînement des actions et les chemins possibles : le point plein marque le début, les rectangles arrondis les actions, le losange une décision, et les flèches le flux de contrôle. Les gardes `[oui]` et `[non]` indiquent le résultat qui emprunte chaque branche. Un diagramme complète le pseudo-code; il ne remplace pas nécessairement les détails des calculs.
+
+### Exemple : somme des entiers de 1 à n
+
+On suppose que `n` est un entier positif ou nul. L'algorithme calcule `1 + 2 + ... + n`; pour `n = 0`, il renvoie `0`.
+
+En pseudo-code :
+
+```text
+Fonction somme(n)
+    total = 0
+    i = 1
+    Tant que i <= n
+        total = total + i
+        i = i + 1
+    Fin tant que
+    Retourner total
+Fin fonction
+```
+
+Le même algorithme sous forme de diagramme d'activité :
+
+![Diagramme d'activité de la fonction somme, avec une boucle tant que et une décision sur i inférieur ou égal à n](img/activite_somme.svg)
+
+*La branche `[oui]` ajoute la valeur courante puis revient tester la condition; la branche `[non]` termine le calcul et retourne `total`.*
+
+### Exemple : maximum de deux nombres
+
+Cet exemple montre comment un choix `Si/Sinon` apparaît dans les deux représentations.
+
+En pseudo-code :
+
+```text
+Fonction maximum(a, b)
+    Si a >= b alors
+        Retourner a
+    Sinon
+        Retourner b
+    Fin si
+Fin fonction
+```
+
+Le même algorithme sous forme de diagramme d'activité :
+
+![Diagramme d'activité de la fonction maximum, avec deux branches selon le résultat de la comparaison entre a et b](img/activite_maximum.svg)
+
+*Les gardes `[oui]` et `[non]` orientent le flux vers le résultat correspondant; les deux chemins rejoignent ensuite la fin de l'activité.*
 
 
 ## Variable et affectation ##

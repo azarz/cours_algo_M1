@@ -7,7 +7,23 @@ Ce cours est une initiation au langage de programmation Python. Il n'est pas né
 
 On utilisera l'[IDE](https://fr.wikipedia.org/wiki/Environnement_de_d%C3%A9veloppement) Visual Studio Code [(lien)](https://code.visualstudio.com/), qui permet d'écrire du code pour Python mais aussi bien d'autres langages (web, etc). On installera Python et l'extension Python pour VS Code en suivant le tutotriel suivant : [https://code.visualstudio.com/docs/languages/python](https://code.visualstudio.com/docs/languages/python).
 
-La version 3 de Python est la seule utilisée tout au long du cours. On privilégiera la dernière version (3.13 au moment de l'écriture de ce texte).
+La version 3 de Python est la seule utilisée tout au long du cours. Les exemples présentés ici sont compatibles avec Python 3. On privilégiera la dernière version stable (Python 3.15 au 21 octobre 2026).
+
+## Environnements virtuels
+
+Un environnement virtuel est un espace isolé pour les paquets Python d'un projet. Il évite que les dépendances de plusieurs projets se mélangent. Depuis la racine du projet, le créer avec :
+
+```bash
+python -m venv .venv
+```
+
+Activer ensuite l'environnement dans le terminal utilisé pour le TP :
+
+- macOS ou Linux (bash/zsh) : `source .venv/bin/activate`
+- Windows PowerShell : `.\.venv\Scripts\Activate.ps1`
+- Windows Invite de commandes : `.venv\Scripts\activate.bat`
+
+Une fois l'environnement activé, installer les paquets nécessaires avec `python -m pip install nom_du_paquet`. Dans VS Code, sélectionner aussi l'interpréteur situé dans `.venv` (commande **Python: Select Interpreter**). Pour quitter l'environnement, exécuter `deactivate`. Le dossier `.venv` est local au projet et ne doit pas être versionné.
 
 ## Types et opérations
 
@@ -26,11 +42,13 @@ Nous définirons ainsi une variable comme l'association d'un nom et d'une valeur
 
 
 En Python, le nom (on parle parfois d'identificateur) :
-  + ne peut contenir que des lettres, des chiffres et des blancs soulignés;
+  + peut contenir des lettres, des chiffres et des blancs soulignés; de nombreuses lettres non ASCII sont également acceptées;
   + ne peut pas contenir d'espace ou de caractères spéciaux (&, ;...);
   + ne peut pas commencer par un chiffre;
   + distingue minuscules et majuscules (on dit que le langage est sensible à la casse);
-  + doit être unique. Par convention, pour les noms de variable, on séparera les mots par des blancs soulignés : mon_nom_de_variable. Les noms de variable commençant par deux _ et se terminant par deux _ sont réservés au langage (exemple : __str__). Certains mots-clé sont également réservés par le langage. Il n'est pas possible de créer une variable portant l'un de ces noms : `and else in return as except is true assert false lambda try break finally none while class for nonlocal with continue from not yield def global or del if pass elif import raise` ([liste exhaustive sur la documentation officielle](https://docs.python.org/3.3/reference/lexical_analysis.html#keywords))
+  + peut être réutilisé ou réaffecté; sa portée détermine où cette liaison de nom est visible. Par convention, pour les noms de variable, on séparera les mots par des blancs soulignés : `mon_nom_de_variable`. Les noms de la forme `__nom__` sont réservés aux usages définis par Python (exemple : `__str__`). Les mots-clés ne peuvent pas être utilisés comme identificateurs ordinaires. La liste dépend de la version et figure dans la [documentation officielle](https://docs.python.org/3/reference/lexical_analysis.html#keywords).
+
+Certains mots sont des mots-clés contextuels : `match` et `case` dans une instruction `match`, `_` dans un motif, `type` dans une déclaration de type et `lazy` avant un import.
 
 
 En Python, la valeur d'une variable est une référence vers une adresse mémoire (un emplacement précis dans la mémoire vive de l'ordinateur). Le contenu de la variable est stocké à cette adresse mémoire sous forme d'une suite de nombres binaires. Pour distinguer les différents contenus, les langages de programmation utilisent des types de variable qui permettent de spécifier le contenu attendu.
@@ -73,6 +91,8 @@ Les nombres sont des objets relativement basiques et dont l'utilisation est asse
 | Decimal | Decimal('0.1') |
 | Fraction | Fraction(1, 3) |
 
+`Decimal` et `Fraction` sont fournis par les modules `decimal` et `fractions` : on les utilise après les imports `from decimal import Decimal` et `from fractions import Fraction`.
+
 
 Les nombres Python supportent les opérations mathématiques classiques listées dans la table c-dessous. Dans le cas d'expression avec des parenthèses, Python applique la règle mathématique classique et calcule en premier les sous-expressions entre parenthèses.
 
@@ -91,7 +111,7 @@ On pourra convertir un nombre quelconque en nombre entier via la fonction `int()
 
 Une variable de type booléen ne pourra prendre que deux valeurs : `True` (vrai) et `False` (faux).
 
-Les opérations logiques retournent des booléens. La table suivante liste les opérateurs de comparaison. Ces opérateurs s'appliquent à tous les types de données, à condition que les types soient comparables (comparer 5 à "toto" n'a pas vraiment de sens).
+Les opérations logiques retournent des booléens. La table suivante liste les opérateurs de comparaison. Ils s'appliquent aux objets dont les types définissent la comparaison correspondante; comparer un nombre et une chaîne avec `<`, par exemple, provoque une erreur en Python 3.
 
 
 | Opérateur | Signification |
@@ -100,9 +120,11 @@ Les opérations logiques retournent des booléens. La table suivante liste les o
 | \>= | Supérieur ou égal |
 | <= | Inférieur ou égal |
 | == | Egal |
-| != ou <> | Différent de |
-| is | Objet identique |
-| is not | Objet différent |
+| != | Différent de |
+| is | Même objet (identité) |
+| is not | Objets distincts (identité) |
+
+Pour tester l'égalité des valeurs, on utilise `==`. `is` et `is not` servent notamment à tester une valeur unique comme `None` (`x is None`).
 
 Dans l'exemple ci-dessous, nous affectons à `x` le résultat de la comparaison `3 != 5`. Ce résultat est un booléen :
 ```python
@@ -120,7 +142,7 @@ Mini-exo : table de vérité
 
 Python propose un type spécial qui ne peut prendre qu'une seule valeur possible, `None`, et qui est utilisé pour signifier qu'une variable ne contient rien. Ou plus exactement, elle référence un objet et cet objet est l'objet "rien".
 
-Il s'agit d'une valeur qui est utilisée par défaut lorsqu'une opération n'a pas de retour explicite ou n'a pas pu être menée à son terme. Le type "rien" est ainsi utilisé pour vérifier que des parties de programme ont correctement fonctionné.
+Cette valeur est notamment renvoyée par une fonction qui ne contient pas de `return` explicite. Elle sert aussi à représenter l'absence de valeur; une erreur est généralement signalée par une exception, pas par `None`.
 
 
 ### Les chaînes de caractères
@@ -158,7 +180,7 @@ Les opérateurs suivants sont applicables aux chaînes de caractères.
 | `in` | Inclusion d'une chaîne dans une autre |
 | `not in` | Non inclusion d'une chaîne dans une autre |
 | `[i]` | Caractère à la i-ième position dans la chaîne |
-| `[i:j]` | Caractères compris entre les i-ième et j-ième positions |
+| `[i:j]` | Caractères de la position i à la position j exclue |
 
 De plus, on peut appliquer de nombreuses fonctions aux chaînes de caractères, qui sont décrites dans [la documentation officielle](https://docs.python.org/3/library/stdtypes.html#string-methods)
 
@@ -225,18 +247,19 @@ D'autre fonctions existent, à l'aide d'un IDE une liste est disponible.
 
 ### Les dictionnaires
 
-Les dictionnaires sont des objets semblables aux listes mais plus souples en ce qui concerne le référencement des valeurs. Alors qu'une liste référence les éléments qu'elle contient à l'aide de leur position (un entier compris entre 0 et la taille de la liste), un dictionnaire se contente d'associer l'élément à __un autre élément de type immuable__ (entier, réel, chaîne, tuple). On dit que le dictionnaire __associe une valeur à une clé__.
+Les dictionnaires sont des objets semblables aux listes mais plus souples en ce qui concerne le référencement des valeurs. Alors qu'une liste référence les éléments qu'elle contient à l'aide de leur position, un dictionnaire associe une valeur à une clé. Une clé doit être hachable (par exemple un nombre, une chaîne ou un tuple dont les éléments sont eux-mêmes hachables); une liste ou un dictionnaire ne peut pas servir de clé.
 
-Les éléments d'un dictionnaire ne sont pas ordonnés (il n'est pas possible de les trier) et on y accède uniquement par leurs clés. La structure d'un dictionnaire n'est pas figée, on peut ajouter/modifier/supprimer des éléments sans avoir besoin de recréer le dictionnaire : le dictionnaire est modifiable.
+Les dictionnaires conservent l'ordre d'insertion des clés, mais on y accède par leurs clés plutôt que par position. La structure d'un dictionnaire est modifiable : on peut ajouter, modifier ou supprimer des éléments.
 
 La syntaxe de création d'un dictionnaire est la suivante :
 ```python
 >>> dico = {cle1: valeur1 , cle2: valeur2...}
 ```
 
-On peut créer un dictionnaire vide :
+On peut créer un dictionnaire vide de l'une de ces façons :
 ```python
->>> dico = {} >>> dico = dict()
+dico = {}
+dico = dict()
 ```
 
 Pour accéder à la valeur d'un élément, la syntaxe est semblable à celle d'une liste, mais l'indice n'est plus uniquement un entier : `dico[cle]` retourne la valeur associé à la clé.
@@ -249,10 +272,10 @@ L'ajout d'une nouvel élément est assez aisé :
 >>> dico[0] = 'rouge' >>> dico {0: 'rouge', 'age': 24, 'prenom': 'paul'}
 ```
 
-Les dictionnaires implémentent aussi un certain nombre de fonctions, dont en voici quelques unes :
-+ `d.items()` : retourne une séquence des couples (clé, valeur) du dictionnaire
-+ `d.keys()` : retourne une séquence des clés du dictionnaire
-+ `d.values()` : retourne une séquence des valeurs du dictionnaire
+Les dictionnaires implémentent aussi des méthodes qui retournent des vues dynamiques :
++ `d.items()` : couples (clé, valeur) du dictionnaire;
++ `d.keys()` : clés du dictionnaire;
++ `d.values()` : valeurs du dictionnaire.
 
 
 ### Les fichiers
@@ -265,7 +288,7 @@ Avant de commencer à manipuler les fichiers, précisons qu'il existe deux possi
 Lorsque l'on utilise des chemins absolus, on décrit le fichier en partant de la racine du disque. Les chemins prennent la forme : `/home/user/cours-python/toto.txt`.
 
 
-Avec les chemins relatifs, on tient compte du répertoire courant, c'est à dire celui depuis lequel l'interpréteur Python est exécuté (si l'on exécute un fichier .py directement, le répertoire courant est celui contenant le programme; si on utilise l'interpréteur Python, le répertoire courant est celui contenant l'interpréteur). Ainsi, si on est dans le répertoire `/home/user/cours-python/` , on appellera la fichier `resultat.txt` de ce répertoire en saisissant tout simplement `resultat.txt`.
+Avec les chemins relatifs, on tient compte du répertoire courant du processus Python, qui dépend de la façon dont le programme est lancé et n'est pas nécessairement le dossier du script ni celui de l'interpréteur. Ainsi, si le répertoire courant est `/home/user/cours-python/`, on peut désigner un fichier de ce répertoire avec `resultat.txt`.
 
 #### Ouverture d'un fichier
 
@@ -274,22 +297,23 @@ Pour ouvrir un fichier, on utilise la fonction open(). Elle prend en paramètre 
 + le mode d'ouverture :
   - 'r' pour lire uniquement;
   - 'w' pour écrire uniquement (le contenu précédent est écrasé);
-  - 'a' pour écrire à la finn uniquement (le contenu précédent est conservé);
- Il est possible de combiner les modes pour, par exemple, lire et ajouter à la fin (en écrivant `ra`).
+    - 'a' pour écrire à la fin uniquement (le contenu précédent est conservé);
+    - 'r+' pour lire et écrire sans tronquer le fichier;
+    - 'a+' pour lire et écrire en ajoutant les écritures à la fin.
 
 
-Lorsque le fichier n'est plus utilisé par le programme, il est nécessaire de le fermer, sans quoi un verrou persiste empêchant son utilisation par une autre personne/un autre programme. On utilise la fonction close().
+Lorsque le fichier n'est plus utilisé, il faut le fermer afin de libérer les ressources et de vider les données encore en mémoire tampon. Cela ne signifie pas qu'un verrou empêchera nécessairement les autres programmes de l'utiliser. On peut fermer le fichier avec `close()` ou, de préférence, utiliser `with`.
 
 
 #### Lecture d'un fichier
 
-Plusieurs modes de lecture d'un fichier sont possible. Les plus courants sont :
-+ la lecture en entier avec la fonction read()
-+ la lecture ligne par ligne avec la fonction readline()
+Plusieurs modes de lecture d'un fichier sont possibles. Les plus courants sont :
++ la lecture de tout le contenu avec la méthode `read()`;
++ la lecture d'une ligne avec la méthode `readline()`.
 
 Un exemple de lecture :
 ```python
-fichier = open("fichier.txt", 'r')
+fichier = open("fichier.txt", 'r', encoding='utf-8')
 contenu = fichier.read()
 fichier.close()
 ```
@@ -299,7 +323,7 @@ fichier.close()
 Pour écrire dans un fichier, on utilise la méthode write(texte) en lui passant en paramètre la chaîne de caractères à écrire. Elle renvoie le nombre de caractères qui ont été écrits. Cette fonction peut être appelée plusieurs fois pour écrire plusieurs chaînes. Elle fonctionne que le fichier soit ouvert en mode 'w' ou 'a'.
 
 ```python
-fichier = open("fichier.txt", 'w')
+fichier = open("fichier.txt", 'w', encoding='utf-8')
 fichier.write("J'écris pour la première fois dans un fichier texte via Python")
 fichier.close()
 ```
@@ -310,7 +334,7 @@ L'ouverture et la manipulation de fichiers est une opération source d'erreurs e
 
 Pour simplifier l'utilisation des fichiers, Python permet d'utiliser un mot clé : `with`. Avec cette forme d'ouverture d'un fichier, la fermeture du fichier est automatique :
 ```python
-with open("fichier.txt", 'r') as fichier:
+with open("fichier.txt", 'r', encoding='utf-8') as fichier:
   contenu = fichier.read()
 ```
 
@@ -363,7 +387,7 @@ if condition:
     instruction2
 ```
 
-Les **espaces et sauts de ligne** sont ignorés par l’interpréteur. Le code :
+Les lignes vides sont ignorées, mais l'indentation délimite les blocs et fait partie de la syntaxe. À l'intérieur de parenthèses, crochets ou accolades, une expression peut s'étendre sur plusieurs lignes. Par exemple, les lignes vides entre les instructions suivantes ne changent pas le programme :
 
 ```python
 ligne_d_en_tete:
@@ -384,7 +408,7 @@ ligne_d_en_tete:
 #### Commentaires
 
 - Commentaire simple : commence par `#`
-- Docstrings : délimitées par `"""`
+- Docstrings : chaînes placées au début d'un module, d'une fonction ou d'une classe pour en documenter le rôle; les triples guillemets sont une convention courante.
 
 ---
 
@@ -679,7 +703,7 @@ Une manière d'exécuter les tests est d'appeler les fonctions et de faire des a
 def somme(a, b):
     return a + b
 
-if __name__ == "__main__": # sera exécuté avec la commande `python somme.py`, ne sera pas exécuté avec la commande `pyton main.py`
+if __name__ == "__main__": # exécuté avec `python somme.py`, pas lors de l'import de somme depuis main.py
     print("Testing somme.py...")
     assert somme(2, 3) == 5
     assert somme(-1, 1) == 0

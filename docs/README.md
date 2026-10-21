@@ -12,7 +12,7 @@ Durée : 16 demi journées.
 ## Programme par demi-journées
 
 ### 1 (matin du 1er octobre 2019)
-[Architecture informatique](1_Architecture_informatique.md)
+[Architecture informatique](1_Architecture_logicielle.md)
 
 [Validité des calculs dans un ordinateur](2_Validite_logiciel_numerique.md)
 

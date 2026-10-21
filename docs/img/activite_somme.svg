@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" role="img" aria-labelledby="title desc">
+  <title id="title">Diagramme d'activité : somme des entiers de 1 à n</title>
+  <desc id="desc">L'algorithme initialise total et i, répète l'addition tant que i est inférieur ou égal à n, puis retourne total.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#263238" />
+    </marker>
+    <style>
+      text { font-family: sans-serif; font-size: 18px; fill: #17252a; text-anchor: middle; }
+      .action { fill: #ffffff; stroke: #176b67; stroke-width: 2.5; }
+      .decision { fill: #fff7df; stroke: #a96810; stroke-width: 2.5; }
+      .flow { fill: none; stroke: #263238; stroke-width: 2.5; marker-end: url(#arrow); }
+      .label { font-size: 16px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <circle cx="400" cy="36" r="11" fill="#17252a" />
+  <path class="flow" d="M400 47 V75" />
+
+  <rect class="action" x="250" y="76" width="300" height="64" rx="14" />
+  <text x="400" y="115">total = 0 ; i = 1</text>
+  <path class="flow" d="M400 140 V178" />
+
+  <path class="decision" d="M400 178 L520 230 L400 282 L280 230 Z" />
+  <text x="400" y="237">i &lt;= n ?</text>
+
+  <path class="flow" d="M400 282 V340" />
+  <text class="label" x="430" y="317">[oui]</text>
+  <rect class="action" x="250" y="340" width="300" height="80" rx="14" />
+  <text x="400" y="373">
+    <tspan x="400">total = total + i</tspan>
+    <tspan x="400" dy="25">i = i + 1</tspan>
+  </text>
+
+  <path class="flow" d="M250 380 H100 V230 H278" />
+  <text class="label" x="138" y="366">recommencer</text>
+
+  <path class="flow" d="M520 230 H700 V545 H550" />
+  <text class="label" x="575" y="215">[non]</text>
+  <rect class="action" x="250" y="510" width="300" height="70" rx="14" />
+  <text x="400" y="552">Retourner total</text>
+
+  <path class="flow" d="M400 580 V628" />
+  <circle cx="400" cy="650" r="15" fill="#ffffff" stroke="#17252a" stroke-width="3" />
+  <circle cx="400" cy="650" r="8" fill="#17252a" />
+</svg>

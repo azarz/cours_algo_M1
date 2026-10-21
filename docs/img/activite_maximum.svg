@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-labelledby="title desc">
+  <title id="title">Diagramme d'activité : maximum de deux nombres</title>
+  <desc id="desc">Le diagramme compare a et b, retourne le plus grand, puis termine.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#263238" />
+    </marker>
+    <style>
+      text { font-family: sans-serif; font-size: 18px; fill: #17252a; text-anchor: middle; }
+      .action { fill: #ffffff; stroke: #176b67; stroke-width: 2.5; }
+      .decision { fill: #fff7df; stroke: #a96810; stroke-width: 2.5; }
+      .flow { fill: none; stroke: #263238; stroke-width: 2.5; marker-end: url(#arrow); }
+      .label { font-size: 16px; font-weight: 600; }
+    </style>
+  </defs>
+
+  <circle cx="400" cy="36" r="11" fill="#17252a" />
+  <path class="flow" d="M400 47 V105" />
+
+  <path class="decision" d="M400 105 L535 170 L400 235 L265 170 Z" />
+  <text x="400" y="177">a &gt;= b ?</text>
+
+  <path class="flow" d="M265 170 H205 V285" />
+  <text class="label" x="225" y="155">[oui]</text>
+  <rect class="action" x="60" y="285" width="290" height="72" rx="14" />
+  <text x="205" y="328">Retourner a</text>
+
+  <path class="flow" d="M535 170 H595 V285" />
+  <text class="label" x="575" y="155">[non]</text>
+  <rect class="action" x="450" y="285" width="290" height="72" rx="14" />
+  <text x="595" y="328">Retourner b</text>
+
+  <path class="flow" d="M205 357 V440 H365" />
+  <path class="flow" d="M595 357 V440 H435" />
+  <path class="decision" d="M400 410 L435 440 L400 470 L365 440 Z" />
+  <path class="flow" d="M400 470 V535" />
+  <circle cx="400" cy="557" r="15" fill="#ffffff" stroke="#17252a" stroke-width="3" />
+  <circle cx="400" cy="557" r="8" fill="#17252a" />
+</svg>

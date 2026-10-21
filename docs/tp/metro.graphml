@@ -303,6 +303,28 @@
     <node id="299 Cour Saint-Emilion"/>
     <node id="300 Biblioteque Francois Mitterrand"/>
     <node id="301 Olympiades"/>
+    <!-- Extensions en service des lignes 4, 11, 12 et 14. -->
+    <node id="302 Mairie de Montrouge"/>
+    <node id="303 Barbara"/>
+    <node id="304 Bagneux - Lucie Aubrac"/>
+    <node id="305 Serge Gainsbourg"/>
+    <node id="306 Romainville - Carnot"/>
+    <node id="307 Montreuil - Hopital"/>
+    <node id="308 La Dhuys"/>
+    <node id="309 Coteaux Beauclair"/>
+    <node id="310 Rosny - Bois-Perrier"/>
+    <node id="311 Front Populaire"/>
+    <node id="312 Aime Cesaire"/>
+    <node id="313 Mairie d'Aubervilliers"/>
+    <node id="314 Pont Cardinet"/>
+    <node id="315 Saint-Ouen"/>
+    <node id="316 Saint-Denis Pleyel"/>
+    <node id="317 Hopital Bicetre"/>
+    <node id="318 Villejuif - Gustave Roussy"/>
+    <node id="319 L'Hay-les-Roses"/>
+    <node id="320 Chevilly-Larue"/>
+    <node id="321 Thiais - Orly"/>
+    <node id="322 Aeroport d'Orly"/>
     <edge id="1 M1" source="1 La Defense" target="2 Esplanade de La Defense" directed="true"/>
     <edge id="2 M1" source="2 Esplanade de La Defense" target="3 Pont de Neuilly" directed="true"/>
     <edge id="3 M1" source="3 Pont de Neuilly" target="4 Les Sablons" directed="true"/>
@@ -1006,5 +1028,53 @@
     <edge id="701 M9" source="208 Porte de Saint-Cloud" target="207 Marcel Sembat" directed="true"/>
     <edge id="702 M9" source="207 Marcel Sembat" target="206 Billancourt" directed="true"/>
     <edge id="703 M9" source="206 Billancourt" target="205 Pont de Sevres" directed="true"/>
+    <edge id="704 M4" source="99 Porte d'Orleans" target="302 Mairie de Montrouge" directed="true"/>
+    <edge id="705 M4" source="302 Mairie de Montrouge" target="303 Barbara" directed="true"/>
+    <edge id="706 M4" source="303 Barbara" target="304 Bagneux - Lucie Aubrac" directed="true"/>
+    <edge id="707 M4" source="304 Bagneux - Lucie Aubrac" target="303 Barbara" directed="true"/>
+    <edge id="708 M4" source="303 Barbara" target="302 Mairie de Montrouge" directed="true"/>
+    <edge id="709 M4" source="302 Mairie de Montrouge" target="99 Porte d'Orleans" directed="true"/>
+    <edge id="710 M11" source="253 Mairie des Lilas" target="305 Serge Gainsbourg" directed="true"/>
+    <edge id="711 M11" source="305 Serge Gainsbourg" target="306 Romainville - Carnot" directed="true"/>
+    <edge id="712 M11" source="306 Romainville - Carnot" target="307 Montreuil - Hopital" directed="true"/>
+    <edge id="713 M11" source="307 Montreuil - Hopital" target="308 La Dhuys" directed="true"/>
+    <edge id="714 M11" source="308 La Dhuys" target="309 Coteaux Beauclair" directed="true"/>
+    <edge id="715 M11" source="309 Coteaux Beauclair" target="310 Rosny - Bois-Perrier" directed="true"/>
+    <edge id="716 M11" source="310 Rosny - Bois-Perrier" target="309 Coteaux Beauclair" directed="true"/>
+    <edge id="717 M11" source="309 Coteaux Beauclair" target="308 La Dhuys" directed="true"/>
+    <edge id="718 M11" source="308 La Dhuys" target="307 Montreuil - Hopital" directed="true"/>
+    <edge id="719 M11" source="307 Montreuil - Hopital" target="306 Romainville - Carnot" directed="true"/>
+    <edge id="720 M11" source="306 Romainville - Carnot" target="305 Serge Gainsbourg" directed="true"/>
+    <edge id="721 M11" source="305 Serge Gainsbourg" target="253 Mairie des Lilas" directed="true"/>
+    <edge id="722 M12" source="254 Porte de la Chapelle" target="311 Front Populaire" directed="true"/>
+    <edge id="723 M12" source="311 Front Populaire" target="312 Aime Cesaire" directed="true"/>
+    <edge id="724 M12" source="312 Aime Cesaire" target="313 Mairie d'Aubervilliers" directed="true"/>
+    <edge id="725 M12" source="313 Mairie d'Aubervilliers" target="312 Aime Cesaire" directed="true"/>
+    <edge id="726 M12" source="312 Aime Cesaire" target="311 Front Populaire" directed="true"/>
+    <edge id="727 M12" source="311 Front Populaire" target="254 Porte de la Chapelle" directed="true"/>
+    <edge id="728 M14" source="58 Saint-Lazare" target="314 Pont Cardinet" directed="true"/>
+    <edge id="729 M14" source="314 Pont Cardinet" target="294 Porte de Clichy" directed="true"/>
+    <edge id="730 M14" source="294 Porte de Clichy" target="315 Saint-Ouen" directed="true"/>
+    <edge id="731 M14" source="315 Saint-Ouen" target="288 Mairie de Saint-Ouen" directed="true"/>
+    <edge id="732 M14" source="288 Mairie de Saint-Ouen" target="316 Saint-Denis Pleyel" directed="true"/>
+    <edge id="733 M14" source="316 Saint-Denis Pleyel" target="288 Mairie de Saint-Ouen" directed="true"/>
+    <edge id="734 M14" source="288 Mairie de Saint-Ouen" target="315 Saint-Ouen" directed="true"/>
+    <edge id="735 M14" source="315 Saint-Ouen" target="294 Porte de Clichy" directed="true"/>
+    <edge id="736 M14" source="294 Porte de Clichy" target="314 Pont Cardinet" directed="true"/>
+    <edge id="737 M14" source="314 Pont Cardinet" target="58 Saint-Lazare" directed="true"/>
+    <edge id="738 M14" source="301 Olympiades" target="160 Maison Blanche" directed="true"/>
+    <edge id="739 M14" source="160 Maison Blanche" target="317 Hopital Bicetre" directed="true"/>
+    <edge id="740 M14" source="317 Hopital Bicetre" target="318 Villejuif - Gustave Roussy" directed="true"/>
+    <edge id="741 M14" source="318 Villejuif - Gustave Roussy" target="319 L'Hay-les-Roses" directed="true"/>
+    <edge id="742 M14" source="319 L'Hay-les-Roses" target="320 Chevilly-Larue" directed="true"/>
+    <edge id="743 M14" source="320 Chevilly-Larue" target="321 Thiais - Orly" directed="true"/>
+    <edge id="744 M14" source="321 Thiais - Orly" target="322 Aeroport d'Orly" directed="true"/>
+    <edge id="745 M14" source="322 Aeroport d'Orly" target="321 Thiais - Orly" directed="true"/>
+    <edge id="746 M14" source="321 Thiais - Orly" target="320 Chevilly-Larue" directed="true"/>
+    <edge id="747 M14" source="320 Chevilly-Larue" target="319 L'Hay-les-Roses" directed="true"/>
+    <edge id="748 M14" source="319 L'Hay-les-Roses" target="318 Villejuif - Gustave Roussy" directed="true"/>
+    <edge id="749 M14" source="318 Villejuif - Gustave Roussy" target="317 Hopital Bicetre" directed="true"/>
+    <edge id="750 M14" source="317 Hopital Bicetre" target="160 Maison Blanche" directed="true"/>
+    <edge id="751 M14" source="160 Maison Blanche" target="301 Olympiades" directed="true"/>
   </graph>
 </graphml>
